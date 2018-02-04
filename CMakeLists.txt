@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.9)
 project(workspace)
 
-set(CMAKE_CXX_STANDARD 14)
+# Toolchain file with values for the whole project (e.g. C++ 14)
+include(${CMAKE_CURRENT_LIST_DIR}/CMakeConfiguration.cmake)
 
 add_executable(workspace main.cpp)
 
