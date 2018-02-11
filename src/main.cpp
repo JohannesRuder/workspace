@@ -3,6 +3,8 @@
 //
 
 #include <opencv2/opencv.hpp>
+#include "team.h"
+#include "player.h"
 
 int main(int argc, char** argv)
 {
@@ -14,5 +16,9 @@ int main(int argc, char** argv)
     cv::imshow("Example1", img);
     cv::waitKey(0);
     cv::destroyWindow("Example1");
+
+    Team team1;
+    Player player1;
+
     return 0;
 }

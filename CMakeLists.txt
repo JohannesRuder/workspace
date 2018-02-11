@@ -4,7 +4,7 @@ project(workspace)
 # Toolchain file with values for the whole project (e.g. C++ 14)
 include(${CMAKE_CURRENT_LIST_DIR}/CMakeConfiguration.cmake)
 
-add_executable(workspace src/main.cpp)
+add_executable(workspace src/main.cpp src/team.cpp src/team.h src/player.cpp src/player.h)
 
 # OpenCV
 find_package(OpenCV REQUIRED)
