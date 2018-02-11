@@ -4,6 +4,7 @@
 
 #include "gtest/gtest.h"
 
-TEST(FactorialTest, Zero) {
+TEST(FactorialTest, Zero)
+{
     EXPECT_EQ(1, 1);
 }

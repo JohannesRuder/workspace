@@ -1,3 +1,7 @@
+//
+// Created by hannes on 03.02.18.
+//
+
 #include <opencv2/opencv.hpp>
 
 int main(int argc, char** argv)
