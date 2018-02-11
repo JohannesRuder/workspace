@@ -4,32 +4,32 @@
 
 #include "team.h"
 
-Team::Team() : name(""), playerVector(0) {}
+Team::Team() : name_(""), players_(0) {}
 
-Team::Team(std::string nameToBeSet) : name(nameToBeSet) {}
+Team::Team(std::string name) : name_(name) {}
 
-void Team::setTeam(std::string nameToBeSet)
+const std::string& Team::GetName() const
 {
-    name = nameToBeSet;
+    return name_;
 }
 
-std::string Team::getName()
+const Player& Team::GetPlayer(int player_number) const
 {
-    return name;
+    return players_[player_number];
 }
 
-Player Team::getPlayer(int playerNumber)
+void Team::AddPlayer(Player player)
 {
-    return playerVector[playerNumber];
+    players_.push_back(player);
 }
 
-void Team::addPlayer(Player playerToBeAdded)
+void Team::Write(cv::FileStorage& file_storage) const
 {
-    playerVector.push_back(playerToBeAdded);
+    file_storage << "{"
+                 << "name" << name_ << "}";
 }
 
-void Team::write(cv::FileStorage& fs) const
+void Team::SetName(const std::string& name)
 {
-    fs << "{"
-       << "name" << name << "}";
+    Team::name_ = name;
 }

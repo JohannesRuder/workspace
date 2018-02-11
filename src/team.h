@@ -11,24 +11,26 @@ class Team
 {
 
   private:
-    std::string name;
-    std::vector<Player> playerVector;
+    std::string name_;
+    std::vector<Player> players_;
 
   public:
     explicit Team();
-    explicit Team(std::string nameToBeSet);
+    explicit Team(std::string name);
 
-    void setTeam(std::string name);
-    std::string getName();
-    Player getPlayer(int playerNumber);
-    void addPlayer(Player playerToBeAdded);
+    const std::string& GetName() const;
+    const Player& GetPlayer(int player_number) const;
 
-    void write(cv::FileStorage& fs) const;
+    void SetName(const std::string& name);
+
+    void AddPlayer(Player player);
+
+    void Write(cv::FileStorage& file_storage) const;
 };
 
-static void write(cv::FileStorage& fs, const std::string&, const Team& x)
+static void Write(cv::FileStorage& file_storage, const std::string&, const Team& x)
 {
-    x.write(fs);
+    x.Write(file_storage);
 }
 
 #endif  // WORKSPACE_TEAM_H
