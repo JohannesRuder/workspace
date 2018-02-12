@@ -24,13 +24,6 @@ class Team
     void SetName(const std::string& name);
 
     void AddPlayer(Player player);
-
-    void Write(cv::FileStorage& file_storage) const;
 };
-
-static void Write(cv::FileStorage& file_storage, const std::string&, const Team& x)
-{
-    x.Write(file_storage);
-}
 
 #endif  // WORKSPACE_TEAM_H

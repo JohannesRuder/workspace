@@ -4,43 +4,50 @@
 
 #include "player.h"
 
-Player::Player() : name(""), number(0), position(Position::UNDEFINED), numberOfActions(0) {}
+Player::Player() : name_(""), number_(0), position_(Position::UNDEFINED), number_of_actions_(0) {}
 
-Player::Player(std::string nameToBeSet, int numberToBeSet, Position positionToBeSet)
+Player::Player(std::string name, int number, Position position)
 {
-    name = nameToBeSet;
-    number = numberToBeSet;
-    position = positionToBeSet;
-    numberOfActions = 0;
+    name_ = name;
+    number_ = number;
+    position_ = position;
+    number_of_actions_ = 0;
 }
 
-std::string Player::getName()
+const std::string& Player::GetName() const
 {
-    return name;
+    return name_;
 }
 
-int Player::getNumber()
+const int& Player::GetNumber() const
 {
-    return number;
+    return number_;
 }
 
-Position Player::getPosition()
+const Position& Player::GetPosition() const
 {
-    return position;
+    return position_;
 }
 
-int Player::getNumberOfActions()
+const int& Player::GetNumberOfActions() const
 {
-    return numberOfActions;
+    return number_of_actions_;
 }
 
-void Player::incrementNumberOfActions()
+void Player::IncrementNumberOfActions()
 {
-    numberOfActions++;
+    number_of_actions_++;
 }
 
-void Player::write(cv::FileStorage& fs) const
+void Player::Write(cv::FileStorage &file_storage) const
 {
-    fs << "{"
-       << "name" << name << "number" << number << "numberOfActions" << numberOfActions << "}";
-}  // TODO write position
+    file_storage << "{"
+                 << "name" << name_ << "number" << number_ << "numberOfActions" << number_of_actions_ << "}";
+}
+
+void Player::Read(const cv::FileNode &node)
+{
+    name_ = (std::string)node["name"];
+    number_ = (int)node["number"];
+    number_of_actions_ = (int)node["numberOfActions"];
+}

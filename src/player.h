@@ -18,26 +18,36 @@ enum class Position
 class Player
 {
   private:
-    std::string name;
-    int number;
-    Position position;
-    int numberOfActions;
+    std::string name_;
+    int number_;
+    Position position_;
+    int number_of_actions_;
 
   public:
     Player();
-    Player(std::string nameToBeSet, int numberToBeSet, Position positionToBeSet);
-    std::string getName();
-    int getNumber();
-    Position getPosition();
-    int getNumberOfActions();
-    void incrementNumberOfActions();
+    Player(std::string name, int number, Position position);
+    const std::string& GetName() const;
+    const int& GetNumber() const;
+    const Position& GetPosition() const;
+    const int& GetNumberOfActions() const;
+    void IncrementNumberOfActions();
 
-    void write(cv::FileStorage& fs) const;
+    void Write(cv::FileStorage &file_storage) const;
+
+    void Read(const cv::FileNode &node);
 };
 
-static void write(cv::FileStorage& fs, const std::string&, const Player& x)
+static void write(cv::FileStorage &file_storage, const std::string &, const Player &x)
 {
-    x.write(fs);
+    x.Write(file_storage);
+}
+
+static void read(const cv::FileNode& node, Player& x, const Player& default_value = Player())
+{
+    if (node.empty())
+        x = default_value;
+    else
+        x.Read(node);
 }
 
 #endif  // WORKSPACE_PLAYER_H

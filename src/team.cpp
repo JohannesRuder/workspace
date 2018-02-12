@@ -23,12 +23,6 @@ void Team::AddPlayer(Player player)
     players_.push_back(player);
 }
 
-void Team::Write(cv::FileStorage& file_storage) const
-{
-    file_storage << "{"
-                 << "name" << name_ << "}";
-}
-
 void Team::SetName(const std::string& name)
 {
     Team::name_ = name;

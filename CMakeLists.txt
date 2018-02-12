@@ -30,7 +30,7 @@ find_package(GTest REQUIRED)
 include_directories(${GTest_SOURCE_DIR}/include ${GTest_SOURCE_DIR})
 
 # Add test cpp file
-add_executable(runUnitTests test/unittest.cpp)
+add_executable(runUnitTests test/player_spec.cpp src/player.cpp test/team_spec.cpp src/team.cpp)
 
 # Link test executable against gtest & gtest_main
-target_link_libraries(runUnitTests gtest gtest_main)
+target_link_libraries(runUnitTests gtest gtest_main ${OpenCV_LIBS})

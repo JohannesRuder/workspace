@@ -3,8 +3,8 @@
 //
 
 #include <opencv2/opencv.hpp>
-#include "team.h"
 #include "player.h"
+#include "team.h"
 
 int main(int argc, char** argv)
 {
@@ -18,7 +18,12 @@ int main(int argc, char** argv)
     cv::destroyWindow("Example1");
 
     Team team1;
-    Player player1;
+    team1.SetName("Los Krachos");
+    team1.AddPlayer(Player("Hannes", 9, Position::MITTELBLOCKER));
+
+    cv::FileStorage file_storage("/home/hannes/workspace/data.yaml", cv::FileStorage::WRITE);
+    file_storage << "player" << Player("Hannes", 9, Position::MITTELBLOCKER);
+    file_storage.release();
 
     return 0;
 }
