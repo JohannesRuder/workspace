@@ -4,7 +4,7 @@ project(workspace)
 # Toolchain file with values for the whole project (e.g. C++ 14)
 include(${CMAKE_CURRENT_LIST_DIR}/CMakeConfiguration.cmake)
 
-add_executable(workspace src/main.cpp src/team.cpp src/team.h src/player.cpp src/player.h)
+add_executable(workspace src/main.cpp src/team.cpp src/team.h src/player.cpp src/player.h src/video.cpp src/video.h src/camera.cpp src/camera.h)
 
 # OpenCV
 find_package(OpenCV REQUIRED)
@@ -30,7 +30,7 @@ find_package(GTest REQUIRED)
 include_directories(${GTest_SOURCE_DIR}/include ${GTest_SOURCE_DIR})
 
 # Add test cpp file
-add_executable(runUnitTests test/player_spec.cpp src/player.cpp test/team_spec.cpp src/team.cpp)
+add_executable(runUnitTests test/player_spec.cpp src/player.cpp test/team_spec.cpp src/team.cpp test/camera_spec.cpp src/camera.cpp)
 
 # Link test executable against gtest & gtest_main
 target_link_libraries(runUnitTests gtest gtest_main ${OpenCV_LIBS})
