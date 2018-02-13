@@ -7,7 +7,7 @@
 Camera::Camera() : name_(""), camera_calibration_filename_(""), intrinsics_(), distortion_() {}
 
 Camera::Camera(const std::string& name, const std::string& camera_calibration_filename)
-        : name_(name), camera_calibration_filename_(camera_calibration_filename)
+    : name_(name), camera_calibration_filename_(camera_calibration_filename)
 {
     ReadCameraCalibrationFile();
 }
@@ -25,6 +25,7 @@ const std::string& Camera::GetName() const
 void Camera::SetCameraCalibrationFilename(const std::string& filename)
 {
     camera_calibration_filename_ = filename;
+    ReadCameraCalibrationFile();
 }
 
 const std::string& Camera::GetCameraCalibrationFilename() const
