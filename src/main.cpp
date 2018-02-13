@@ -17,12 +17,12 @@ int main(int argc, char** argv)
     cv::waitKey(0);
     cv::destroyWindow("Example1");
 
-    Team team1;
-    team1.SetName("Los Krachos");
+    Team team1{"Los Krachos"};
     team1.AddPlayer(Player("Hannes", 9, Position::MITTELBLOCKER));
+    team1.AddPlayer(Player("Michi", 6, Position::AUSSENANGREIFER));
 
     cv::FileStorage file_storage("/home/hannes/workspace/data.yaml", cv::FileStorage::WRITE);
-    file_storage << "player" << Player("Hannes", 9, Position::MITTELBLOCKER);
+    file_storage << "team" << team1;
     file_storage.release();
 
     return 0;

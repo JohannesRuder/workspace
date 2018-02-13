@@ -39,15 +39,20 @@ void Player::IncrementNumberOfActions()
     number_of_actions_++;
 }
 
-void Player::Write(cv::FileStorage &file_storage) const
+void Player::Write(cv::FileStorage& file_storage) const
 {
     file_storage << "{"
                  << "name" << name_ << "number" << number_ << "numberOfActions" << number_of_actions_ << "}";
 }
 
-void Player::Read(const cv::FileNode &node)
+void Player::Read(const cv::FileNode& node)
 {
     name_ = (std::string)node["name"];
     number_ = (int)node["number"];
     number_of_actions_ = (int)node["numberOfActions"];
+}
+
+bool Player::operator==(Player player_to_compare) const
+{
+    return this->GetName() == player_to_compare.GetName() && this->GetNumber() == player_to_compare.GetNumber();
 }

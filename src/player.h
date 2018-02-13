@@ -32,12 +32,13 @@ class Player
     const int& GetNumberOfActions() const;
     void IncrementNumberOfActions();
 
-    void Write(cv::FileStorage &file_storage) const;
+    void Write(cv::FileStorage& file_storage) const;
+    void Read(const cv::FileNode& node);
 
-    void Read(const cv::FileNode &node);
+    bool operator==(Player player_to_compare) const;
 };
 
-static void write(cv::FileStorage &file_storage, const std::string &, const Player &x)
+static void write(cv::FileStorage& file_storage, const std::string&, const Player& x)
 {
     x.Write(file_storage);
 }

@@ -59,3 +59,27 @@ TEST_F(ExamplePlayerFixture, WritePlayerToFile)
     EXPECT_EQ(unit.GetNumber(), playerFromFile.GetNumber());
     EXPECT_EQ(unit.GetNumberOfActions(), playerFromFile.GetNumberOfActions());
 }
+
+TEST_F(ExamplePlayerFixture, ComparePlayers_AllEqual)
+{
+    Player player{"Hannes",9,Position::MITTELBLOCKER};
+    EXPECT_TRUE(unit == player);
+}
+
+TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentName)
+{
+    Player player{"Michi",9,Position::MITTELBLOCKER};
+    EXPECT_FALSE(unit == player);
+}
+
+TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentNumber)
+{
+    Player player{"Hannes",6,Position::MITTELBLOCKER};
+    EXPECT_FALSE(unit == player);
+}
+
+TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentPosition)
+{
+    Player player{"Hannes",9,Position::AUSSENANGREIFER};
+    EXPECT_TRUE(unit == player);
+}
