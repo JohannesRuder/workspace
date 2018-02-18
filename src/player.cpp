@@ -6,12 +6,9 @@
 
 Player::Player() : name_(""), number_(0), position_(Position::UNDEFINED), number_of_actions_(0) {}
 
-Player::Player(std::string name, int number, Position position)
+Player::Player(const std::string& name, int number, Position position)
+        : name_{name}, number_{number}, position_{position}, number_of_actions_{0}
 {
-    name_ = name;
-    number_ = number;
-    position_ = position;
-    number_of_actions_ = 0;
 }
 
 const std::string& Player::GetName() const
@@ -43,13 +40,15 @@ void Player::Write(cv::FileStorage& file_storage) const
 {
     file_storage << "{"
                  << "name" << name_ << "number" << number_ << "numberOfActions" << number_of_actions_ << "}";
+    // TODO: Write position enum to file.
 }
 
 void Player::Read(const cv::FileNode& node)
 {
-    name_ = (std::string)node["name"];
-    number_ = (int)node["number"];
-    number_of_actions_ = (int)node["numberOfActions"];
+    name_ = static_cast<std::string>(node["name"]);
+    number_ = static_cast<int>(node["number"]);
+    number_of_actions_ = static_cast<int>(node["numberOfActions"]);
+    // TODO: Read position enum from file.
 }
 
 bool Player::operator==(Player player_to_compare) const

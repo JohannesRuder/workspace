@@ -45,8 +45,20 @@ void Video::Write(cv::FileStorage& file_storage) const
 
 void Video::Read(const cv::FileNode& node)
 {
-    name_ = (std::string)node["name"];
-    filename_ = (std::string)node["filename"];
+    name_ = static_cast<std::string>(node["name"]);
+    filename_ = static_cast<std::string>(node["filename"]);
     node["camera"] >> camera_;
     node["gym_floor_mask"] >> gym_floor_mask_;
+}
+
+const Camera& Video::GetCamera() const
+{
+    return camera_;
+}
+
+Video::Video(const std::string& name, const std::string& filename) : name_(name), filename_(filename) {}
+
+bool Video::operator==(const Video& rhs) const
+{
+    return name_ == rhs.name_ && filename_ == rhs.filename_ && camera_ == rhs.camera_;
 }

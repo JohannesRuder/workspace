@@ -41,14 +41,19 @@ const std::vector<Player>& Team::GetPlayers() const
 
 void Team::Read(const cv::FileNode& node)
 {
-    name_ = (std::string)node["name"];
+    name_ = static_cast<std::string>(node["name"]);
 
     cv::FileNode file_node = node["players"];
     for (cv::FileNodeIterator iterator = file_node.begin(); iterator != file_node.end(); ++iterator)
     {
-        cv::FileNode node = *iterator;
+        cv::FileNode item_node = *iterator;
         Player player;
-        node >> player;
+        item_node >> player;
         players_.push_back(player);
     }
+}
+
+bool Team::operator==(const Team &rhs) const {
+    return name_ == rhs.name_ &&
+           players_ == rhs.players_;
 }

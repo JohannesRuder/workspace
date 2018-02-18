@@ -9,13 +9,13 @@
 
 class Camera
 {
-  private:
+private:
     std::string name_;
     std::string camera_calibration_filename_;
     cv::Mat intrinsics_;
     cv::Mat distortion_;
 
-  public:
+public:
     Camera();
     Camera(const std::string& name, const std::string& camera_calibration_filename);
 
@@ -29,14 +29,16 @@ class Camera
 
     void Write(cv::FileStorage& file_storage) const;
     void Read(const cv::FileNode& node);
+
+    bool operator==(Camera camera_to_compare) const;
 };
 
-static void write(cv::FileStorage& file_storage, const std::string&, const Camera& x)
+inline void write(cv::FileStorage& file_storage, const std::string&, const Camera& x)
 {
     x.Write(file_storage);
 }
 
-static void read(const cv::FileNode& node, Camera& x, const Camera& default_value = Camera())
+inline void read(const cv::FileNode& node, Camera& x, const Camera& default_value = Camera())
 {
     if (node.empty())
         x = default_value;

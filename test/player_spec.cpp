@@ -3,11 +3,11 @@
 //
 
 #include "../src/player.h"
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 class DefaultPlayerFixture : public ::testing::Test
 {
-  protected:
+protected:
     Player unit{};
 };
 
@@ -30,7 +30,7 @@ TEST_F(DefaultPlayerFixture, IncrementNumberOfActions)
 
 class ExamplePlayerFixture : public ::testing::Test
 {
-  protected:
+protected:
     Player unit{"Hannes", 9, Position::MITTELBLOCKER};
 };
 

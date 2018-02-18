@@ -4,11 +4,46 @@ project(workspace)
 # Toolchain file with values for the whole project (e.g. C++ 14)
 include(${CMAKE_CURRENT_LIST_DIR}/CMakeConfiguration.cmake)
 
-add_executable(workspace src/main.cpp src/team.cpp src/team.h src/player.cpp src/player.h src/video.cpp src/video.h src/camera.cpp src/camera.h)
+add_executable(workspace src/main.cpp
+        src/team.cpp src/team.h
+        src/player.cpp src/player.h
+        src/video.cpp src/video.h
+        src/camera.cpp src/camera.h
+        src/action.cpp src/action.h
+        src/game.cpp src/game.h
+        src/gym.cpp src/gym.h
+        src/mainwindow.cpp src/mainwindow.h
+        src/opencvworker.cpp src/opencvworker.h
+        src/rally.cpp src/rally.h
+        src/season.cpp src/season.h
+        src/set.cpp src/set.h
+        ${MyProjectBin_src})
+
 
 # OpenCV
 find_package(OpenCV REQUIRED)
-target_link_libraries(workspace ${OpenCV_LIBS})
+target_link_libraries(workspace ${OpenCV_LIBS} MyProjectLib)
+
+# QT
+find_package(Qt5 COMPONENTS Core Widgets Gui REQUIRED)
+
+set (MyProjectLib_src ${PROJECT_SOURCE_DIR}/src/mainwindow.cpp)
+set (MyProjectLib_hdr ${PROJECT_SOURCE_DIR}/src/mainwindow.h)
+set (MyProjectLib_ui  ${PROJECT_SOURCE_DIR}/src/mainwindow.ui)
+set (MyProjectBin_src ${PROJECT_SOURCE_DIR}/src/main.cpp)
+
+qt5_wrap_cpp(MyProjectLib_hdr_moc ${MyProjectLib_hdr})
+qt5_wrap_ui (MyProjectLib_ui_moc  ${MyProjectLib_ui})
+
+include_directories (${PROJECT_SOURCE_DIR})
+include_directories (${PROJECT_BINARY_DIR})
+
+add_library (MyProjectLib SHARED
+        ${MyProjectLib_src}
+        ${MyProjectLib_hdr_moc}
+        ${MyProjectLib_ui_moc}
+        )
+target_link_libraries (MyProjectLib Qt5::Widgets Qt5::Gui Qt5::Core)
 
 # Googletest
 # Download and unpack googletest at configure time
@@ -30,7 +65,19 @@ find_package(GTest REQUIRED)
 include_directories(${GTest_SOURCE_DIR}/include ${GTest_SOURCE_DIR})
 
 # Add test cpp file
-add_executable(runUnitTests test/player_spec.cpp src/player.cpp test/team_spec.cpp src/team.cpp test/camera_spec.cpp src/camera.cpp)
+add_executable(runUnitTests
+        test/player_spec.cpp src/player.cpp
+        test/team_spec.cpp src/team.cpp
+        test/camera_spec.cpp src/camera.cpp
+        test/action_spec.cpp src/action.cpp
+        test/game_spec.cpp src/game.cpp
+        test/rally_spec.cpp src/rally.cpp
+        test/season_spec.cpp src/season.cpp
+        test/set_spec.cpp src/set.cpp
+        test/video_spec.cpp src/video.cpp)
 
 # Link test executable against gtest & gtest_main
-target_link_libraries(runUnitTests gtest gtest_main ${OpenCV_LIBS})
+target_link_libraries(runUnitTests
+        gtest gtest_main
+        ${OpenCV_LIBS}
+        Qt5::Core Qt5::Widgets Qt5::Gui)

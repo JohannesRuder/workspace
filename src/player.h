@@ -17,15 +17,15 @@ enum class Position
 
 class Player
 {
-  private:
+private:
     std::string name_;
     int number_;
     Position position_;
     int number_of_actions_;
 
-  public:
+public:
     Player();
-    Player(std::string name, int number, Position position);
+    Player(const std::string& name, int number, Position position);
     const std::string& GetName() const;
     const int& GetNumber() const;
     const Position& GetPosition() const;
@@ -38,12 +38,12 @@ class Player
     bool operator==(Player player_to_compare) const;
 };
 
-static void write(cv::FileStorage& file_storage, const std::string&, const Player& x)
+inline void write(cv::FileStorage& file_storage, const std::string&, const Player& x)
 {
     x.Write(file_storage);
 }
 
-static void read(const cv::FileNode& node, Player& x, const Player& default_value = Player())
+inline void read(const cv::FileNode& node, Player& x, const Player& default_value = Player())
 {
     if (node.empty())
         x = default_value;

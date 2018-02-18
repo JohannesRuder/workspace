@@ -3,11 +3,12 @@
 //
 
 #include "../src/team.h"
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
+
 
 class DefaultTeamFixture : public ::testing::Test
 {
-  protected:
+protected:
     Team unit{};
 };
 

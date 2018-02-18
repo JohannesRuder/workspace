@@ -10,33 +10,39 @@
 
 class Video
 {
-  private:
+private:
     std::string name_;
     std::string filename_;
     Camera camera_;
     cv::Mat gym_floor_mask_;
 
-  public:
+public:
     Video();
+    Video(const std::string& name, const std::string& filename);
 
     void SetName(const std::string& name);
     const std::string& GetName() const;
 
     void SetFilename(const std::string& filename);
     const std::string& GetFilename() const;
+
+    const Camera& GetCamera() const;
+
     void SetGymFloorMask(const cv::Mat& mask);
     const cv::Mat& GetGymFloorMask() const;
+
+    bool operator==(const Video& rhs) const;
 
     void Write(cv::FileStorage& file_storage) const;
     void Read(const cv::FileNode& node);
 };
 
-static void write(cv::FileStorage& file_storage, const std::string&, const Video& x)
+inline void write(cv::FileStorage& file_storage, const std::string&, const Video& x)
 {
     x.Write(file_storage);
 }
 
-static void read(const cv::FileNode& node, Video& x, const Video& default_value = Video())
+inline void read(const cv::FileNode& node, Video& x, const Video& default_value = Video())
 {
     if (node.empty())
         x = default_value;

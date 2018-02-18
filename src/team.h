@@ -11,11 +11,11 @@
 class Team
 {
 
-  private:
+private:
     std::string name_;
     std::vector<Player> players_;
 
-  public:
+public:
     explicit Team();
     explicit Team(std::string name);
 
@@ -26,16 +26,18 @@ class Team
     const std::vector<Player>& GetPlayers() const;
     const Player& GetPlayer(int player_number) const;
 
+    bool operator==(const Team &rhs) const;
+
     void Write(cv::FileStorage& file_storage) const;
     void Read(const cv::FileNode& node);
 };
 
-static void write(cv::FileStorage& file_storage, const std::string&, const Team& x)
+inline void write(cv::FileStorage& file_storage, const std::string&, const Team& x)
 {
     x.Write(file_storage);
 }
 
-static void read(const cv::FileNode& node, Team& x, const Team& default_value = Team())
+inline void read(const cv::FileNode& node, Team& x, const Team& default_value = Team())
 {
     if (node.empty())
         x = default_value;
