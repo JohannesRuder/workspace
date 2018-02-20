@@ -15,18 +15,18 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 find_package(Qt5 COMPONENTS Core Widgets Gui REQUIRED)
 
 add_executable(workspace src/main.cpp
-        src/team.cpp src/team.h
-        src/player.cpp src/player.h
-        src/video.cpp src/video.h
-        src/camera.cpp src/camera.h
-        src/action.cpp src/action.h
-        src/game.cpp src/game.h
-        src/gym.cpp src/gym.h
-        src/mainwindow.cpp src/mainwindow.h
-        src/opencvworker.cpp src/opencvworker.h
-        src/rally.cpp src/rally.h
-        src/season.cpp src/season.h
-        src/set.cpp src/set.h)
+        src/team.cpp
+        src/player.cpp
+        src/video.cpp
+        src/camera.cpp
+        src/action.cpp
+        src/game.cpp
+        src/gym.cpp
+        src/mainwindow.cpp
+        src/opencvworker.cpp
+        src/rally.cpp
+        src/season.cpp
+        src/set.cpp)
 
 qt5_use_modules(workspace Core Widgets Gui)
 
