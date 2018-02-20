@@ -4,6 +4,16 @@ project(workspace)
 # Toolchain file with values for the whole project (e.g. C++ 14)
 include(${CMAKE_CURRENT_LIST_DIR}/CMakeConfiguration.cmake)
 
+# QT
+# Tell CMake to run moc when necessary:
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+# As moc files are generated in the binary dir, tell CMake
+# to always look for includes there:
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+find_package(Qt5 COMPONENTS Core Widgets Gui REQUIRED)
+
 add_executable(workspace src/main.cpp
         src/team.cpp src/team.h
         src/player.cpp src/player.h
@@ -16,34 +26,13 @@ add_executable(workspace src/main.cpp
         src/opencvworker.cpp src/opencvworker.h
         src/rally.cpp src/rally.h
         src/season.cpp src/season.h
-        src/set.cpp src/set.h
-        ${MyProjectBin_src})
+        src/set.cpp src/set.h)
 
+qt5_use_modules(workspace Core Widgets Gui)
 
 # OpenCV
 find_package(OpenCV REQUIRED)
-target_link_libraries(workspace ${OpenCV_LIBS} MyProjectLib)
-
-# QT
-find_package(Qt5 COMPONENTS Core Widgets Gui REQUIRED)
-
-set (MyProjectLib_src ${PROJECT_SOURCE_DIR}/src/mainwindow.cpp)
-set (MyProjectLib_hdr ${PROJECT_SOURCE_DIR}/src/mainwindow.h)
-set (MyProjectLib_ui  ${PROJECT_SOURCE_DIR}/src/mainwindow.ui)
-set (MyProjectBin_src ${PROJECT_SOURCE_DIR}/src/main.cpp)
-
-qt5_wrap_cpp(MyProjectLib_hdr_moc ${MyProjectLib_hdr})
-qt5_wrap_ui (MyProjectLib_ui_moc  ${MyProjectLib_ui})
-
-include_directories (${PROJECT_SOURCE_DIR})
-include_directories (${PROJECT_BINARY_DIR})
-
-add_library (MyProjectLib SHARED
-        ${MyProjectLib_src}
-        ${MyProjectLib_hdr_moc}
-        ${MyProjectLib_ui_moc}
-        )
-target_link_libraries (MyProjectLib Qt5::Widgets Qt5::Gui Qt5::Core)
+target_link_libraries(workspace ${OpenCV_LIBS})
 
 # Googletest
 # Download and unpack googletest at configure time
