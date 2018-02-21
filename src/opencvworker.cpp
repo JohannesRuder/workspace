@@ -4,103 +4,109 @@
 
 #include "opencvworker.h"
 
-OpenCvWorker::OpenCvWorker(QObject* parent) : QObject{parent}, status{false}, toggleStream{false}, updateFrame{false}
+OpenCvWorker::OpenCvWorker(QObject* parent)
+    : QObject{parent}, status_{false}, toggle_stream_{false}, update_frame_{false}
 {
-    cap = new cv::VideoCapture();
+    capture = new cv::VideoCapture();
 }
 
 OpenCvWorker::~OpenCvWorker()
 {
-    if (cap->isOpened())
-        cap->release();
-    delete cap;
+    if (capture->isOpened())
+        capture->release();
+    delete capture;
 }
 
-void OpenCvWorker::checkIfDeviceAlreadyOpened(QString filename)
+void OpenCvWorker::CheckIfDeviceAlreadyOpened(QString filename)
 {
-    if (cap->isOpened())
-        cap->release();
-    cap->open(filename.toStdString());
+    if (capture->isOpened())
+        capture->release();
+    capture->open(filename.toStdString());
 
     QTime temp(0, 0, 0);
-    QTime videoEndTime = temp.addMSecs(cap->get(cv::CAP_PROP_FRAME_COUNT) * 1 / cap->get(cv::CAP_PROP_FPS) * 1000);
-    //    emit sendVideoEndTime( videoEndTime );
+    const int s_to_ms = 1000;
+    auto ms_per_frame = static_cast<int>(1 / capture->get(cv::CAP_PROP_FPS) * s_to_ms);
+    QTime videoEndTime = temp.addMSecs(static_cast<int>(capture->get(cv::CAP_PROP_FRAME_COUNT) * ms_per_frame));
+    emit SendVideoEndTime(videoEndTime);
 
-    //    emit sendVideoFrameCount( cap->get( cv::CAP_PROP_FRAME_COUNT ) );
+    emit SendVideoFrameCount(static_cast<int>(capture->get(cv::CAP_PROP_FRAME_COUNT)));
 }
 
-void OpenCvWorker::receiveGrabFrame()
+void OpenCvWorker::ReceiveGrabFrame()
 {
-    if (!toggleStream && !updateFrame)
+    if (!toggle_stream_ && !update_frame_)
         return;
 
-    (*cap) >> _frameOriginal;
-    if (_frameOriginal.empty())
+    (*capture) >> original_frame_;
+    if (original_frame_.empty())
         return;
 
     QTime temp(0, 0, 0);
-    QTime videoCurrentTime = temp.addMSecs(cap->get(cv::CAP_PROP_POS_MSEC));
+    QTime video_current_time = temp.addMSecs(static_cast<int>(capture->get(cv::CAP_PROP_POS_MSEC)));
 
-    //    emit sendFrame(ASM::cvMatToQImage(_frameOriginal));
-    //    emit sendVideoCurrentTime( videoCurrentTime );
+    emit SendFrame(ASM::cvMatToQImage(original_frame_));
+    emit SendVideoCurrentTime(video_current_time);
 
-    //    emit sendVideoCurrentFrameNumber( cap->get( cv::CAP_PROP_POS_FRAMES ) );
+    emit SendVideoCurrentFrameNumber(static_cast<int>(capture->get(cv::CAP_PROP_POS_FRAMES)));
 
-    updateFrame = false;
+    update_frame_ = false;
 }
 
-void OpenCvWorker::receiveOpenVideoFile(QString videoFileName)
+void OpenCvWorker::ReceiveOpenVideoFile(const QString& video_filename)
 {
-    checkIfDeviceAlreadyOpened(videoFileName);
-    if (!cap->isOpened())
+    CheckIfDeviceAlreadyOpened(video_filename);
+    if (!capture->isOpened())
     {
-        status = false;
+        status_ = false;
         return;
     }
 
-    status = true;
+    status_ = true;
 }
 
-void OpenCvWorker::receiveToggleStream()
+void OpenCvWorker::ReceiveToggleStream()
 {
-    toggleStream = !toggleStream;
+    toggle_stream_ = !toggle_stream_;
 }
 
-void OpenCvWorker::receiveUpdateFrame()
+void OpenCvWorker::ReceiveUpdateFrame()
 {
-    updateFrame = true;
+    update_frame_ = true;
 }
 
-void OpenCvWorker::receiveGoTo(int videoFrameNumber)
+void OpenCvWorker::ReceiveGoTo(int video_frame_number)
 {
-    cap->set(cv::CAP_PROP_POS_FRAMES, videoFrameNumber);
+    capture->set(cv::CAP_PROP_POS_FRAMES, video_frame_number);
 }
 
-void OpenCvWorker::receiveGoToStart()
+void OpenCvWorker::ReceiveGoToStart()
 {
-    cap->set(cv::CAP_PROP_POS_FRAMES, 0);
+    capture->set(cv::CAP_PROP_POS_FRAMES, 0);
 }
 
-void OpenCvWorker::receiveNext()
+void OpenCvWorker::ReceiveNext()
 {
-    if (cap->get(cv::CAP_PROP_POS_FRAMES) + 5 * cap->get(cv::CAP_PROP_FPS) <= cap->get(cv::CAP_PROP_FRAME_COUNT))
+    if (capture->get(cv::CAP_PROP_POS_FRAMES) + 5 * capture->get(cv::CAP_PROP_FPS) <=
+        capture->get(cv::CAP_PROP_FRAME_COUNT))
     {
-        cap->set(cv::CAP_PROP_POS_FRAMES, cap->get(cv::CAP_PROP_POS_FRAMES) + 5 * cap->get(cv::CAP_PROP_FPS));
+        capture->set(cv::CAP_PROP_POS_FRAMES,
+                     capture->get(cv::CAP_PROP_POS_FRAMES) + 5 * capture->get(cv::CAP_PROP_FPS));
     }
     else
     {
-        cap->set(cv::CAP_PROP_POS_FRAMES, cap->get(cv::CAP_PROP_FRAME_COUNT));
+        capture->set(cv::CAP_PROP_POS_FRAMES, capture->get(cv::CAP_PROP_FRAME_COUNT));
     }
 }
 
-void OpenCvWorker::receivePrevious()
+void OpenCvWorker::ReceivePrevious()
 {
-    if (cap->get(cv::CAP_PROP_POS_FRAMES) - 5 * cap->get(cv::CAP_PROP_FPS) >= 0)
+    if (capture->get(cv::CAP_PROP_POS_FRAMES) - 5 * capture->get(cv::CAP_PROP_FPS) >= 0)
     {
-        cap->set(cv::CAP_PROP_POS_FRAMES, cap->get(cv::CAP_PROP_POS_FRAMES) - 5 * cap->get(cv::CAP_PROP_FPS));
+        capture->set(cv::CAP_PROP_POS_FRAMES,
+                     capture->get(cv::CAP_PROP_POS_FRAMES) - 5 * capture->get(cv::CAP_PROP_FPS));
     }
     else
     {
-        cap->set(cv::CAP_PROP_POS_FRAMES, 0);
+        capture->set(cv::CAP_PROP_POS_FRAMES, 0);
     }
 }

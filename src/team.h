@@ -7,26 +7,27 @@
 
 #include <opencv2/core/core.hpp>
 #include "player.h"
+#include <QString>
 
 class Team
 {
 
-private:
-    std::string name_;
+  private:
+    QString name_;
     std::vector<Player> players_;
 
-public:
+  public:
     explicit Team();
-    explicit Team(std::string name);
+    explicit Team(QString name);
 
-    void SetName(const std::string& name);
-    const std::string& GetName() const;
+    void SetName(const QString& name);
+    const QString& GetName() const;
 
     void AddPlayer(Player player);
     const std::vector<Player>& GetPlayers() const;
     const Player& GetPlayer(int player_number) const;
 
-    bool operator==(const Team &rhs) const;
+    bool operator==(const Team& rhs) const;
 
     void Write(cv::FileStorage& file_storage) const;
     void Read(const cv::FileNode& node);

@@ -20,36 +20,36 @@ class OpenCvWorker : public QObject
     Q_OBJECT
 
   private:
-    cv::Mat _frameOriginal;
-    cv::Mat _frameProcessed;
-    cv::VideoCapture* cap;
+    cv::Mat original_frame_;
+    cv::Mat processed_frame_;
+    cv::VideoCapture* capture;
 
-    bool status;
-    bool toggleStream;
-    bool updateFrame;
+    bool status_;
+    bool toggle_stream_;
+    bool update_frame_;
 
-    void checkIfDeviceAlreadyOpened(QString filename);
+    void CheckIfDeviceAlreadyOpened(QString filename);
 
   public:
     explicit OpenCvWorker(QObject* parent = 0);
     ~OpenCvWorker();
 
   signals:
-    //    void sendFrame( QImage frameProcessed );
-    //    void sendVideoEndTime( QTime videoEndTime );
-    //    void sendVideoFrameCount( int videoFrameCount );
-    //    void sendVideoCurrentTime( QTime videoCurrentTime );
-    //    void sendVideoCurrentFrameNumber( int videoCurrentFrameNumber );
+    void SendFrame(QImage processed_frame);
+    void SendVideoEndTime(QTime video_end_time);
+    void SendVideoFrameCount(int video_frame_count);
+    void SendVideoCurrentTime(QTime video_current_time);
+    void SendVideoCurrentFrameNumber(int video_current_frame_number);
 
   public slots:
-    void receiveGrabFrame();
-    void receiveOpenVideoFile(QString videoFileName);
-    void receiveToggleStream();
-    void receiveUpdateFrame();
-    void receiveGoTo(int videoFrameNumber);
-    void receiveGoToStart();
-    void receiveNext();
-    void receivePrevious();
+    void ReceiveGrabFrame();
+    void ReceiveOpenVideoFile(const QString& video_filename);
+    void ReceiveToggleStream();
+    void ReceiveUpdateFrame();
+    void ReceiveGoTo(int video_frame_number);
+    void ReceiveGoToStart();
+    void ReceiveNext();
+    void ReceivePrevious();
 };
 
 #endif  // WORKSPACE_OPENCVWORKER_H

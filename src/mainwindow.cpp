@@ -5,136 +5,136 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-        QMainWindow(parent),
-        ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget* parent) : QMainWindow{parent}, ui_{new Ui::MainWindow}
 {
-    ui->setupUi(this);
-    setup();
-    ui->stackedWidget_2->setCurrentIndex(0);
+    ui_->setupUi(this);
+    Setup();
+    ui_->stackedWidget_2->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
 {
-    thread->quit();
-    while(!thread->isFinished());
+    thread_->quit();
+    while (!thread_->isFinished())
+        ;
 
-    delete thread;
-    delete ui;
+    delete thread_;
+    delete ui_;
 }
 
-void MainWindow::setup()
+void MainWindow::Setup()
 {
-    thread = new QThread();
-    auto *worker = new OpenCvWorker();
-    workerTrigger = new QTimer();
-    workerTrigger->setInterval( 1000/60 );
+    thread_ = new QThread();
+    auto* worker = new OpenCvWorker();
+    worker_trigger_ = new QTimer();
+    worker_trigger_->setInterval(1000 / 60);
 
-    connect( workerTrigger, SIGNAL( timeout() ), worker, SLOT( receiveGrabFrame() ) );
-    connect( thread, SIGNAL( finished() ), worker, SLOT( deleteLater() ) );
-    connect( thread, SIGNAL( finished() ), workerTrigger, SLOT( deleteLater() ) );
-    connect( this, SIGNAL( sendOpenVideoFile( QString ) ), worker, SLOT( receiveOpenVideoFile( QString ) ) );
-    connect( this, SIGNAL( sendToggleStream() ), worker, SLOT( receiveToggleStream() ) );
-    connect( ui->pushButtonPlay, SIGNAL( clicked(bool) ), this, SLOT( receiveToggleStream() ) );
-    connect( ui->pushButtonGoToStart, SIGNAL( clicked(bool) ), this, SLOT( receiveGoToStart() ) );
-    connect( this, SIGNAL( sendGoToStart() ), worker, SLOT( receiveGoToStart() ) );
-    connect( this, SIGNAL( sendUpdateFrame() ), worker, SLOT( receiveUpdateFrame() ) );
-    connect( this, SIGNAL( sendGrabFrame() ), worker, SLOT( receiveGrabFrame() ) );
-    connect( ui->pushButtonNext, SIGNAL( clicked(bool) ), this, SLOT( receiveNext() ) );
-    connect( this, SIGNAL( sendNext() ), worker, SLOT( receiveNext() ) );
-    connect( ui->pushButtonPrevious, SIGNAL( clicked(bool) ), this, SLOT( receivePrevious() ) );
-    connect( this, SIGNAL( sendPrevious() ), worker, SLOT( receivePrevious() ) );
-    connect( worker, SIGNAL( sendFrame(QImage) ), this, SLOT( receiveFrame(QImage) ) );
-    connect( thread, SIGNAL( finished() ), worker, SLOT( deleteLater() ) );
-    connect( thread, SIGNAL( finished() ), workerTrigger, SLOT( deleteLater() ) );
-    connect( worker, SIGNAL( sendVideoEndTime(QTime) ), this, SLOT( receiveVideoEndTime(QTime) ) );
-    connect( worker, SIGNAL( sendVideoFrameCount(int) ), this, SLOT( receiveVideoFrameCount(int) ) );
-    connect( worker, SIGNAL( sendVideoCurrentTime(QTime) ), this, SLOT( receiveVideoCurrentTime(QTime) ) );
-    connect( worker, SIGNAL( sendVideoCurrentFrameNumber(int) ), this, SLOT( receiveVideoCurrentFrameNumber(int) ) );
-    connect( this, SIGNAL( sendGoTo(int) ), worker, SLOT( receiveGoTo(int) ) );
-    connect( this, SIGNAL( sendVideoFrameInterval(int) ), workerTrigger, SLOT( start(int) ) );
+    connect(worker_trigger_, SIGNAL(timeout()), worker, SLOT(ReceiveGrabFrame()));
+    connect(thread_, SIGNAL(finished()), worker, SLOT(deleteLater()));
+    connect(thread_, SIGNAL(finished()), worker_trigger_, SLOT(deleteLater()));
+    connect(this, SIGNAL(SendOpenVideoFile(QString)), worker, SLOT(ReceiveOpenVideoFile(QString)));
+    connect(this, SIGNAL(SendToggleStream()), worker, SLOT(ReceiveToggleStream()));
+    connect(ui_->pushButtonPlay, SIGNAL(clicked(bool)), this, SLOT(ReceiveToggleStream()));
+    connect(ui_->pushButtonGoToStart, SIGNAL(clicked(bool)), this, SLOT(ReceiveGoToStart()));
+    connect(this, SIGNAL(SendGoToStart()), worker, SLOT(ReceiveGoToStart()));
+    connect(this, SIGNAL(SendUpdateFrame()), worker, SLOT(ReceiveUpdateFrame()));
+    connect(this, SIGNAL(SendGrabFrame()), worker, SLOT(ReceiveGrabFrame()));
+    connect(ui_->pushButtonNext, SIGNAL(clicked(bool)), this, SLOT(ReceiveNext()));
+    connect(this, SIGNAL(SendNext()), worker, SLOT(ReceiveNext()));
+    connect(ui_->pushButtonPrevious, SIGNAL(clicked(bool)), this, SLOT(ReceivePrevious()));
+    connect(this, SIGNAL(SendPrevious()), worker, SLOT(ReceivePrevious()));
+    connect(worker, SIGNAL(SendFrame(QImage)), this, SLOT(ReceiveFrame(QImage)));
+    connect(thread_, SIGNAL(finished()), worker, SLOT(deleteLater()));
+    connect(thread_, SIGNAL(finished()), worker_trigger_, SLOT(deleteLater()));
+    connect(worker, SIGNAL(SendVideoEndTime(QTime)), this, SLOT(ReceiveVideoEndTime(QTime)));
+    connect(worker, SIGNAL(SendVideoFrameCount(int)), this, SLOT(ReceiveVideoFrameCount(int)));
+    connect(worker, SIGNAL(SendVideoCurrentTime(QTime)), this, SLOT(ReceiveVideoCurrentTime(QTime)));
+    connect(worker, SIGNAL(SendVideoCurrentFrameNumber(int)), this, SLOT(ReceiveVideoCurrentFrameNumber(int)));
+    connect(this, SIGNAL(SendGoTo(int)), worker, SLOT(ReceiveGoTo(int)));
+    connect(this, SIGNAL(SendVideoFrameInterval(int)), worker_trigger_, SLOT(start(int)));
 
-    workerTrigger->start();
-    worker->moveToThread(thread);
-    workerTrigger->moveToThread(thread);
+    worker_trigger_->start();
+    worker->moveToThread(thread_);
+    worker_trigger_->moveToThread(thread_);
 
-    thread->start();
+    thread_->start();
 }
 
-void MainWindow::receiveFrame(QImage frame)
+void MainWindow::ReceiveFrame(QImage frame)
 {
-    ui->labelViewVideo->setPixmap(QPixmap::fromImage(frame));
+    ui_->labelViewVideo->setPixmap(QPixmap::fromImage(frame));
 }
 
-void MainWindow::receiveVideoEndTime(QTime videoEndTime)
+void MainWindow::ReceiveVideoEndTime(QTime video_end_time)
 {
-    ui->labelVideoLength->setText( videoEndTime.toString("H:mm:ss") );
+    ui_->labelVideoLength->setText(video_end_time.toString("H:mm:ss"));
 }
 
-void MainWindow::receiveVideoFrameCount(int videoFrameCount)
+void MainWindow::ReceiveVideoFrameCount(int video_frame_count)
 {
-    ui->horizontalSliderVideoPosition->setMaximum( videoFrameCount );
+    ui_->horizontalSliderVideoPosition->setMaximum(video_frame_count);
 }
 
-void MainWindow::receiveVideoCurrentTime(QTime videoCurrentTime)
+void MainWindow::ReceiveVideoCurrentTime(QTime video_current_time)
 {
-    ui->labelVideoPosition->setText( videoCurrentTime.toString("H:mm:ss") );
+    ui_->labelVideoPosition->setText(video_current_time.toString("H:mm:ss"));
 }
 
-void MainWindow::receiveVideoCurrentFrameNumber( int videoCurrentFrameNumber )
+void MainWindow::ReceiveVideoCurrentFrameNumber(int video_current_frame_number)
 {
-    ui->horizontalSliderVideoPosition->setValue( videoCurrentFrameNumber );
+    ui_->horizontalSliderVideoPosition->setValue(video_current_frame_number);
 }
 
-void MainWindow::receiveToggleStream()
+void MainWindow::ReceiveToggleStream()
 {
-    if(!ui->pushButtonPlay->text().compare(">")) ui->pushButtonPlay->setText("||");
-    else ui->pushButtonPlay->setText(">");
+    if (!ui_->pushButtonPlay->text().compare(">"))
+        ui_->pushButtonPlay->setText("||");
+    else
+        ui_->pushButtonPlay->setText(">");
 
-    emit sendToggleStream();
+    emit SendToggleStream();
 }
 
-void MainWindow::receiveGoToStart()
+void MainWindow::ReceiveGoToStart()
 {
-    emit sendGoToStart();
-    emit sendUpdateFrame();
+    emit SendGoToStart();
+    emit SendUpdateFrame();
 }
 
-void MainWindow::receiveNext()
+void MainWindow::ReceiveNext()
 {
-    emit sendNext();
-    emit sendUpdateFrame();
+    emit SendNext();
+    emit SendUpdateFrame();
 }
 
-void MainWindow::receivePrevious()
+void MainWindow::ReceivePrevious()
 {
-    emit sendPrevious();
-    emit sendUpdateFrame();
+    emit SendPrevious();
+    emit SendUpdateFrame();
 }
 
 void MainWindow::on_horizontalSliderVideoSpeed_valueChanged(int value)
 {
-    ui->labelVideoSpeed->setText( QString::number( value*0.1 ) + "%" );
-    emit sendVideoFrameInterval( (2 - value * 0.001) * 1000 / 60 );
+    ui_->labelVideoSpeed->setText(QString::number(value * 0.1) + "%");
+    emit SendVideoFrameInterval((2 - value * 0.001) * 1000 / 60);
 }
 
 void MainWindow::on_horizontalSliderVideoPosition_sliderPressed()
 {
-    emit sendToggleStream();
+    emit SendToggleStream();
 }
 
 void MainWindow::on_horizontalSliderVideoPosition_sliderReleased()
 {
-    emit sendGoTo( ui->horizontalSliderVideoPosition->value() );
-    emit sendToggleStream();
+    emit SendGoTo(ui_->horizontalSliderVideoPosition->value());
+    emit SendToggleStream();
 }
 
 void MainWindow::on_actionOpenGame_triggered()
 {
-    QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Open Video"), "D:/Videos/", tr("Video Files ( *.mp4)"));
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open Video"), "D:/Videos/", tr("Video Files ( *.mp4)"));
 
-    emit sendOpenVideoFile( filename );
+    emit SendOpenVideoFile(filename);
 }
 
 void MainWindow::on_actionNewSeason_triggered()
@@ -145,67 +145,62 @@ void MainWindow::on_actionNewSeason_triggered()
 
 void MainWindow::on_actionSave_triggered()
 {
-    cv::FileStorage fs(season.GetFilename().toStdString(), cv::FileStorage::WRITE);
-    fs << "season" << season;
-    fs.release();
+    cv::FileStorage file_storage(season.GetFilename().toStdString(), cv::FileStorage::WRITE);
+    file_storage << "season" << season;
+    file_storage.release();
 }
 
 void MainWindow::on_actionOpenSeason_triggered()
 {
-    cv::FileStorage fs("D:/Videos/store.yaml", cv::FileStorage::READ);
-    QString temp = QString::fromStdString( fs["name"] );
+    cv::FileStorage file_storage("D:/Videos/store.yaml", cv::FileStorage::READ);
+    QString temp = QString::fromStdString(file_storage["name"]);
     qDebug() << "name: " << temp;
 }
 
 void MainWindow::on_actionSaisonAnsicht_triggered()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    ui_->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_actionSpielAnsicht_triggered()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui_->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButtonOpenSeasonFile_clicked()
 {
-    QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Öffne Saison File"), "D:/Videos/", tr("YAML Files ( *.yaml)"));
-    ui->lineEditSeasonFilename->setText(filename);
+    QString filename =
+        QFileDialog::getOpenFileName(this, tr("Öffne Saison File"), "D:/Videos/", tr("YAML Files ( *.yaml)"));
+    ui_->lineEditSeasonFilename->setText(filename);
     season.SetFilename(filename);
 
-    cv::FileStorage fs;
-    fs.open(filename.toStdString(), cv::FileStorage::READ);
+    cv::FileStorage file_storage;
+    file_storage.open(filename.toStdString(), cv::FileStorage::READ);
 
-    fs["season"] >> season;
-    ui->lineEditSeasonName->setText(season.GetName());
-
+    file_storage["season"] >> season;
+    ui_->lineEditSeasonName->setText(season.GetName());
 }
 
 void MainWindow::on_pushButtonNewGame_clicked()
 {
-    // TODO:
-//    game.setGame(ui->tableWidgetGames->rowCount()+1,
-//                 Team::Team("Heimmannschaft"),
-//                 Team::Team("Gastmannschaft"),
-//                 {});
-//    season.AddGame(game);
-//
-//    ui->tableWidgetGames->setRowCount( ui->tableWidgetGames->rowCount()+1);
-//    ui->tableWidgetGames->setItem(
-//            ui->tableWidgetGames->rowCount()-1, 0, new QTableWidgetItem( game.GetHomeTeam().GetName() ) );
-//    ui->tableWidgetGames->setItem(
-//            ui->tableWidgetGames->rowCount()-1, 1, new QTableWidgetItem( game.GetGuestTeam().GetName() ) );
-//    ui->tableWidgetGames->setCurrentCell(ui->tableWidgetGames->rowCount()-1,0);
+    Game game{ui_->tableWidgetGames->rowCount() + 1, Team{"Heimmannschaft"}, Team{"Gastmannschaft"}, {}, {}};
+    season.AddGame(game);
+
+    ui_->tableWidgetGames->setRowCount(ui_->tableWidgetGames->rowCount() + 1);
+    ui_->tableWidgetGames->setItem(
+        ui_->tableWidgetGames->rowCount() - 1, 0, new QTableWidgetItem( game.GetHomeTeam().GetName()) );
+    ui_->tableWidgetGames->setItem(
+        ui_->tableWidgetGames->rowCount() - 1, 1, new QTableWidgetItem(game.GetGuestTeam().GetName()));
+    ui_->tableWidgetGames->setCurrentCell(ui_->tableWidgetGames->rowCount() - 1, 0);
 }
 
-void MainWindow::on_tableWidgetGames_doubleClicked(const QModelIndex &index)
+void MainWindow::on_tableWidgetGames_doubleClicked(const QModelIndex& index)
 {
     game = season.GetGame(index.row());
-    ui->stackedWidget_2->setCurrentIndex(1);
+    ui_->stackedWidget_2->setCurrentIndex(1);
 }
 
-void MainWindow::on_lineEditSeasonName_textChanged(const QString &arg1)
+void MainWindow::on_lineEditSeasonName_textChanged(const QString& arg1)
 {
     season.SetName(arg1);
 }

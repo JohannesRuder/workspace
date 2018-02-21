@@ -6,9 +6,9 @@
 
 Team::Team() : name_(""), players_(0) {}
 
-Team::Team(std::string name) : name_(name) {}
+Team::Team(QString name) : name_(name) {}
 
-const std::string& Team::GetName() const
+const QString& Team::GetName() const
 {
     return name_;
 }
@@ -23,7 +23,7 @@ void Team::AddPlayer(Player player)
     players_.push_back(player);
 }
 
-void Team::SetName(const std::string& name)
+void Team::SetName(const QString &name)
 {
     Team::name_ = name;
 }
@@ -31,7 +31,7 @@ void Team::SetName(const std::string& name)
 void Team::Write(cv::FileStorage& file_storage) const
 {
     file_storage << "{"
-                 << "name" << name_ << "players" << players_ << "}";
+                 << "name" << name_.toStdString() << "players" << players_ << "}";
 }
 
 const std::vector<Player>& Team::GetPlayers() const
@@ -41,7 +41,7 @@ const std::vector<Player>& Team::GetPlayers() const
 
 void Team::Read(const cv::FileNode& node)
 {
-    name_ = static_cast<std::string>(node["name"]);
+    name_ = QString::fromStdString(static_cast<std::string>(node["name"]));
 
     cv::FileNode file_node = node["players"];
     for (cv::FileNodeIterator iterator = file_node.begin(); iterator != file_node.end(); ++iterator)

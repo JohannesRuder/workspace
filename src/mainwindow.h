@@ -36,33 +36,33 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
-    QThread *thread;
-    QTimer *workerTrigger;
+    Ui::MainWindow *ui_;
+    QThread *thread_;
+    QTimer *worker_trigger_;
 
-    void setup();
+    void Setup();
 
 signals:
-    void sendOpenVideoFile( QString filename );
-    void sendToggleStream();
-    void sendUpdateFrame();
-    void sendGoTo( int videoFrameNumber );
-    void sendGoToStart();
-    void sendNext();
-    void sendPrevious();
-    void sendGrabFrame();
-    void sendVideoFrameInterval( int intevalMSec );
+    void SendOpenVideoFile(QString filename);
+    void SendToggleStream();
+    void SendUpdateFrame();
+    void SendGoTo(int video_frame_number);
+    void SendGoToStart();
+    void SendNext();
+    void SendPrevious();
+    void SendGrabFrame();
+    void SendVideoFrameInterval(int inteval_in_ms);
 
 private slots:
-    void receiveFrame( QImage frame );
-    void receiveVideoEndTime( QTime videoEndTime );
-    void receiveVideoFrameCount( int videoFrameCount );
-    void receiveVideoCurrentTime( QTime videoCurrentTime );
-    void receiveVideoCurrentFrameNumber( int videoCurrentFrameNumber );
-    void receiveToggleStream();
-    void receiveGoToStart();
-    void receiveNext();
-    void receivePrevious();
+    void ReceiveFrame(QImage frame);
+    void ReceiveVideoEndTime(QTime video_end_time);
+    void ReceiveVideoFrameCount(int video_frame_count);
+    void ReceiveVideoCurrentTime(QTime video_current_time);
+    void ReceiveVideoCurrentFrameNumber(int video_current_frame_number);
+    void ReceiveToggleStream();
+    void ReceiveGoToStart();
+    void ReceiveNext();
+    void ReceivePrevious();
     void on_horizontalSliderVideoSpeed_valueChanged(int value);
     void on_horizontalSliderVideoPosition_sliderPressed();
     void on_horizontalSliderVideoPosition_sliderReleased();
