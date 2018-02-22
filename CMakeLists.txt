@@ -12,7 +12,14 @@ set(CMAKE_AUTOUIC ON)
 # to always look for includes there:
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-find_package(Qt5 COMPONENTS Core Widgets Gui REQUIRED)
+find_package(Qt5 COMPONENTS Core Widgets Gui Test REQUIRED)
+
+#QtTest
+enable_testing()
+
+add_executable(MainwindowSpec test/mainwindow_spec.cpp)
+add_test(MainwindowSpec mainwindow_spec)
+target_link_libraries(MainwindowSpec Qt5::Widgets Qt5::Test)
 
 add_executable(workspace src/main.cpp
         src/team.cpp
@@ -63,7 +70,7 @@ add_executable(runUnitTests
         test/rally_spec.cpp src/rally.cpp
         test/season_spec.cpp src/season.cpp
         test/set_spec.cpp src/set.cpp
-        test/video_spec.cpp src/video.cpp)
+        test/video_spec.cpp src/video.cpp test/mainwindow_spec.cpp)
 
 # Link test executable against gtest & gtest_main
 target_link_libraries(runUnitTests

@@ -2,18 +2,20 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
+      <config projectName="workspace" targetName="runUnitTests" />
+      <config projectName="workspace" targetName="gtest" />
+      <config projectName="workspace" targetName="gtest_main_autogen" />
       <config projectName="workspace" targetName="gtest_autogen" />
-      <config projectName="workspace" targetName="gmock_main" />
+      <config projectName="workspace" targetName="gmock_main_autogen" />
+      <config projectName="workspace" targetName="runUnitTests_autogen" />
+      <config projectName="workspace" targetName="MainwindowSpec" />
+      <config projectName="workspace" targetName="gmock_autogen" />
+      <config projectName="workspace" targetName="MainwindowSpec_autogen" />
       <config projectName="workspace" targetName="workspace_autogen" />
+      <config projectName="workspace" targetName="gmock_main" />
+      <config projectName="workspace" targetName="gmock" />
       <config projectName="workspace" targetName="workspace" />
       <config projectName="workspace" targetName="gtest_main" />
-      <config projectName="workspace" targetName="gmock_main_autogen" />
-      <config projectName="workspace" targetName="gtest" />
-      <config projectName="workspace" targetName="runUnitTests_autogen" />
-      <config projectName="workspace" targetName="gtest_main_autogen" />
-      <config projectName="workspace" targetName="runUnitTests" />
-      <config projectName="workspace" targetName="gmock" />
-      <config projectName="workspace" targetName="gmock_autogen" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -24,14 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2340ac1-1f3f-4e35-9b37-59d411bad2d1" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/test/mainwindow_spec.cpp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/mainwindow.cpp" afterPath="$PROJECT_DIR$/src/mainwindow.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/mainwindow.h" afterPath="$PROJECT_DIR$/src/mainwindow.h" />
-      <change beforePath="$PROJECT_DIR$/src/opencvworker.cpp" afterPath="$PROJECT_DIR$/src/opencvworker.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/opencvworker.h" afterPath="$PROJECT_DIR$/src/opencvworker.h" />
-      <change beforePath="$PROJECT_DIR$/src/team.cpp" afterPath="$PROJECT_DIR$/src/team.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/team.h" afterPath="$PROJECT_DIR$/src/team.h" />
-      <change beforePath="$PROJECT_DIR$/test/team_spec.cpp" afterPath="$PROJECT_DIR$/test/team_spec.cpp" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
     <ignored path="$USER_HOME$/cmake-build-debug/CMakeFiles/" />
@@ -46,46 +43,36 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="opencvworker.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/opencvworker.h">
+      <file leaf-file-name="mainwindow_spec.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/mainwindow_spec.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="45" column="45" lean-forward="false" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+            <state relative-caret-position="270">
+              <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
               <folding>
-                <element signature="e#108#125#0" expanded="true" />
+                <element signature="e#41#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="opencvworker.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/opencvworker.cpp">
+      <file leaf-file-name="game_spec.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/game_spec.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2016">
-              <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="594">
+              <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+              <folding>
+                <element signature="e#41#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainwindow.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainwindow.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mainwindow.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="-126">
+              <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainwindow.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mainwindow.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="157" column="1" lean-forward="false" selection-start-line="157" selection-start-column="1" selection-end-line="157" selection-end-column="1" />
-              <folding>
-                <element signature="e#41#64#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +80,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="336">
+              <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -140,7 +127,6 @@
         <option value="$PROJECT_DIR$/src/video.h" />
         <option value="$PROJECT_DIR$/src/gym.h" />
         <option value="$USER_HOME$/cmake-build-debug/src/moc_mainwindow.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/team.h" />
         <option value="$PROJECT_DIR$/test/team_spec.cpp" />
         <option value="$PROJECT_DIR$/test/game_spec.cpp" />
@@ -149,6 +135,8 @@
         <option value="$PROJECT_DIR$/src/opencvworker.h" />
         <option value="$PROJECT_DIR$/src/opencvworker.cpp" />
         <option value="$PROJECT_DIR$/src/mainwindow.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/test/mainwindow_spec.cpp" />
       </list>
     </option>
   </component>
@@ -223,6 +211,12 @@
               <item name="workspace" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="workspace" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="workspace" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -258,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.runUnitTests">
+  <component name="RunManager" selected="Application.MainwindowSpec">
     <configuration name="All in player_spec.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_PATTERN="DefaultPlayerFixture.*:DefaultPlayerFixture/*.*:*/DefaultPlayerFixture.*/*:*/DefaultPlayerFixture/*.*:ExamplePlayerFixture.*:ExamplePlayerFixture/*.*:*/ExamplePlayerFixture.*/*:*/ExamplePlayerFixture/*.*" TEST_MODE="PATTERN">
       <envs />
     </configuration>
@@ -271,10 +265,16 @@
     <configuration name="ExampleCamera.Constructor" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="ExampleCamera" TEST_METHOD="Constructor" TEST_MODE="SUITE_TEST">
       <envs />
     </configuration>
-    <configuration name="Team.FileInAndOutput" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="Team" TEST_METHOD="FileInAndOutput" TEST_MODE="SUITE_TEST">
+    <configuration name="Team.FileInAndOutput" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="Team" TEST_METHOD="FileInAndOutput" TEST_MODE="SUITE_TEST">
       <envs />
     </configuration>
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="workspace" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="MainwindowSpec" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+    </configuration>
+    <configuration name="MainwindowSpec" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="MainwindowSpec" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="MainwindowSpec">
+      <envs />
+    </configuration>
+    <configuration name="MainwindowSpec_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="MainwindowSpec_autogen" CONFIG_NAME="Debug">
       <envs />
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gmock" CONFIG_NAME="Debug">
@@ -313,25 +313,27 @@
     <configuration name="workspace_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="workspace_autogen" CONFIG_NAME="Debug">
       <envs />
     </configuration>
-    <list size="18">
+    <list size="20">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.runUnitTests" />
-      <item index="2" class="java.lang.String" itemvalue="Application.runUnitTests_autogen" />
-      <item index="3" class="java.lang.String" itemvalue="Application.workspace" />
-      <item index="4" class="java.lang.String" itemvalue="Application.workspace_autogen" />
-      <item index="5" class="java.lang.String" itemvalue="Application.gmock" />
-      <item index="6" class="java.lang.String" itemvalue="Application.gmock_autogen" />
-      <item index="7" class="java.lang.String" itemvalue="Application.gmock_main" />
-      <item index="8" class="java.lang.String" itemvalue="Application.gmock_main_autogen" />
-      <item index="9" class="java.lang.String" itemvalue="Application.gtest" />
-      <item index="10" class="java.lang.String" itemvalue="Application.gtest_autogen" />
-      <item index="11" class="java.lang.String" itemvalue="Application.gtest_main" />
-      <item index="12" class="java.lang.String" itemvalue="Application.gtest_main_autogen" />
-      <item index="13" class="java.lang.String" itemvalue="Google Test.All in team_spec.cpp (1)" />
-      <item index="14" class="java.lang.String" itemvalue="Google Test.All in player_spec.cpp" />
-      <item index="15" class="java.lang.String" itemvalue="Google Test.DefaultCameraFixture.DefaultConstructor" />
-      <item index="16" class="java.lang.String" itemvalue="Google Test.ExampleCamera.Constructor" />
-      <item index="17" class="java.lang.String" itemvalue="Google Test.Team.FileInAndOutput" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MainwindowSpec" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MainwindowSpec_autogen" />
+      <item index="3" class="java.lang.String" itemvalue="Application.runUnitTests" />
+      <item index="4" class="java.lang.String" itemvalue="Application.runUnitTests_autogen" />
+      <item index="5" class="java.lang.String" itemvalue="Application.workspace" />
+      <item index="6" class="java.lang.String" itemvalue="Application.workspace_autogen" />
+      <item index="7" class="java.lang.String" itemvalue="Application.gmock" />
+      <item index="8" class="java.lang.String" itemvalue="Application.gmock_autogen" />
+      <item index="9" class="java.lang.String" itemvalue="Application.gmock_main" />
+      <item index="10" class="java.lang.String" itemvalue="Application.gmock_main_autogen" />
+      <item index="11" class="java.lang.String" itemvalue="Application.gtest" />
+      <item index="12" class="java.lang.String" itemvalue="Application.gtest_autogen" />
+      <item index="13" class="java.lang.String" itemvalue="Application.gtest_main" />
+      <item index="14" class="java.lang.String" itemvalue="Application.gtest_main_autogen" />
+      <item index="15" class="java.lang.String" itemvalue="Google Test.All in team_spec.cpp (1)" />
+      <item index="16" class="java.lang.String" itemvalue="Google Test.All in player_spec.cpp" />
+      <item index="17" class="java.lang.String" itemvalue="Google Test.DefaultCameraFixture.DefaultConstructor" />
+      <item index="18" class="java.lang.String" itemvalue="Google Test.ExampleCamera.Constructor" />
+      <item index="19" class="java.lang.String" itemvalue="Google Test.Team.FileInAndOutput" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -377,7 +379,8 @@
       <workItem from="1519070809723" duration="2538000" />
       <workItem from="1519152735955" duration="68000" />
       <workItem from="1519153672222" duration="5939000" />
-      <workItem from="1519238669556" duration="1796000" />
+      <workItem from="1519238669556" duration="1867000" />
+      <workItem from="1519326950672" duration="2523000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1517138596222</created>
@@ -435,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519154580538</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed some inspections.">
+      <created>1519240499921</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519240499921</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -471,7 +481,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81125000" />
+    <option name="totallyTimeSpent" value="83719000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -491,7 +501,6 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42405063" sideWeight="0.49811321" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35232067" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3386076" sideWeight="0.50477016" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3048523" sideWeight="0.49522984" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -503,6 +512,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -550,7 +560,8 @@
     <MESSAGE value="Added qt. Linker returns error." />
     <MESSAGE value="Fixed CMakeLists.txt for Qt5." />
     <MESSAGE value="Removed *.h from workspace add_executables." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed *.h from workspace add_executables." />
+    <MESSAGE value="Fixed some inspections." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some inspections." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -559,13 +570,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/include/opencv2/core/mat.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="779" column="6" lean-forward="false" selection-start-line="779" selection-start-column="6" selection-end-line="779" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/opencv2/core/mat.inl.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -813,34 +817,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/game_spec.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -877,13 +858,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="695">
           <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/opencvworker.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
+        <state relative-caret-position="810">
           <caret line="45" column="45" lean-forward="false" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
           <folding>
             <element signature="e#108#125#0" expanded="true" />
@@ -901,7 +881,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mainwindow.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="2826">
           <caret line="157" column="1" lean-forward="false" selection-start-line="157" selection-start-column="1" selection-end-line="157" selection-end-column="1" />
           <folding>
             <element signature="e#41#64#0" expanded="true" />
@@ -909,11 +889,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/game_spec.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding>
+            <element signature="e#41#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mainwindow.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state relative-caret-position="-126">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mainwindow_spec.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding>
+            <element signature="e#41#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
