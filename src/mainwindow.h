@@ -6,43 +6,47 @@
 #define WORKSPACE_MAINWINDOW_H
 
 #include "game.h"
-#include "season.h"
 #include "opencvworker.h"
+#include "season.h"
 
 #include <opencv2/core/core.hpp>
 
-#include <QMainWindow>
-#include <QFileDialog>
-#include <QThread>
-#include <QTimer>
-#include <QTime>
 #include <QDebug>
+#include <QFileDialog>
+#include <QMainWindow>
+#include <QThread>
+#include <QTime>
+#include <QTimer>
 
-namespace Ui {
-    class MainWindow;
+namespace Ui
+{
+class MainWindow;
 }
 
-namespace {
-    Season season;
-    Game game;
+namespace
+{
+Season season;
+Game game;
 }
 
 class MainWindow : public QMainWindow
 {
-Q_OBJECT
+    Q_OBJECT
 
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    friend class MainWindowSpec;
 
-private:
-    Ui::MainWindow *ui_;
-    QThread *thread_;
-    QTimer *worker_trigger_;
+  public:
+    explicit MainWindow(QWidget* parent = nullptr);
+    ~MainWindow() override;
+
+  private:
+    Ui::MainWindow* ui_;
+    QThread* thread_;
+    QTimer* worker_trigger_;
 
     void Setup();
 
-signals:
+  signals:
     void SendOpenVideoFile(QString filename);
     void SendToggleStream();
     void SendUpdateFrame();
@@ -53,7 +57,7 @@ signals:
     void SendGrabFrame();
     void SendVideoFrameInterval(int inteval_in_ms);
 
-private slots:
+  private slots:
     void ReceiveFrame(QImage frame);
     void ReceiveVideoEndTime(QTime video_end_time);
     void ReceiveVideoFrameCount(int video_frame_count);
@@ -74,8 +78,8 @@ private slots:
     void on_actionSpielAnsicht_triggered();
     void on_pushButtonOpenSeasonFile_clicked();
     void on_pushButtonNewGame_clicked();
-    void on_tableWidgetGames_doubleClicked(const QModelIndex &index);
-    void on_lineEditSeasonName_textChanged(const QString &arg1);
+    void on_tableWidgetGames_doubleClicked(const QModelIndex& index);
+    void on_lineEditSeasonName_textChanged(const QString& arg1);
 };
 
-#endif //WORKSPACE_MAINWINDOW_H
+#endif  // WORKSPACE_MAINWINDOW_H

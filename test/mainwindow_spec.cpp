@@ -2,26 +2,32 @@
 // Created by hannes on 22.02.18.
 //
 
+#include <QtTest/qtestkeyboard.h>
+#include "src/mainwindow.h"
 #include <QtTest/QtTest>
 #include <QtWidgets/QtWidgets>
-#include <QtTest/qtestkeyboard.h>
 
 class MainWindowSpec : public QObject
 {
     Q_OBJECT
 
   private slots:
-    void t1() {QVERIFY(true); };
-    void t2();
+    void Constructor();
+    void SeasonName();
+
+  private:
+    MainWindow unit_;
 };
 
-void MainWindowSpec::t2()
-{
-    QLineEdit lineEdit;
+void MainWindowSpec::Constructor() {
+    QVERIFY(unit_.thread_->isRunning());
+    QVERIFY(unit_.worker_trigger_->isActive());
+    QCOMPARE(unit_.worker_trigger_->interval(), 1000 / 60);
+}
 
-    QTest::keyClicks(&lineEdit, "hello world");
-
-    QCOMPARE(lineEdit.text(), QString("hello world"));
+void MainWindowSpec::SeasonName() {
+//    QTest::keyClicks( , "2015/2016");
+//    QCOMPARE(unit_.ui_.lineEditSeasonName., "2015/2016");
 }
 
 QTEST_MAIN(MainWindowSpec)

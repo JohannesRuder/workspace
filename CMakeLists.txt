@@ -17,7 +17,21 @@ find_package(Qt5 COMPONENTS Core Widgets Gui Test REQUIRED)
 #QtTest
 enable_testing()
 
-add_executable(MainwindowSpec test/mainwindow_spec.cpp)
+add_executable(MainwindowSpec
+        test/mainwindow_spec.cpp
+        src/team.cpp
+        src/player.cpp
+        src/video.cpp
+        src/camera.cpp
+        src/action.cpp
+        src/game.cpp
+        src/gym.cpp
+        src/mainwindow.cpp
+        src/opencvworker.cpp
+        src/rally.cpp
+        src/season.cpp
+        src/set.cpp)
+
 add_test(MainwindowSpec mainwindow_spec)
 target_link_libraries(MainwindowSpec Qt5::Widgets Qt5::Test)
 
@@ -40,6 +54,7 @@ qt5_use_modules(workspace Core Widgets Gui)
 # OpenCV
 find_package(OpenCV REQUIRED)
 target_link_libraries(workspace ${OpenCV_LIBS})
+target_link_libraries(MainwindowSpec ${OpenCV_LIBS})
 
 # Googletest
 # Download and unpack googletest at configure time
@@ -70,7 +85,7 @@ add_executable(runUnitTests
         test/rally_spec.cpp src/rally.cpp
         test/season_spec.cpp src/season.cpp
         test/set_spec.cpp src/set.cpp
-        test/video_spec.cpp src/video.cpp test/mainwindow_spec.cpp)
+        test/video_spec.cpp src/video.cpp)
 
 # Link test executable against gtest & gtest_main
 target_link_libraries(runUnitTests

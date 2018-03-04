@@ -22,7 +22,7 @@ class OpenCvWorker : public QObject
   private:
     cv::Mat original_frame_;
     cv::Mat processed_frame_;
-    cv::VideoCapture* capture;
+    cv::VideoCapture* capture_;
 
     bool status_;
     bool toggle_stream_;
@@ -31,7 +31,7 @@ class OpenCvWorker : public QObject
     void CheckIfDeviceAlreadyOpened(QString filename);
 
   public:
-    explicit OpenCvWorker(QObject* parent = 0);
+    explicit OpenCvWorker(QObject* parent = nullptr);
     ~OpenCvWorker();
 
   signals:

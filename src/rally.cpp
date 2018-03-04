@@ -15,7 +15,7 @@ const QTime& Rally::GetStartTime() const
 
 void Rally::SetStartTime(const QTime& start_time)
 {
-    Rally::start_time_ = start_time;
+    start_time_ = start_time;
 }
 
 const std::vector<Action>& Rally::GetActions() const
@@ -36,11 +36,11 @@ void Rally::Write(cv::FileStorage& file_storage) const
 
 void Rally::Read(const cv::FileNode& node)
 {
-    std::string temp_std_string = static_cast<std::string>(node["start_time"]);
-    QString temp_q_string = QString::fromStdString(temp_std_string);
+    auto temp_std_string = static_cast<std::string>(node["start_time"]);
+    auto temp_q_string = QString::fromStdString(temp_std_string);
     start_time_ = QTime::fromString(temp_q_string, "hh:mm:ss:zzz");
 
-    cv::FileNode file_node = node["actions"];
+    auto file_node = node["actions"];
     file_node >> actions_;
 }
 

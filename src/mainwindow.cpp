@@ -132,7 +132,7 @@ void MainWindow::on_horizontalSliderVideoPosition_sliderReleased()
 
 void MainWindow::on_actionOpenGame_triggered()
 {
-    QString filename = QFileDialog::getOpenFileName(this, tr("Open Video"), "D:/Videos/", tr("Video Files ( *.mp4)"));
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open Video"), "/home/hannes/", tr("Video Files ( *.mp4)"));
 
     emit SendOpenVideoFile(filename);
 }
@@ -152,7 +152,7 @@ void MainWindow::on_actionSave_triggered()
 
 void MainWindow::on_actionOpenSeason_triggered()
 {
-    cv::FileStorage file_storage("D:/Videos/store.yaml", cv::FileStorage::READ);
+    cv::FileStorage file_storage("/home/hannes/store.yaml", cv::FileStorage::READ);
     QString temp = QString::fromStdString(file_storage["name"]);
     qDebug() << "name: " << temp;
 }
@@ -170,7 +170,7 @@ void MainWindow::on_actionSpielAnsicht_triggered()
 void MainWindow::on_pushButtonOpenSeasonFile_clicked()
 {
     QString filename =
-        QFileDialog::getOpenFileName(this, tr("Öffne Saison File"), "D:/Videos/", tr("YAML Files ( *.yaml)"));
+        QFileDialog::getOpenFileName(this, tr("Öffne Saison File"), "/home/hannes/", tr("YAML Files ( *.yaml)"));
     ui_->lineEditSeasonFilename->setText(filename);
     season.SetFilename(filename);
 

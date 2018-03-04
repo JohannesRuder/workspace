@@ -15,8 +15,8 @@ void Action::Write(cv::FileStorage& file_storage) const
 
 void Action::Read(const cv::FileNode& node)
 {
-    std::string temp_std_string = static_cast<std::string>(node["time"]);
-    QString temp_q_string = QString::fromStdString(temp_std_string);
+    auto temp_std_string = static_cast<std::string>(node["time"]);
+    auto temp_q_string = QString::fromStdString(temp_std_string);
     time_ = QTime::fromString(temp_q_string, "hh:mm:ss:zzz");
 }
 
