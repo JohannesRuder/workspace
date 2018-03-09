@@ -6,6 +6,7 @@
 #define WORKSPACE_CAMERA_H
 
 #include <opencv2/core/core.hpp>
+#include "utils.h"
 
 class Camera
 {

@@ -7,7 +7,7 @@
 Camera::Camera() : name_(""), camera_calibration_filename_(""), intrinsics_(), distortion_() {}
 
 Camera::Camera(const std::string& name, const std::string& camera_calibration_filename)
-        : name_(name), camera_calibration_filename_(camera_calibration_filename)
+    : name_(name), camera_calibration_filename_(camera_calibration_filename)
 {
     ReadCameraCalibrationFile();
 }
@@ -69,6 +69,7 @@ const cv::Mat& Camera::GetDistortion() const
 bool Camera::operator==(Camera camera_to_compare) const
 {
     return this->GetName() == camera_to_compare.GetName() &&
-           this->GetCameraCalibrationFilename() == camera_to_compare.GetCameraCalibrationFilename();
-    // TODO: Add intrinsics and distortion to comparison
+           this->GetCameraCalibrationFilename() == camera_to_compare.GetCameraCalibrationFilename() &&
+            IsMatEqual(this->GetIntrinsics(), camera_to_compare.GetIntrinsics()) &&
+            IsMatEqual(this->GetDistortion(), camera_to_compare.GetDistortion());
 }

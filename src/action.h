@@ -18,7 +18,8 @@ class Action
 
   public:
     Action();
-    Action(const QTime& time);
+
+    explicit Action(const QTime& time);
 
     const QTime& GetTime() const;
     void SetTime(const QTime& time);

@@ -2,12 +2,12 @@
 // Created by hannes on 13.02.18.
 //
 
-#include "../src/camera.h"
 #include <gtest/gtest.h>
+#include "../src/camera.h"
 
 class DefaultCameraFixture : public ::testing::Test
 {
-protected:
+  protected:
     Camera unit{};
 };
 
@@ -21,7 +21,7 @@ TEST_F(DefaultCameraFixture, DefaultConstructor)
 
 TEST_F(DefaultCameraFixture, SetName)
 {
-    const std::string arbitrary_camera_name{"GoPro Hero4"};
+    const auto arbitrary_camera_name{"GoPro Hero4"};
     unit.SetName(arbitrary_camera_name);
 
     EXPECT_EQ(arbitrary_camera_name, unit.GetName());
@@ -39,7 +39,7 @@ TEST_F(DefaultCameraFixture, SetCameraCalibrationFile)
 
 class ExampleCameraFixture : public ::testing::Test
 {
-protected:
+  protected:
     const std::string example_video_name{"GoPro Hero4"};
     const std::string example_video_filename{"/home/hannes/workspace/test/example_camera_calibration.yaml"};
 
@@ -69,7 +69,8 @@ TEST_F(ExampleCameraFixture, FileInAndOutput)
 
     EXPECT_EQ(unit.GetName(), camera_from_file.GetName());
     EXPECT_EQ(unit.GetCameraCalibrationFilename(), camera_from_file.GetCameraCalibrationFilename());
-    // TODO: Compare intrinsics and distortion
+    EXPECT_TRUE(IsMatEqual(unit.GetIntrinsics(), camera_from_file.GetIntrinsics()));
+    EXPECT_TRUE(IsMatEqual(unit.GetDistortion(), camera_from_file.GetDistortion()));
 }
 
 TEST_F(ExampleCameraFixture, CompareCameras_AllEqual)

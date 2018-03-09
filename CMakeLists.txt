@@ -30,7 +30,8 @@ add_executable(MainwindowSpec
         src/opencvworker.cpp
         src/rally.cpp
         src/season.cpp
-        src/set.cpp)
+        src/set.cpp
+        src/utils.cpp)
 
 add_test(MainwindowSpec mainwindow_spec)
 target_link_libraries(MainwindowSpec Qt5::Widgets Qt5::Test)
@@ -47,7 +48,8 @@ add_executable(workspace src/main.cpp
         src/opencvworker.cpp
         src/rally.cpp
         src/season.cpp
-        src/set.cpp)
+        src/set.cpp
+        src/utils.cpp)
 
 qt5_use_modules(workspace Core Widgets Gui)
 
@@ -85,7 +87,8 @@ add_executable(runUnitTests
         test/rally_spec.cpp src/rally.cpp
         test/season_spec.cpp src/season.cpp
         test/set_spec.cpp src/set.cpp
-        test/video_spec.cpp src/video.cpp)
+        test/video_spec.cpp src/video.cpp
+        test/utils_spec.cpp src/utils.cpp)
 
 # Link test executable against gtest & gtest_main
 target_link_libraries(runUnitTests

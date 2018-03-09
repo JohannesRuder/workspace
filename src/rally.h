@@ -19,7 +19,8 @@ class Rally
 
   public:
     Rally();
-    Rally(const QTime& start_time);
+
+    explicit Rally(const QTime& start_time);
 
     const QTime& GetStartTime() const;
     void SetStartTime(const QTime& start_time);

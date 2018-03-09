@@ -57,6 +57,7 @@ TEST_F(ExamplePlayerFixture, WritePlayerToFile)
 
     EXPECT_EQ(unit.GetName(), playerFromFile.GetName());
     EXPECT_EQ(unit.GetNumber(), playerFromFile.GetNumber());
+    EXPECT_EQ(unit.GetPosition(), playerFromFile.GetPosition());
     EXPECT_EQ(unit.GetNumberOfActions(), playerFromFile.GetNumberOfActions());
 }
 
@@ -78,7 +79,7 @@ TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentNumber)
     EXPECT_FALSE(unit == player);
 }
 
-TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentPosition)
+TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentPosition1)
 {
     Player player{"Hannes",9,Position::AUSSENANGREIFER};
     EXPECT_TRUE(unit == player);
