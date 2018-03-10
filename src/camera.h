@@ -10,13 +10,13 @@
 
 class Camera
 {
-private:
+  private:
     std::string name_;
     std::string camera_calibration_filename_;
     cv::Mat intrinsics_;
     cv::Mat distortion_;
 
-public:
+  public:
     Camera();
     Camera(const std::string& name, const std::string& camera_calibration_filename);
 

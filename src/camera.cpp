@@ -38,7 +38,6 @@ void Camera::ReadCameraCalibrationFile()
     cv::FileStorage file_storage(camera_calibration_filename_, cv::FileStorage::READ);
     file_storage["camera_matrix"] >> intrinsics_;
     file_storage["distortion_coefficients"] >> distortion_;
-    file_storage.release();
 }
 
 void Camera::Write(cv::FileStorage& file_storage) const
