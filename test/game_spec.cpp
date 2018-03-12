@@ -47,12 +47,12 @@ TEST_F(DefaultGameFixture, WritePlayerToFile)
     static const char *const filename = "/home/hannes/workspace/data.yaml";
 
     cv::FileStorage file_storage(filename, cv::FileStorage::WRITE);
-    file_storage << "game" << unit;
+    file_storage << "game_" << unit;
     file_storage.release();
 
     Game game_from_file;
     file_storage.open(filename,cv::FileStorage::READ);
-    file_storage["game"] >> game_from_file;
+    file_storage["game_"] >> game_from_file;
     file_storage.release();
 
     EXPECT_EQ(unit, game_from_file);

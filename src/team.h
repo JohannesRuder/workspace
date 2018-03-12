@@ -11,19 +11,18 @@
 
 class Team
 {
-
   private:
     QString name_;
     std::vector<Player> players_;
 
   public:
     explicit Team();
-    explicit Team(QString name);
+    explicit Team(const QString& name);
 
     void SetName(const QString& name);
     const QString& GetName() const;
 
-    void AddPlayer(Player player);
+    void AddPlayer(const Player& player);
     const std::vector<Player>& GetPlayers() const;
     const Player& GetPlayer(int player_number) const;
 

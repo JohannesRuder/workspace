@@ -23,12 +23,6 @@ namespace Ui
 class MainWindow;
 }
 
-namespace
-{
-Season season;
-Game game;
-}
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -43,6 +37,9 @@ class MainWindow : public QMainWindow
     Ui::MainWindow* ui_;
     QThread* thread_;
     QTimer* worker_trigger_;
+
+    Season season_;
+    Game game_;
 
     void Setup();
 

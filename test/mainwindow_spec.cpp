@@ -26,8 +26,8 @@ void MainWindowSpec::Constructor() {
 }
 
 void MainWindowSpec::SeasonName() {
-//    QTest::keyClicks( , "2015/2016");
-//    QCOMPARE(unit_.ui_.lineEditSeasonName., "2015/2016");
+    //QTest::keyClicks( , "2015/2016");
+    //QCOMPARE("2015/2016", unit_.ui_ .lineEditSeasonName);
 }
 
 QTEST_MAIN(MainWindowSpec)

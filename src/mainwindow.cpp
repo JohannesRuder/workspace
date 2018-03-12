@@ -139,14 +139,14 @@ void MainWindow::on_actionOpenGame_triggered()
 
 void MainWindow::on_actionNewSeason_triggered()
 {
-    season.SetName("2016/2017");
-    season.SetFilename("filename");
+    season_.SetName("2016/2017");
+    season_.SetFilename("filename");
 }
 
 void MainWindow::on_actionSave_triggered()
 {
-    cv::FileStorage file_storage(season.GetFilename().toStdString(), cv::FileStorage::WRITE);
-    file_storage << "season" << season;
+    cv::FileStorage file_storage(season_.GetFilename().toStdString(), cv::FileStorage::WRITE);
+    file_storage << "season_" << season_;
     file_storage.release();
 }
 
@@ -172,19 +172,19 @@ void MainWindow::on_pushButtonOpenSeasonFile_clicked()
     QString filename =
         QFileDialog::getOpenFileName(this, tr("Öffne Saison File"), "/home/hannes/", tr("YAML Files ( *.yaml)"));
     ui_->lineEditSeasonFilename->setText(filename);
-    season.SetFilename(filename);
+    season_.SetFilename(filename);
 
     cv::FileStorage file_storage;
     file_storage.open(filename.toStdString(), cv::FileStorage::READ);
 
-    file_storage["season"] >> season;
-    ui_->lineEditSeasonName->setText(season.GetName());
+    file_storage["season_"] >> season_;
+    ui_->lineEditSeasonName->setText(season_.GetName());
 }
 
 void MainWindow::on_pushButtonNewGame_clicked()
 {
     Game game{ui_->tableWidgetGames->rowCount() + 1, Team{"Heimmannschaft"}, Team{"Gastmannschaft"}, {}, {}};
-    season.AddGame(game);
+    season_.AddGame(game);
 
     ui_->tableWidgetGames->setRowCount(ui_->tableWidgetGames->rowCount() + 1);
     ui_->tableWidgetGames->setItem(
@@ -196,11 +196,11 @@ void MainWindow::on_pushButtonNewGame_clicked()
 
 void MainWindow::on_tableWidgetGames_doubleClicked(const QModelIndex& index)
 {
-    game = season.GetGame(index.row());
+    game_ = season_.GetGame(index.row());
     ui_->stackedWidget_2->setCurrentIndex(1);
 }
 
 void MainWindow::on_lineEditSeasonName_textChanged(const QString& arg1)
 {
-    season.SetName(arg1);
+    season_.SetName(arg1);
 }

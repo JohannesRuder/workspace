@@ -6,7 +6,7 @@
 
 Team::Team() : name_(""), players_(0) {}
 
-Team::Team(QString name) : name_(name) {}
+Team::Team(const QString& name) : name_(name) {}
 
 const QString& Team::GetName() const
 {
@@ -18,12 +18,12 @@ const Player& Team::GetPlayer(int player_number) const
     return players_[player_number];
 }
 
-void Team::AddPlayer(Player player)
+void Team::AddPlayer(const Player& player)
 {
     players_.push_back(player);
 }
 
-void Team::SetName(const QString &name)
+void Team::SetName(const QString& name)
 {
     name_ = name;
 }
@@ -44,14 +44,15 @@ void Team::Read(const cv::FileNode& node)
     name_ = QString::fromStdString(static_cast<std::string>(node["name"]));
 
     auto file_node = node["players"];
-    for (auto &&iterator : file_node) {
+    for (auto&& iterator : file_node)
+    {
         Player player;
         iterator >> player;
         players_.push_back(player);
     }
 }
 
-bool Team::operator==(const Team &rhs) const {
-    return name_ == rhs.name_ &&
-           players_ == rhs.players_;
+bool Team::operator==(const Team& rhs) const
+{
+    return name_ == rhs.name_ && players_ == rhs.players_;
 }
