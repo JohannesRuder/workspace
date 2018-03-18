@@ -4,21 +4,35 @@ project(workspace)
 # Toolchain file with values for the whole project (e.g. C++ 14)
 include(${CMAKE_CURRENT_LIST_DIR}/CMakeConfiguration.cmake)
 
-# QT
-# Tell CMake to run moc when necessary:
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-# As moc files are generated in the binary dir, tell CMake
-# to always look for includes there:
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 find_package(Qt5 COMPONENTS Core Widgets Gui Test REQUIRED)
 
 #QtTest
 enable_testing()
 
-add_executable(MainwindowSpec
-        test/mainwindow_spec.cpp
+#add_executable(MainwindowSpec
+#        test/mainwindow_spec.cpp
+#        src/team.cpp
+#        src/player.cpp
+#        src/video.cpp
+#        src/camera.cpp
+#        src/action.cpp
+#        src/game.cpp
+#        src/gym.cpp
+#        mainwindow.cpp
+##        src/opencvworker.cpp
+#        src/rally.cpp
+#        src/season.cpp
+#        src/set.cpp
+#        src/utils.cpp)
+
+#add_test(MainwindowSpec mainwindow_spec)
+#target_link_libraries(MainwindowSpec Qt5::Widgets Qt5::Test)
+
+#Get all header files in the directory
+file(GLOB QT_GEN_HEADERS ./bin_debug/*.h)
+file(GLOB QT_CPP_GENERATED ./bin_debug/*.cpp)
+
+add_executable(workspace main.cpp
         src/team.cpp
         src/player.cpp
         src/video.cpp
@@ -26,37 +40,22 @@ add_executable(MainwindowSpec
         src/action.cpp
         src/game.cpp
         src/gym.cpp
-        src/mainwindow.cpp
-        src/opencvworker.cpp
+        mainwindow.cpp
+#        src/opencvworker.cpp
         src/rally.cpp
         src/season.cpp
         src/set.cpp
-        src/utils.cpp)
-
-add_test(MainwindowSpec mainwindow_spec)
-target_link_libraries(MainwindowSpec Qt5::Widgets Qt5::Test)
-
-add_executable(workspace src/main.cpp
-        src/team.cpp
-        src/player.cpp
-        src/video.cpp
-        src/camera.cpp
-        src/action.cpp
-        src/game.cpp
-        src/gym.cpp
-        src/mainwindow.cpp
-        src/opencvworker.cpp
-        src/rally.cpp
-        src/season.cpp
-        src/set.cpp
-        src/utils.cpp)
+        src/utils.cpp
+        ui_mainwindow.h
+        ${QT_GEN_HEADERS}
+        ${QT_CPP_GENERATED})
 
 qt5_use_modules(workspace Core Widgets Gui)
 
 # OpenCV
 find_package(OpenCV REQUIRED)
 target_link_libraries(workspace ${OpenCV_LIBS})
-target_link_libraries(MainwindowSpec ${OpenCV_LIBS})
+#target_link_libraries(MainwindowSpec ${OpenCV_LIBS})
 
 # Googletest
 # Download and unpack googletest at configure time
@@ -95,3 +94,16 @@ target_link_libraries(runUnitTests
         gtest gtest_main
         ${OpenCV_LIBS}
         Qt5::Core Qt5::Widgets Qt5::Gui)
+
+set(QT_GENERATED qtGenerated)
+add_custom_target(${QT_GENERATED})
+add_dependencies(${PROJECT_NAME} ${QT_GENERATED})
+
+#Copy them to the project dir
+foreach(QT_GEN_HEADERS ${QT_GEN_HEADERS})
+    add_custom_command(TARGET ${QT_GENERATED} PRE_BUILD COMMAND
+            ${CMAKE_COMMAND} -E copy_if_different
+            ${QT_GEN_HEADERS} ${CMAKE_SOURCE_DIR})
+endforeach()
+
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Widgets Qt5::Gui)

@@ -4,16 +4,9 @@
     <generated>
       <config projectName="workspace" targetName="runUnitTests" />
       <config projectName="workspace" targetName="gtest" />
-      <config projectName="workspace" targetName="gtest_main_autogen" />
-      <config projectName="workspace" targetName="gtest_autogen" />
-      <config projectName="workspace" targetName="gmock_main_autogen" />
-      <config projectName="workspace" targetName="MainwindowSpec" />
-      <config projectName="workspace" targetName="runUnitTests_autogen" />
-      <config projectName="workspace" targetName="gmock_autogen" />
-      <config projectName="workspace" targetName="MainwindowSpec_autogen" />
-      <config projectName="workspace" targetName="workspace_autogen" />
       <config projectName="workspace" targetName="gmock_main" />
       <config projectName="workspace" targetName="gmock" />
+      <config projectName="workspace" targetName="qtGenerated" />
       <config projectName="workspace" targetName="workspace" />
       <config projectName="workspace" targetName="gtest_main" />
     </generated>
@@ -26,14 +19,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2340ac1-1f3f-4e35-9b37-59d411bad2d1" name="Default" comment="Intrinsics and distortion are checked in camera compare.">
+      <change beforePath="" afterPath="$PROJECT_DIR$/mainwindow.cpp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mainwindow.h" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mainwindow.ui" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/mainwindow.cpp" afterPath="$PROJECT_DIR$/src/mainwindow.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/mainwindow.h" afterPath="$PROJECT_DIR$/src/mainwindow.h" />
-      <change beforePath="$PROJECT_DIR$/src/team.cpp" afterPath="$PROJECT_DIR$/src/team.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/team.h" afterPath="$PROJECT_DIR$/src/team.h" />
-      <change beforePath="$PROJECT_DIR$/test/game_spec.cpp" afterPath="$PROJECT_DIR$/test/game_spec.cpp" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/mainwindow.cpp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/mainwindow.h" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/mainwindow.ui" afterPath="" />
       <change beforePath="$PROJECT_DIR$/test/mainwindow_spec.cpp" afterPath="$PROJECT_DIR$/test/mainwindow_spec.cpp" />
-      <change beforePath="$PROJECT_DIR$/test/season_spec.cpp" afterPath="$PROJECT_DIR$/test/season_spec.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
     <ignored path="$USER_HOME$/cmake-build-debug/CMakeFiles/" />
@@ -63,15 +58,25 @@
       <find>0</find>
       <find>QT_LIBRARIES</find>
       <find>${QT_MINGW}</find>
-      <find>CMAKE_PREFIX_PATH</find>
       <find>mainwindow</find>
       <find>SendVideoFrameCount</find>
+      <find>actionSave</find>
+      <find>QtBinDebug542</find>
+      <find>${QT_55_MINGW492_TOOLS}</find>
+      <find>QT_55_MINGW492</find>
+      <find>CMAKE_PREFIX_PATH</find>
+      <find>find_package</find>
+      <find>QTTestProject</find>
+      <find>target_link_libraries</find>
     </findStrings>
     <replaceStrings>
       <replace>std::string</replace>
       <replace />
       <replace>DeleteLater</replace>
       <replace>$USER_HOME$/</replace>
+      <replace>bin_debug</replace>
+      <replace>usr</replace>
+      <replace>workspace</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -89,7 +94,6 @@
         <option value="$PROJECT_DIR$/CMakeConfiguration.txt" />
         <option value="$PROJECT_DIR$/CMakeConfiguration" />
         <option value="$PROJECT_DIR$/CMakeConfiguration.cmake" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/src/position.h" />
         <option value="$PROJECT_DIR$/test/example_camera_calibration.yaml" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
@@ -120,8 +124,11 @@
         <option value="$PROJECT_DIR$/src/team.h" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/mainwindow.h" />
-        <option value="$PROJECT_DIR$/test/mainwindow_spec.cpp" />
         <option value="$PROJECT_DIR$/src/mainwindow.cpp" />
+        <option value="$PROJECT_DIR$/ui_mainwindow.h" />
+        <option value="$USER_HOME$/cmake-build-debug/googletest-build/googlemock/gtest/gtest_main_autogen/mocs_compilation.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/test/mainwindow_spec.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
@@ -134,10 +141,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1857" />
-    <option name="height" value="1092" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1617" />
+    <option name="height" value="1062" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -200,13 +207,14 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/qt-test-project/CMakeLists.txt" />
+    <property name="last_opened_file_path" value="$USER_HOME$/workspace_gui" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="SearchEverywhereHistoryKey" value="AddVideo&#9;ACTION&#9;null&#10;on_actionOpenSeason_triggered()&#9;null&#9;null&#10;ReceiveGrabFrame&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="on_actionSave_triggered&#9;null&#9;null&#10;LineEditSeasonName&#9;null&#9;null&#10;AddVideo&#9;ACTION&#9;null&#10;on_actionOpenSeason_triggered()&#9;null&#9;null&#10;ReceiveGrabFrame&#9;null&#9;null" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -227,7 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.runUnitTests">
+  <component name="RunManager" selected="Application.Build All">
     <configuration name="All in camera_spec.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_PATTERN="DefaultCameraFixture.*:DefaultCameraFixture/*.*:*/DefaultCameraFixture.*/*:*/DefaultCameraFixture/*.*:ExampleCameraFixture.*:ExampleCameraFixture/*.*:*/ExampleCameraFixture.*/*:*/ExampleCameraFixture/*.*" TEST_MODE="PATTERN">
       <envs />
     </configuration>
@@ -243,72 +251,44 @@
     <configuration name="ExamplePlayerFixture.WritePlayerToFile" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="ExamplePlayerFixture" TEST_METHOD="WritePlayerToFile" TEST_MODE="SUITE_TEST">
       <envs />
     </configuration>
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="MainwindowSpec" EXPLICIT_BUILD_TARGET_NAME="all">
-      <envs />
-    </configuration>
-    <configuration name="MainwindowSpec" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="MainwindowSpec" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="MainwindowSpec">
-      <envs />
-    </configuration>
-    <configuration name="MainwindowSpec_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="MainwindowSpec_autogen" CONFIG_NAME="Debug">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="workspace" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gmock" CONFIG_NAME="Release">
       <envs />
     </configuration>
-    <configuration name="gmock_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gmock_autogen" CONFIG_NAME="Debug">
-      <envs />
-    </configuration>
     <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gmock_main" CONFIG_NAME="Release">
-      <envs />
-    </configuration>
-    <configuration name="gmock_main_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gmock_main_autogen" CONFIG_NAME="Debug">
       <envs />
     </configuration>
     <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gtest" CONFIG_NAME="Release">
       <envs />
     </configuration>
-    <configuration name="gtest_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gtest_autogen" CONFIG_NAME="Debug">
-      <envs />
-    </configuration>
     <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gtest_main" CONFIG_NAME="Release">
       <envs />
     </configuration>
-    <configuration name="gtest_main_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="gtest_main_autogen" CONFIG_NAME="Debug">
+    <configuration name="qtGenerated" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="qtGenerated" CONFIG_NAME="Debug">
       <envs />
     </configuration>
     <configuration name="runUnitTests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests">
       <envs />
     </configuration>
-    <configuration name="runUnitTests_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests_autogen" CONFIG_NAME="Debug">
-      <envs />
-    </configuration>
     <configuration name="workspace" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/../opencv_extra/testdata/highgui/drawing/image.png" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="workspace" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="workspace">
       <envs />
     </configuration>
-    <configuration name="workspace_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="workspace_autogen" CONFIG_NAME="Debug">
-      <envs />
-    </configuration>
-    <list size="20">
+    <list size="13">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.MainwindowSpec" />
-      <item index="2" class="java.lang.String" itemvalue="Application.MainwindowSpec_autogen" />
-      <item index="3" class="java.lang.String" itemvalue="Application.runUnitTests" />
-      <item index="4" class="java.lang.String" itemvalue="Application.runUnitTests_autogen" />
-      <item index="5" class="java.lang.String" itemvalue="Application.workspace" />
-      <item index="6" class="java.lang.String" itemvalue="Application.workspace_autogen" />
-      <item index="7" class="java.lang.String" itemvalue="Application.gmock" />
-      <item index="8" class="java.lang.String" itemvalue="Application.gmock_autogen" />
-      <item index="9" class="java.lang.String" itemvalue="Application.gmock_main" />
-      <item index="10" class="java.lang.String" itemvalue="Application.gmock_main_autogen" />
-      <item index="11" class="java.lang.String" itemvalue="Application.gtest" />
-      <item index="12" class="java.lang.String" itemvalue="Application.gtest_autogen" />
-      <item index="13" class="java.lang.String" itemvalue="Application.gtest_main" />
-      <item index="14" class="java.lang.String" itemvalue="Application.gtest_main_autogen" />
-      <item index="15" class="java.lang.String" itemvalue="Google Test.All in season_spec.cpp" />
-      <item index="16" class="java.lang.String" itemvalue="Google Test.ExamplePlayerFixture.WritePlayerToFile" />
-      <item index="17" class="java.lang.String" itemvalue="Google Test.ExampleCameraFixture.FileInAndOutput" />
-      <item index="18" class="java.lang.String" itemvalue="Google Test.DefaultCameraFixture.SetCameraCalibrationFile" />
-      <item index="19" class="java.lang.String" itemvalue="Google Test.All in camera_spec.cpp" />
+      <item index="1" class="java.lang.String" itemvalue="Application.qtGenerated" />
+      <item index="2" class="java.lang.String" itemvalue="Application.runUnitTests" />
+      <item index="3" class="java.lang.String" itemvalue="Application.workspace" />
+      <item index="4" class="java.lang.String" itemvalue="Application.gmock" />
+      <item index="5" class="java.lang.String" itemvalue="Application.gmock_main" />
+      <item index="6" class="java.lang.String" itemvalue="Application.gtest" />
+      <item index="7" class="java.lang.String" itemvalue="Application.gtest_main" />
+      <item index="8" class="java.lang.String" itemvalue="Google Test.All in season_spec.cpp" />
+      <item index="9" class="java.lang.String" itemvalue="Google Test.ExamplePlayerFixture.WritePlayerToFile" />
+      <item index="10" class="java.lang.String" itemvalue="Google Test.ExampleCameraFixture.FileInAndOutput" />
+      <item index="11" class="java.lang.String" itemvalue="Google Test.DefaultCameraFixture.SetCameraCalibrationFile" />
+      <item index="12" class="java.lang.String" itemvalue="Google Test.All in camera_spec.cpp" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -373,6 +353,10 @@
       <workItem from="1520802086437" duration="597000" />
       <workItem from="1520880428134" duration="325000" />
       <workItem from="1520880808763" duration="2418000" />
+      <workItem from="1520967753716" duration="996000" />
+      <workItem from="1521395813125" duration="2046000" />
+      <workItem from="1521398369231" duration="67000" />
+      <workItem from="1521398732671" duration="2552000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1517138596222</created>
@@ -501,7 +485,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128877000" />
+    <option name="totallyTimeSpent" value="135609000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -513,16 +497,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1617" height="1062" extended-state="6" />
+    <frame x="65" y="-4" width="1617" height="1062" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27120742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27120742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49535602" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3449367" sideWeight="0.49811321" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35126582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.504644" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2964135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28270042" sideWeight="0.49522984" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28270042" sideWeight="0.49522984" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -533,6 +517,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2964135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -589,60 +574,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/x86_64-linux-gnu/qt5/QtCore/qthread.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-963">
-          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mainwindow.ui">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="254" column="86" lean-forward="false" selection-start-line="254" selection-start-column="68" selection-end-line="254" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="79" column="19" lean-forward="false" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="113" column="22" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/cmake-build-debug/MainwindowSpec_autogen/include/mainwindow_spec.moc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="86" column="11" lean-forward="false" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rally.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/season.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -895,36 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/mainwindow_spec.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="59" lean-forward="false" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#64#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/qt-test-project/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
           <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mainwindow.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,9 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="28" />
-          <folding>
-            <element signature="e#108#125#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -942,22 +849,90 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui_mainwindow.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/cmake-build-debug/googletest-build/googlemock/gtest/gtest_main_autogen/mocs_compilation.cpp" />
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainwindow.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainwindow.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainwindow.ui">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mainwindow.cpp">
+    <entry file="file://$PROJECT_DIR$/mainwindow.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-882">
-          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainwindow.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeConfiguration.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-693">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mainwindow_spec.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#41#74#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        <state relative-caret-position="1044">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
