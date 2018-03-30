@@ -23,7 +23,7 @@ class Game
     std::vector<int> video_frames_;
 
   public:
-    explicit Game();
+    Game();
     Game(int number,
          const Team& home_team,
          const Team& guest_team,

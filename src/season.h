@@ -17,18 +17,18 @@
 class Season
 {
   private:
-    QString name_;
-    QString filename_;
+    std::string name_;
+    std::string filename_;
     std::vector<Game> games_;
 
   public:
-    explicit Season();
-    explicit Season(const QString& name, const QString& filename);
+    Season();
+    Season(const std::string &name, const std::string &filename);
 
-    void SetName(const QString& name);
-    const QString& GetName();
-    void SetFilename(const QString& filename);
-    const QString& GetFilename();
+    void SetName(const std::string &name);
+    const std::string & GetName();
+    void SetFilename(const std::string &filename);
+    const std::string & GetFilename();
     const std::vector<Game> &GetGames() const;
 
     const Game& GetGame(int number);

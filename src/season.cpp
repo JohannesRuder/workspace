@@ -6,24 +6,24 @@
 
 Season::Season() : name_{""}, filename_{""}, games_{} {}
 
-Season::Season(const QString& name, const QString& filename) : name_{name}, filename_{filename} {}
+Season::Season(const std::string &name, const std::string &filename) : name_{name}, filename_{filename} {}
 
-void Season::SetName(const QString& name)
+void Season::SetName(const std::string &name)
 {
     name_ = name;
 }
 
-const QString& Season::GetName()
+const std::string & Season::GetName()
 {
     return name_;
 }
 
-void Season::SetFilename(const QString& filename)
+void Season::SetFilename(const std::string &filename)
 {
     filename_ = filename;
 }
 
-const QString& Season::GetFilename()
+const std::string & Season::GetFilename()
 {
     return filename_;
 }
@@ -41,13 +41,13 @@ void Season::AddGame(Game game)
 void Season::Write(cv::FileStorage& file_storage) const
 {
     file_storage << "{"
-                 << "name" << name_.toStdString() << "filename" << filename_.toStdString() << "games" << games_ << "}";
+                 << "name" << name_ << "filename" << filename_ << "games" << games_ << "}";
 }
 
 void Season::Read(const cv::FileNode& node)
 {
-    name_ = QString::fromStdString(static_cast<std::string>(node["name"]));
-    filename_ = QString::fromStdString(static_cast<std::string>(node["filename"]));
+    name_ = static_cast<std::string>(node["name"]);
+    filename_ = static_cast<std::string>(node["filename"]);
 
     auto file_node = node["games"];
     for (auto&& iterator : file_node)

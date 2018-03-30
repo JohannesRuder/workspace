@@ -20,14 +20,14 @@ TEST_F(DefaultSeasonFixture, DefaultConstructor)
 
 TEST_F(DefaultSeasonFixture, SetName)
 {
-    QString arbitrary_season_name = "Season 2017/2018";
+    auto arbitrary_season_name = "Season 2017/2018";
     unit_.SetName(arbitrary_season_name);
     EXPECT_EQ(arbitrary_season_name, unit_.GetName());
 }
 
 TEST_F(DefaultSeasonFixture, SetFilename)
 {
-    QString arbitrary_filename = "season_-2017-2018.yaml";
+    auto arbitrary_filename = "season_-2017-2018.yaml";
     unit_.SetName(arbitrary_filename);
     EXPECT_EQ(arbitrary_filename, unit_.GetName());
 }
@@ -45,16 +45,23 @@ TEST_F(ExampleSeasonFixture, Constructor)
     EXPECT_TRUE(unit_.GetGames().empty());
 }
 
+TEST_F(ExampleSeasonFixture, AddGame)
+{
+    EXPECT_EQ(0, unit_.GetGames().size());
+    unit_.AddGame(Game{});
+    EXPECT_EQ(1, unit_.GetGames().size());
+}
+
 TEST_F(ExampleSeasonFixture, WriteSeasonToFile)
 {
-    static const char *const filename = "/home/hannes/workspace/data.yaml";
+    unit_.AddGame(Game{});
 
-    cv::FileStorage file_storage(filename, cv::FileStorage::WRITE);
+    cv::FileStorage file_storage(unit_.GetFilename(), cv::FileStorage::WRITE);
     file_storage << "season_" << unit_;
     file_storage.release();
 
     Season season_from_file;
-    file_storage.open(filename,cv::FileStorage::READ);
+    file_storage.open(unit_.GetFilename(),cv::FileStorage::READ);
     file_storage["season_"] >> season_from_file;
     file_storage.release();
 
