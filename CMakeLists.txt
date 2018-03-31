@@ -108,17 +108,17 @@ endforeach()
 
 target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Widgets Qt5::Gui)
 
-# Include what you use
-find_program(iwyu_path NAMES include-what-you-use iwyu)
-if(NOT iwyu_path)
-    message(FATAL_ERROR "Could not find the program include-what-you-use")
-endif()
-
-set(iwyu_path_and_options
-        ${iwyu_path}
-        -Xiwyu
-        --verbose=1)
-#        --mapping_file=${my_mapping})
-
-set_property(TARGET ${PROJECT_NAME}
-        PROPERTY CXX_INCLUDE_WHAT_YOU_USE ${iwyu_path_and_options})
+## Include what you use
+#find_program(iwyu_path NAMES include-what-you-use iwyu)
+#if(NOT iwyu_path)
+#    message(FATAL_ERROR "Could not find the program include-what-you-use")
+#endif()
+#
+#set(iwyu_path_and_options
+#        ${iwyu_path}
+#        -Xiwyu
+#        --verbose=1)
+##        --mapping_file=${my_mapping})
+#
+#set_property(TARGET ${PROJECT_NAME}
+#        PROPERTY CXX_INCLUDE_WHAT_YOU_USE ${iwyu_path_and_options})

@@ -5,9 +5,11 @@
 #ifndef WORKSPACE_SET_H
 #define WORKSPACE_SET_H
 
-#include <vector>
-#include <opencv2/core/core.hpp>
-#include "rally.h"
+#include <string>                        // for string
+#include <vector>                        // for vector
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+
+#include "rally.h"  // for Rally
 
 class Set
 {
@@ -26,7 +28,7 @@ class Set
     void IncrementHomeScore();
     void IncrementGuestScore();
 
-    bool operator==(const Set &rhs) const;
+    bool operator==(const Set& rhs) const;
 
     void Write(cv::FileStorage& file_storage) const;
     void Read(const cv::FileNode& node);

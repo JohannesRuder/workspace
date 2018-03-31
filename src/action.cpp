@@ -3,7 +3,8 @@
 //
 
 #include "action.h"
-#include <QDebug>
+
+#include <qstring.h>  // for QString
 
 Action::Action() : time_() {}
 

@@ -4,6 +4,10 @@
 
 #include "camera.h"
 
+#include <opencv2/core/cvstd.hpp>      // for String
+
+#include "utils.h"  // for IsMatEqual
+
 Camera::Camera() : name_(""), camera_calibration_filename_(""), intrinsics_(), distortion_() {}
 
 Camera::Camera(const std::string& name, const std::string& camera_calibration_filename)
@@ -69,6 +73,6 @@ bool Camera::operator==(Camera camera_to_compare) const
 {
     return this->GetName() == camera_to_compare.GetName() &&
            this->GetCameraCalibrationFilename() == camera_to_compare.GetCameraCalibrationFilename() &&
-            IsMatEqual(this->GetIntrinsics(), camera_to_compare.GetIntrinsics()) &&
-            IsMatEqual(this->GetDistortion(), camera_to_compare.GetDistortion());
+           IsMatEqual(this->GetIntrinsics(), camera_to_compare.GetIntrinsics()) &&
+           IsMatEqual(this->GetDistortion(), camera_to_compare.GetDistortion());
 }

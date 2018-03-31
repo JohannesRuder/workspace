@@ -4,6 +4,8 @@
 
 #include "rally.h"
 
+#include <qstring.h>  // for QString
+
 Rally::Rally() : start_time_(), actions_() {}
 
 Rally::Rally(const QTime& start_time) : start_time_(start_time) {}

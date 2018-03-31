@@ -2,8 +2,13 @@
 // Created by hannes on 17.02.18.
 //
 
-#include <gtest/gtest.h>
-#include "../src/set.h"
+#include <gtest/gtest-message.h>         // for Message
+#include <gtest/gtest-test-part.h>       // for TestPartResult
+#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+#include <vector>                        // for vector
+
+#include "../src/set.h"                  // for Set
+#include "gtest/gtest_pred_impl.h"       // for EXPECT_EQ, AssertionResult
 
 class DefaultSetFixture : public ::testing::Test
 {

@@ -6,24 +6,24 @@
 
 Season::Season() : name_{""}, filename_{""}, games_{} {}
 
-Season::Season(const std::string &name, const std::string &filename) : name_{name}, filename_{filename} {}
+Season::Season(const std::string& name, const std::string& filename) : name_{name}, filename_{filename} {}
 
-void Season::SetName(const std::string &name)
+void Season::SetName(const std::string& name)
 {
     name_ = name;
 }
 
-const std::string & Season::GetName()
+const std::string& Season::GetName()
 {
     return name_;
 }
 
-void Season::SetFilename(const std::string &filename)
+void Season::SetFilename(const std::string& filename)
 {
     filename_ = filename;
 }
 
-const std::string & Season::GetFilename()
+const std::string& Season::GetFilename()
 {
     return filename_;
 }

@@ -5,7 +5,8 @@
 #ifndef WORKSPACE_PLAYER_H
 #define WORKSPACE_PLAYER_H
 
-#include <opencv2/core/core.hpp>
+#include <string>                        // for string, basic_string
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
 
 enum class Position
 {
@@ -17,13 +18,13 @@ enum class Position
 
 class Player
 {
-private:
+  private:
     std::string name_;
     int number_;
     Position position_;
     int number_of_actions_;
 
-public:
+  public:
     Player();
     Player(const std::string& name, int number, Position position);
     const std::string& GetName() const;

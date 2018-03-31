@@ -2,8 +2,14 @@
 // Created by hannes on 09.03.18.
 //
 
-#include <gtest/gtest.h>
-#include "../src/utils.h"
+#include <gtest/gtest-message.h>         // for Message
+#include <gtest/gtest-test-part.h>       // for TestFactoryImpl, TestPartResult
+#include <gtest/gtest.h>                 // for AssertionResult, Test, TestI...
+#include <opencv2/core/hal/interface.h>  // for CV_32S, CV_8U, CV_16S
+#include <opencv2/core/mat.hpp>          // for Mat, MatExpr
+#include <opencv2/core/mat.inl.hpp>      // for Mat::Mat, Mat::~Mat, MatExpr...
+
+#include "../src/utils.h"  // for IsMatEqual
 
 TEST(Utils, IsMatrixEqual_BothMatricesEmpty)
 {

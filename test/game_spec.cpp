@@ -2,12 +2,18 @@
 // Created by hannes on 17.02.18.
 //
 
-#include "../src/game.h"
-#include <gtest/gtest.h>
+#include <vector>                        // for vector
+#include <gtest/gtest-message.h>         // for Message
+#include <gtest/gtest-test-part.h>       // for TestPartResult
+#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+
+#include "../src/game.h"            // for Game
+#include "../src/team.h"            // for Team
+#include "gtest/gtest_pred_impl.h"  // for AssertionResult, EXPECT_EQ
 
 class DefaultGameFixture : public ::testing::Test
 {
-protected:
+  protected:
     Game unit{};
 };
 
@@ -44,14 +50,14 @@ TEST_F(DefaultGameFixture, SetGuestTeam)
 
 TEST_F(DefaultGameFixture, WritePlayerToFile)
 {
-    static const char *const filename = "/home/hannes/workspace/data.yaml";
+    static const char* const filename = "/home/hannes/workspace/data.yaml";
 
     cv::FileStorage file_storage(filename, cv::FileStorage::WRITE);
     file_storage << "game_" << unit;
     file_storage.release();
 
     Game game_from_file;
-    file_storage.open(filename,cv::FileStorage::READ);
+    file_storage.open(filename, cv::FileStorage::READ);
     file_storage["game_"] >> game_from_file;
     file_storage.release();
 

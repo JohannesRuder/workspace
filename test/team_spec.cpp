@@ -2,8 +2,13 @@
 // Created by hannes on 12.02.18.
 //
 
-#include "../src/team.h"
-#include <gtest/gtest.h>
+#include <gtest/gtest-message.h>         // for Message
+#include <gtest/gtest-test-part.h>       // for TestPartResult
+#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+
+#include "../src/player.h"               // for Player, Position, Position::...
+#include "../src/team.h"                 // for Team
+#include "gtest/gtest_pred_impl.h"       // for Test, EXPECT_EQ, EqHelper
 
 class DefaultTeamFixture : public ::testing::Test
 {

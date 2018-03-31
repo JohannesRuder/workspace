@@ -5,8 +5,10 @@
 #ifndef WORKSPACE_CAMERA_H
 #define WORKSPACE_CAMERA_H
 
-#include <opencv2/core/core.hpp>
-#include "utils.h"
+#include <string>                        // for string, basic_string
+#include <opencv2/core/mat.hpp>          // for Mat
+#include <opencv2/core/mat.inl.hpp>      // for Mat::operator=, Mat::~Mat
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
 
 class Camera
 {

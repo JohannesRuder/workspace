@@ -5,9 +5,9 @@
 #ifndef WORKSPACE_GYM_H
 #define WORKSPACE_GYM_H
 
-#include <opencv2/core/core.hpp>
-#include <QColor>
-#include <QString>
+#include <string>                        // for string, basic_string
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include <qcolor.h>                      // for QColor
 
 class Gym
 {

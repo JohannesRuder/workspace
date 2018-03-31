@@ -2,9 +2,16 @@
 // Created by hannes on 13.02.18.
 //
 
-#include <gtest/gtest.h>
-#include "../src/camera.h"
-#include <QtGui/QtGui>
+#include <gtest/gtest-message.h>         // for Message
+#include <gtest/gtest-test-part.h>       // for TestPartResult, TestFactoryImpl
+#include <opencv2/core/mat.hpp>          // for MatCommaInitializer_, Mat, Mat_
+#include <opencv2/core/mat.inl.hpp>      // for MatCommaInitializer_::operator,
+#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+#include <string>                        // for string
+
+#include "../src/camera.h"               // for Camera
+#include "../src/utils.h"                // for IsMatEqual
+#include "gtest/gtest_pred_impl.h"       // for AssertionResult, EXPECT_TRUE
 
 class DefaultCameraFixture : public ::testing::Test
 {

@@ -2,9 +2,13 @@
 // Created by hannes on 16.02.18.
 //
 
-#include "../src/action.h"
-#include <gtest/gtest.h>
+#include <gtest/gtest-message.h>         // for Message
+#include <gtest/gtest-test-part.h>       // for TestPartResult
+#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+#include <qdatetime.h>                   // for QTime
 
+#include "../src/action.h"          // for Action
+#include "gtest/gtest_pred_impl.h"  // for AssertionResult, TEST_F, Tes...
 
 class DefaultActionFixture : public ::testing::Test
 {

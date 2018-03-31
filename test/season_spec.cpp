@@ -2,8 +2,15 @@
 // Created by hannes on 18.02.18.
 //
 
-#include "../src/season.h"
-#include <gtest/gtest.h>
+#include <gtest/gtest-message.h>         // for Message
+#include <gtest/gtest-test-part.h>       // for TestPartResult
+#include <opencv2/core/cvstd.hpp>        // for String
+#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+#include <vector>                        // for vector
+
+#include "../src/game.h"                 // for Game
+#include "../src/season.h"               // for Season
+#include "gtest/gtest_pred_impl.h"       // for EXPECT_EQ, AssertionResult
 
 class DefaultSeasonFixture : public ::testing::Test
 {

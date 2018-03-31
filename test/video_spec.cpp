@@ -2,8 +2,16 @@
 // Created by hannes on 14.02.18.
 //
 
-#include <gtest/gtest.h>
-#include "../src/video.h"
+#include <gtest/gtest-message.h>         // for Message
+#include <gtest/gtest-test-part.h>       // for TestPartResult
+#include <opencv2/core/mat.hpp>          // for Mat
+#include <opencv2/core/mat.inl.hpp>      // for Mat::empty
+#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+#include <string>                        // for string
+
+#include "../src/camera.h"               // for Camera
+#include "../src/video.h"                // for Video
+#include "gtest/gtest_pred_impl.h"       // for AssertionResult, EXPECT_EQ
 
 class DefaultVideoFixture : public ::testing::Test
 {

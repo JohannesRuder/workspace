@@ -5,12 +5,13 @@
 #ifndef WORKSPACE_GAME_H
 #define WORKSPACE_GAME_H
 
-#include <vector>
-#include <opencv2/core/core.hpp>
-#include "set.h"
-#include "team.h"
-#include "video.h"
-#include <QTime>
+#include <string>                        // for string
+#include <vector>                        // for vector
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+
+#include "set.h"    // for Set
+#include "team.h"   // for Team
+#include "video.h"  // for Video
 
 class Game
 {

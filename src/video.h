@@ -5,8 +5,11 @@
 #ifndef WORKSPACE_VIDEO_H
 #define WORKSPACE_VIDEO_H
 
-#include <opencv2/core/core.hpp>
-#include "camera.h"
+#include <opencv2/core/mat.hpp>          // for Mat
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include <string>                        // for string, basic_string
+
+#include "camera.h"                      // for Camera
 
 class Video
 {

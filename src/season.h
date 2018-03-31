@@ -5,14 +5,11 @@
 #ifndef WORKSPACE_SEASON_H
 #define WORKSPACE_SEASON_H
 
-#include <opencv2/core/core.hpp>
-#include "game.h"
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include <string>                        // for string, basic_string
+#include <vector>                        // for vector
 
-#include <QDebug>
-#include <QString>
-
-#include <string>
-#include <vector>
+#include "game.h"                        // for Game
 
 class Season
 {
@@ -23,13 +20,13 @@ class Season
 
   public:
     Season();
-    Season(const std::string &name, const std::string &filename);
+    Season(const std::string& name, const std::string& filename);
 
-    void SetName(const std::string &name);
-    const std::string & GetName();
-    void SetFilename(const std::string &filename);
-    const std::string & GetFilename();
-    const std::vector<Game> &GetGames() const;
+    void SetName(const std::string& name);
+    const std::string& GetName();
+    void SetFilename(const std::string& filename);
+    const std::string& GetFilename();
+    const std::vector<Game>& GetGames() const;
 
     const Game& GetGame(int number);
     void AddGame(Game game);

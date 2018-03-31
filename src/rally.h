@@ -5,11 +5,12 @@
 #ifndef WORKSPACE_RALLY_H
 #define WORKSPACE_RALLY_H
 
-#include <vector>
-#include <opencv2/core/types.hpp>
-#include "action.h"
-#include <QTime>
-#include <QVector3D>
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include <qdatetime.h>                   // for QTime
+#include <string>                        // for string
+#include <vector>                        // for vector
+
+#include "action.h"                      // for Action
 
 class Rally
 {

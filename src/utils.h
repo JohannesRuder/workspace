@@ -5,7 +5,9 @@
 #ifndef WORKSPACE_UTILS_H
 #define WORKSPACE_UTILS_H
 
-#include <opencv2/core/core.hpp>
+namespace cv {
+class Mat;
+}  // namespace cv
 
 bool IsMatEqual(const cv::Mat& mat_1, const cv::Mat& mat_2);
 

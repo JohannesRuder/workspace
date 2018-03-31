@@ -5,11 +5,9 @@
 #ifndef WORKSPACE_ACTION_H
 #define WORKSPACE_ACTION_H
 
-#include <opencv2/core/core.hpp>
-#include "player.h"
-#include <qt5/QtCore/QString>
-#include <qt5/QtCore/QTime>
-#include <qt5/QtCore/Qt>
+#include <string>                        // for string
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include <qdatetime.h>                   // for QTime
 
 class Action
 {
