@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="AUTOSCROLL_TO_SOURCE" value="true" />
+    <option name="SPLITTER_PROPORTION" value="0.57308435" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="workspace" targetName="runUnitTests" />
-      <config projectName="workspace" targetName="gtest" />
       <config projectName="workspace" targetName="gmock_main" />
-      <config projectName="workspace" targetName="gmock" />
-      <config projectName="workspace" targetName="qtGenerated" />
       <config projectName="workspace" targetName="workspace" />
       <config projectName="workspace" targetName="gtest_main" />
+      <config projectName="workspace" targetName="qtGenerated" />
+      <config projectName="workspace" targetName="gtest" />
+      <config projectName="workspace" targetName="runUnitTests" />
+      <config projectName="workspace" targetName="gmock" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -19,19 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2340ac1-1f3f-4e35-9b37-59d411bad2d1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mainwindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/mainwindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/season.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/season.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/team.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/team.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/video.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/video.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/game_spec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/game_spec.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/season_spec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/season_spec.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/team_spec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/team_spec.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/utils_spec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/utils_spec.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/player_spec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/player_spec.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
     <ignored path="$USER_HOME$/cmake-build-debug/CMakeFiles/" />
@@ -48,51 +43,12 @@
     <favorites_list name="workspace" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="team_spec.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/team_spec.cpp">
+    <leaf>
+      <file leaf-file-name="player_spec.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/player_spec.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="55" />
-              <folding>
-                <element signature="e#41#96#0" expanded="true" />
-                <element signature="e#297#371#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game_spec.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/game_spec.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-              <folding>
-                <element signature="e#41#95#0" expanded="true" />
-                <element signature="e#352#399#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="season_spec.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/season_spec.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="55" />
-              <folding>
-                <element signature="e#41#95#0" expanded="true" />
-                <element signature="e#407#454#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils_spec.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/utils_spec.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="409">
+              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
               <folding>
                 <element signature="e#41#96#0" expanded="true" />
               </folding>
@@ -164,7 +120,6 @@
         <option value="$PROJECT_DIR$/src/action.h" />
         <option value="$PROJECT_DIR$/src/rally.h" />
         <option value="$PROJECT_DIR$/src/player.h" />
-        <option value="$PROJECT_DIR$/test/player_spec.cpp" />
         <option value="$PROJECT_DIR$/src/camera.h" />
         <option value="$PROJECT_DIR$/src/utils.h" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -196,6 +151,7 @@
         <option value="$PROJECT_DIR$/test/game_spec.cpp" />
         <option value="$PROJECT_DIR$/test/season_spec.cpp" />
         <option value="$PROJECT_DIR$/test/utils_spec.cpp" />
+        <option value="$PROJECT_DIR$/test/player_spec.cpp" />
       </list>
     </option>
   </component>
@@ -211,28 +167,6 @@
     <option name="y" value="-4" />
     <option name="width" value="1615" />
     <option name="height" value="1054" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>C/C++</id>
-          </State>
-          <State>
-            <id>GeneralC/C++</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>ClangTidyInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -258,6 +192,12 @@
               <item name="workspace" type="b2602c69:ProjectViewProjectNode" />
               <item name="workspace" type="47feb1d3:ProjectViewModuleNode" />
               <item name="workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workspace" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="workspace" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -273,7 +213,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/workspace_gui" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -298,7 +238,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.runUnitTests">
+  <component name="RunManager" selected="Application.Build All">
     <configuration name="All in camera_spec.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_PATTERN="DefaultCameraFixture.*:DefaultCameraFixture/*.*:*/DefaultCameraFixture.*/*:*/DefaultCameraFixture/*.*:ExampleCameraFixture.*:ExampleCameraFixture/*.*:*/ExampleCameraFixture.*/*:*/ExampleCameraFixture/*.*" TEST_MODE="PATTERN" />
     <configuration name="DefaultCameraFixture.SetCameraCalibrationFile" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="DefaultCameraFixture" TEST_METHOD="SetCameraCalibrationFile" TEST_MODE="SUITE_TEST" />
     <configuration name="ExampleCameraFixture.FileInAndOutput" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="ExampleCameraFixture" TEST_METHOD="FileInAndOutput" TEST_MODE="SUITE_TEST" />
@@ -392,7 +332,8 @@
       <workItem from="1521398369231" duration="67000" />
       <workItem from="1521398732671" duration="2552000" />
       <workItem from="1522386737753" duration="18019000" />
-      <workItem from="1522495838717" duration="11900000" />
+      <workItem from="1522495838717" duration="12992000" />
+      <workItem from="1522528715514" duration="664000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1517138596222</created>
@@ -499,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522522664725</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Cleaned up includes with include-what-you-need.">
+      <created>1522526365738</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1522526365738</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -535,7 +483,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165528000" />
+    <option name="totallyTimeSpent" value="167284000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -550,45 +498,45 @@
     <frame x="64" y="-11" width="1617" height="1062" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.27120742" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49535602" weight="0.32911393" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49811321" weight="0.3498943" />
       <window_info anchor="bottom" id="CMake" order="7" weight="0.39429176" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50526315" side_tool="true" weight="0.28224102" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.28893444" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49473685" visible="true" weight="0.3245243" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49473685" weight="0.32346722" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32924336" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.27120742" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" order="8" visible="true" weight="0.32875264" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.29598308" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5010571" side_tool="true" weight="0.27120742" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978904" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.32911393" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2964135" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2964135" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49473685" weight="0.27525774" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27120742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49535602" weight="0.32911393" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32924336" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.35126582" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32911393" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978904" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.49811321" visible="true" weight="0.5369979" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32924336" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50526315" side_tool="true" weight="0.28224102" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.49811321" visible="true" weight="0.5369979" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32924336" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2964135" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.35126582" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -745,28 +693,7 @@
     </entry>
     <entry file="file:///usr/local/include/opencv2/core/cvstd.inl.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3293">
-          <folding>
-            <element signature="e#2286#2304#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#96#150#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-3293" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/camera.cpp">
@@ -783,27 +710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gym.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#90#158#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gym.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -828,32 +738,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding>
-            <element signature="e#94#173#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rally.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#41#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/set.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/set.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#90#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file:///usr/local/include/opencv2/core/persistence.hpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -900,13 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/player_spec.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/rally_spec.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -935,16 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/season.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#96#175#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -963,9 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding>
-            <element signature="e#41#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -973,9 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -983,19 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="e#43#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/season.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="79" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,9 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="75" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
-          <folding>
-            <element signature="e#41#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,21 +893,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/utils_spec.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <element signature="e#41#96#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/season_spec.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="55" />
+        <state relative-caret-position="-108">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/season.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="58" column="31" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/season.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gym.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/player_spec.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding>
-            <element signature="e#41#95#0" expanded="true" />
-            <element signature="e#407#454#0" expanded="true" />
+            <element signature="e#41#96#0" expanded="true" />
           </folding>
         </state>
       </provider>
