@@ -8,6 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED On)
 # https://cmake.org/cmake/help/v3.5/variable/CMAKE_CXX_EXTENSIONS.html
 set(CMAKE_CXX_EXTENSIONS Off)
 
+# generate a JSON compile database for include-what-you-use
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Global compiler flags, which are manadatory for all targets
 add_compile_options(
         #$<$<CXX_COMPILER_ID:GNU>:-Werror>
@@ -63,3 +66,4 @@ endfunction()
 variable_watch(CMAKE_CXX_STANDARD toolchain_ad_watch_cxx_standard)
 variable_watch(CMAKE_CXX_STANDARD_REQUIRED toolchain_ad_watch_cxx_standard_required)
 variable_watch(CMAKE_CXX_EXTENSIONS toolchain_ad_watch_cxx_extensions)
+
