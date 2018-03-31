@@ -4,6 +4,8 @@
 
 #include "season.h"
 
+#include <opencv2/core/cvstd.inl.hpp>  // for operator<<, FileNode::operator...
+
 Season::Season() : name_{""}, filename_{""}, games_{} {}
 
 Season::Season(const std::string& name, const std::string& filename) : name_{name}, filename_{filename} {}

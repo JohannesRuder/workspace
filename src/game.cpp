@@ -4,6 +4,8 @@
 
 #include "game.h"
 
+#include <opencv2/core/cvstd.inl.hpp>  // for String::operator basic_string
+
 Game::Game() : number_(0), home_team_(), guest_team_(), sets_(0), videos_(0), video_frames_(0) {}
 
 void Game::SetNumber(const int& number)

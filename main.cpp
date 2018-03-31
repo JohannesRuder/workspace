@@ -2,10 +2,11 @@
 // Created by hannes on 03.02.18.
 //
 
-#include "mainwindow.h"
-#include <QApplication>
+#include <qapplication.h>  // for QApplication
 
-int main(int argc, char *argv[])
+#include "mainwindow.h"  // for MainWindow
+
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;

@@ -2,19 +2,20 @@
 // Created by hannes on 18.02.18.
 //
 
+#include <vector>                        // for vector
 #include <gtest/gtest-message.h>         // for Message
 #include <gtest/gtest-test-part.h>       // for TestPartResult
 #include <opencv2/core/cvstd.hpp>        // for String
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
-#include <vector>                        // for vector
+// IWYU pragma: no_include <opencv2/core/cvstd.inl.hpp>
 
-#include "../src/game.h"                 // for Game
-#include "../src/season.h"               // for Season
-#include "gtest/gtest_pred_impl.h"       // for EXPECT_EQ, AssertionResult
+#include "../src/game.h"            // for Game
+#include "../src/season.h"          // for Season
+#include "gtest/gtest_pred_impl.h"  // for EXPECT_EQ, AssertionResult
 
 class DefaultSeasonFixture : public ::testing::Test
 {
-protected:
+  protected:
     Season unit_{};
 };
 
@@ -41,8 +42,8 @@ TEST_F(DefaultSeasonFixture, SetFilename)
 
 class ExampleSeasonFixture : public ::testing::Test
 {
-protected:
-    Season unit_{"Season 2017/2018","season_-2017-2018.yaml"};
+  protected:
+    Season unit_{"Season 2017/2018", "season_-2017-2018.yaml"};
 };
 
 TEST_F(ExampleSeasonFixture, Constructor)
@@ -68,7 +69,7 @@ TEST_F(ExampleSeasonFixture, WriteSeasonToFile)
     file_storage.release();
 
     Season season_from_file;
-    file_storage.open(unit_.GetFilename(),cv::FileStorage::READ);
+    file_storage.open(unit_.GetFilename(), cv::FileStorage::READ);
     file_storage["season_"] >> season_from_file;
     file_storage.release();
 

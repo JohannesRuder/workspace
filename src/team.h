@@ -5,9 +5,13 @@
 #ifndef WORKSPACE_TEAM_H
 #define WORKSPACE_TEAM_H
 
-#include <opencv2/core/core.hpp>
-#include "player.h"
-#include <QString>
+#include <string>                        // for string
+#include <vector>                        // for vector
+#include <opencv2/core/core.hpp>         // IWYU pragma: keep
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include <qstring.h>                     // for QString
+
+#include "player.h"  // for Player
 
 class Team
 {
