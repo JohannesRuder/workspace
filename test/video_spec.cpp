@@ -16,31 +16,31 @@
 class DefaultVideoFixture : public ::testing::Test
 {
   protected:
-    Video unit{};
+    Video unit_{};
 };
 
 TEST_F(DefaultVideoFixture, DefaultConstructor)
 {
-    EXPECT_EQ("", unit.GetName());
-    EXPECT_EQ("", unit.GetFilename());
-    EXPECT_EQ(Camera{}, unit.GetCamera());
-    EXPECT_TRUE(unit.GetGymFloorMask().empty());
+    EXPECT_EQ("", unit_.GetName());
+    EXPECT_EQ("", unit_.GetFilename());
+    EXPECT_EQ(Camera{}, unit_.GetCamera());
+    EXPECT_TRUE(unit_.GetGymFloorMask().empty());
 }
 
 TEST_F(DefaultVideoFixture, SetName)
 {
     const std::string arbitrary_video_name{"Los Krachos vs. Nix Is Fix"};
-    unit.SetName(arbitrary_video_name);
+    unit_.SetName(arbitrary_video_name);
 
-    EXPECT_EQ(arbitrary_video_name, unit.GetName());
+    EXPECT_EQ(arbitrary_video_name, unit_.GetName());
 }
 
 TEST_F(DefaultVideoFixture, SetFilename)
 {
     const std::string example_video_filename{"/home/hannes/workspace/test/2016-02-15_NixIsFix.mp4"};
-    unit.SetFilename(example_video_filename);
+    unit_.SetFilename(example_video_filename);
 
-    EXPECT_EQ(example_video_filename, unit.GetFilename());
+    EXPECT_EQ(example_video_filename, unit_.GetFilename());
 }
 
 class ExampleVideoFixture : public ::testing::Test
@@ -49,15 +49,15 @@ class ExampleVideoFixture : public ::testing::Test
     const std::string example_video_name{"Los Krachos vs. Nix Is Fix"};
     const std::string example_video_filename{"/home/hannes/workspace/test/2016-02-15_NixIsFix.mp4"};
 
-    Video unit{example_video_name, example_video_filename};
+    Video unit_{example_video_name, example_video_filename};
 };
 
 TEST_F(ExampleVideoFixture, Constructor)
 {
-    EXPECT_EQ(example_video_name, unit.GetName());
-    EXPECT_EQ(example_video_filename, unit.GetFilename());
-    EXPECT_EQ(Camera{}, unit.GetCamera());
-    EXPECT_TRUE(unit.GetGymFloorMask().empty());
+    EXPECT_EQ(example_video_name, unit_.GetName());
+    EXPECT_EQ(example_video_filename, unit_.GetFilename());
+    EXPECT_EQ(Camera{}, unit_.GetCamera());
+    EXPECT_TRUE(unit_.GetGymFloorMask().empty());
 }
 
 TEST_F(ExampleVideoFixture, FileInAndOutput)
@@ -65,7 +65,7 @@ TEST_F(ExampleVideoFixture, FileInAndOutput)
     static const char* const filename = "/home/hannes/workspace/data.yaml";
 
     cv::FileStorage file_storage(filename, cv::FileStorage::WRITE);
-    file_storage << "video" << unit;
+    file_storage << "video" << unit_;
     file_storage.release();
 
     Video video_from_file;
@@ -73,6 +73,6 @@ TEST_F(ExampleVideoFixture, FileInAndOutput)
     file_storage["video"] >> video_from_file;
     file_storage.release();
 
-    EXPECT_EQ(unit.GetName(), video_from_file.GetName());
-    EXPECT_EQ(unit.GetFilename(), video_from_file.GetFilename());
+    EXPECT_EQ(unit_.GetName(), video_from_file.GetName());
+    EXPECT_EQ(unit_.GetFilename(), video_from_file.GetFilename());
 }

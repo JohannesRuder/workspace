@@ -15,52 +15,69 @@
 class DefaultGameFixture : public ::testing::Test
 {
   protected:
-    Game unit{};
+    DefaultGameFixture() {}
+
+    Game unit_{};
 };
 
 TEST_F(DefaultGameFixture, DefaultConstructor)
 {
-    EXPECT_EQ(0, unit.GetNumber());
-    EXPECT_EQ(Team{}, unit.GetHomeTeam());
-    EXPECT_EQ(Team{}, unit.GetGuestTeam());
-    EXPECT_TRUE(unit.GetSets().empty());
-    EXPECT_TRUE(unit.GetVideos().empty());
-    EXPECT_TRUE(unit.GetVideoFrames().empty());
+    EXPECT_EQ(0, unit_.GetNumber());
+    EXPECT_EQ(Team{}, unit_.GetHomeTeam());
+    EXPECT_EQ(Team{}, unit_.GetGuestTeam());
+    EXPECT_TRUE(unit_.GetSets().empty());
+    EXPECT_TRUE(unit_.GetVideos().empty());
+    EXPECT_TRUE(unit_.GetVideoFrames().empty());
 }
 
 TEST_F(DefaultGameFixture, SetNumber)
 {
     int arbitrary_number{5};
-    unit.SetNumber(arbitrary_number);
-    EXPECT_EQ(arbitrary_number, unit.GetNumber());
+    unit_.SetNumber(arbitrary_number);
+    EXPECT_EQ(arbitrary_number, unit_.GetNumber());
 }
 
 TEST_F(DefaultGameFixture, SetHomeTeam)
 {
     Team arbitrary_team{"Los Krachos"};
-    unit.SetHomeTeam(arbitrary_team);
-    EXPECT_EQ(arbitrary_team, unit.GetHomeTeam());
+    unit_.SetHomeTeam(arbitrary_team);
+    EXPECT_EQ(arbitrary_team, unit_.GetHomeTeam());
 }
 
 TEST_F(DefaultGameFixture, SetGuestTeam)
 {
     Team arbitrary_team{"Los Krachos"};
-    unit.SetGuestTeam(arbitrary_team);
-    EXPECT_EQ(arbitrary_team, unit.GetGuestTeam());
+    unit_.SetGuestTeam(arbitrary_team);
+    EXPECT_EQ(arbitrary_team, unit_.GetGuestTeam());
 }
 
-TEST_F(DefaultGameFixture, WritePlayerToFile)
+TEST_F(DefaultGameFixture, AddVideo)
+{
+    EXPECT_EQ(0, unit_.GetVideos().size());
+    unit_.AddVideo(Video{"View 1", "/home/hannes/Videos/2016-02-15_NixIsFix.mp4"});
+    EXPECT_EQ(1, unit_.GetVideos().size());
+}
+
+class ExampleGameFixture : public ::testing::Test
+{
+  protected:
+    Game unit_{1, Team{"Los Krachos"}, Team{"Nix is fix"}};
+
+    virtual void SetUp() { unit_.AddVideo(Video{"View 1", "/home/hannes/Videos/2016-02-15_NixIsFix.mp4"}); }
+};
+
+TEST_F(ExampleGameFixture, WriteGameToFile)
 {
     static const char* const filename = "/home/hannes/workspace/data.yaml";
 
     cv::FileStorage file_storage(filename, cv::FileStorage::WRITE);
-    file_storage << "game_" << unit;
+    file_storage << "game" << unit_;
     file_storage.release();
 
     Game game_from_file;
     file_storage.open(filename, cv::FileStorage::READ);
-    file_storage["game_"] >> game_from_file;
+    file_storage["game"] >> game_from_file;
     file_storage.release();
 
-    EXPECT_EQ(unit, game_from_file);
+    EXPECT_EQ(unit_, game_from_file);
 }

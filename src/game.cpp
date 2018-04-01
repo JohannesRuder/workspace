@@ -6,8 +6,6 @@
 
 #include <opencv2/core/cvstd.inl.hpp>  // for String::operator basic_string
 
-Game::Game() : number_(0), home_team_(), guest_team_(), sets_(0), videos_(0), video_frames_(0) {}
-
 void Game::SetNumber(const int& number)
 {
     number_ = number;
@@ -65,12 +63,8 @@ void Game::Read(const cv::FileNode& node)
     file_node >> video_frames_;
 }
 
-Game::Game(int number,
-           const Team& home_team,
-           const Team& guest_team,
-           const std::vector<Video>& videos,
-           const std::vector<int>& video_frames)
-    : number_(number), home_team_(home_team), guest_team_(guest_team), videos_(videos), video_frames_(video_frames)
+Game::Game(int number, const Team& home_team, const Team& guest_team)
+    : number_(number), home_team_(home_team), guest_team_(guest_team)
 {
 }
 

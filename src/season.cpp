@@ -6,8 +6,6 @@
 
 #include <opencv2/core/cvstd.inl.hpp>  // for operator<<, FileNode::operator...
 
-Season::Season() : name_{""}, filename_{""}, games_{} {}
-
 Season::Season(const std::string& name, const std::string& filename) : name_{name}, filename_{filename} {}
 
 void Season::SetName(const std::string& name)
@@ -30,7 +28,7 @@ const std::string& Season::GetFilename()
     return filename_;
 }
 
-const Game& Season::GetGame(int number)
+Game& Season::GetGame(int number)
 {
     return games_[number];
 }

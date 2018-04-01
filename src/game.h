@@ -24,12 +24,8 @@ class Game
     std::vector<int> video_frames_;
 
   public:
-    Game();
-    Game(int number,
-         const Team& home_team,
-         const Team& guest_team,
-         const std::vector<Video>& videos,
-         const std::vector<int>& video_frames);
+    Game() = default;
+    Game(int number, const Team& home_team, const Team& guest_team);
 
     void SetNumber(const int& number);
     const int& GetNumber() const;
@@ -57,9 +53,13 @@ inline void write(cv::FileStorage& file_storage, const std::string&, const Game&
 inline void read(const cv::FileNode& node, Game& x, const Game& default_value = Game())
 {
     if (node.empty())
+    {
         x = default_value;
+    }
     else
+    {
         x.Read(node);
+    }
 }
 
 #endif  // WORKSPACE_GAME_H

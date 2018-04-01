@@ -56,21 +56,31 @@ TEST_F(ExampleSeasonFixture, Constructor)
 TEST_F(ExampleSeasonFixture, AddGame)
 {
     EXPECT_EQ(0, unit_.GetGames().size());
-    unit_.AddGame(Game{});
+    unit_.AddGame(Game{1, Team{"Los Krachos"}, Team{"Gänsejäger"}});
     EXPECT_EQ(1, unit_.GetGames().size());
 }
 
-TEST_F(ExampleSeasonFixture, WriteSeasonToFile)
+class FullSeasonFixture : public ::testing::Test
 {
-    unit_.AddGame(Game{});
+  protected:
+    Season unit_{"Season 2017/2018", "season-2017-2018.yaml"};
 
+    virtual void SetUp()
+    {
+        unit_.AddGame(Game{1, Team{"Los Krachos"}, Team{"Gänsejäger"}});
+//        unit_.GetGame(1).AddVideo(Video{"View 1", "/home/hannes/Videos/2016-02-15_NixIsFix.mp4"});
+    }
+};
+
+TEST_F(FullSeasonFixture, WriteSeasonToFile)
+{
     cv::FileStorage file_storage(unit_.GetFilename(), cv::FileStorage::WRITE);
-    file_storage << "season_" << unit_;
+    file_storage << "season" << unit_;
     file_storage.release();
 
     Season season_from_file;
     file_storage.open(unit_.GetFilename(), cv::FileStorage::READ);
-    file_storage["season_"] >> season_from_file;
+    file_storage["season"] >> season_from_file;
     file_storage.release();
 
     EXPECT_EQ(unit_.GetName(), season_from_file.GetName());

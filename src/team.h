@@ -44,9 +44,13 @@ inline void write(cv::FileStorage& file_storage, const std::string&, const Team&
 inline void read(const cv::FileNode& node, Team& x, const Team& default_value = Team())
 {
     if (node.empty())
+    {
         x = default_value;
+    }
     else
+    {
         x.Read(node);
+    }
 }
 
 #endif  // WORKSPACE_TEAM_H
