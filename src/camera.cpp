@@ -3,10 +3,9 @@
 //
 
 #include "camera.h"
-
-#include <opencv2/core/cvstd.hpp>      // for String
-
 #include "utils.h"  // for IsMatEqual
+
+#include <opencv2/core/cvstd.hpp>  // for String
 
 Camera::Camera() : name_(""), camera_calibration_filename_(""), intrinsics_(), distortion_() {}
 

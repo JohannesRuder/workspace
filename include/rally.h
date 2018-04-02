@@ -5,10 +5,10 @@
 #ifndef RALLY_H_
 #define RALLY_H_
 
-#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
-#include "../../../../usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h"                   // for QTime
-#include "../../../../usr/include/c++/5/string"                        // for string
-#include "../../../../usr/include/c++/5/vector"                        // for vector
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include <qdatetime.h>                   // for QTime
+#include <string>                        // for string
+#include <vector>                        // for vector
 
 #include "action.h"                      // for Action
 

@@ -5,9 +5,9 @@
 #ifndef GAME_H_
 #define GAME_H_
 
-#include "../../../../usr/include/c++/5/string"                        // for string
-#include "../../../../usr/include/c++/5/vector"                        // for vector
-#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
+#include <string>                        // for string
+#include <vector>                        // for vector
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
 
 #include "set.h"    // for Set
 #include "team.h"   // for Team

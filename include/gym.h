@@ -5,9 +5,9 @@
 #ifndef GYM_H_
 #define GYM_H_
 
-#include "../../../../usr/include/c++/5/string"                        // for string, basic_string
-#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
-#include "../../../../usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h"                      // for QColor
+#include <string>                        // for string, basic_string
+#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include <qcolor.h>                      // for QColor
 
 class Gym
 {

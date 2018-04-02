@@ -41,4 +41,4 @@ inline void read(const cv::FileNode& node, Action& x, const Action& default_valu
         x.Read(node);
 }
 
-#endif // ACTION_H_
+#endif  // ACTION_H_
