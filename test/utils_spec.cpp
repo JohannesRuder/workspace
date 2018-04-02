@@ -11,7 +11,7 @@
 // IWYU pragma: no_include <gtest/gtest.h>
 
 
-#include "../src/utils.h"  // for IsMatEqual
+#include "utils.h"  // for IsMatEqual
 
 TEST(Utils, IsMatrixEqual_BothMatricesEmpty)
 {

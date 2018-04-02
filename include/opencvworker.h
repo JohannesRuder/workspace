@@ -2,8 +2,8 @@
 // Created by hannes on 18.02.18.
 //
 
-#ifndef WORKSPACE_OPENCVWORKER_H
-#define WORKSPACE_OPENCVWORKER_H
+#ifndef OPENCVWORKER_H_
+#define OPENCVWORKER_H_
 
 #include <QImage>
 #include <QObject>
@@ -13,7 +13,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
-#include "convopencv2qt.h"
+#include "../src/convopencv2qt.h"
 
 class OpenCvWorker : public QObject
 {
@@ -52,4 +52,4 @@ class OpenCvWorker : public QObject
     void ReceivePrevious();
 };
 
-#endif  // WORKSPACE_OPENCVWORKER_H
+#endif  // OPENCVWORKER_H_

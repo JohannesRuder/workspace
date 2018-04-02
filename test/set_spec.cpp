@@ -7,7 +7,7 @@
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
 #include <vector>                        // for vector
 
-#include "../src/set.h"                  // for Set
+#include "set.h"                  // for Set
 #include "gtest/gtest_pred_impl.h"       // for EXPECT_EQ, AssertionResult
 
 class DefaultSetFixture : public ::testing::Test

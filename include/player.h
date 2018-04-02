@@ -2,11 +2,11 @@
 // Created by hannes on 11.02.18.
 //
 
-#ifndef WORKSPACE_PLAYER_H
-#define WORKSPACE_PLAYER_H
+#ifndef PLAYER_H_
+#define PLAYER_H_
 
-#include <string>                        // for string, basic_string
-#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include "../../../../usr/include/c++/5/string"                        // for string, basic_string
+#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
 
 enum class Position
 {
@@ -52,4 +52,4 @@ inline void read(const cv::FileNode& node, Player& x, const Player& default_valu
         x.Read(node);
 }
 
-#endif  // WORKSPACE_PLAYER_H
+#endif  // PLAYER_H_

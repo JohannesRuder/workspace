@@ -6,11 +6,11 @@
 #include <gtest/gtest-message.h>         // for Message
 #include <gtest/gtest-test-part.h>       // for TestPartResult
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
-// IWYU pragma: no_include <opencv2/core/cvstd.inl.hpp>
 
-#include "../src/game.h"            // for Game
-#include "../src/team.h"            // for Team
+#include "game.h"            // for Game
+#include "team.h"            // for Team
 #include "gtest/gtest_pred_impl.h"  // for AssertionResult, EXPECT_EQ
+// IWYU pragma: no_include <opencv2/core/cvstd.inl.hpp>
 
 class DefaultGameFixture : public ::testing::Test
 {

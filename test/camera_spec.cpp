@@ -9,8 +9,8 @@
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
 #include <string>                        // for string
 
-#include "../src/camera.h"               // for Camera
-#include "../src/utils.h"                // for IsMatEqual
+#include "camera.h"               // for Camera
+#include "utils.h"                // for IsMatEqual
 #include "gtest/gtest_pred_impl.h"       // for AssertionResult, EXPECT_TRUE
 
 class DefaultCameraFixture : public ::testing::Test

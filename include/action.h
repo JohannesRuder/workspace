@@ -2,8 +2,8 @@
 // Created by hannes on 15.02.18.
 //
 
-#ifndef WORKSPACE_ACTION_H
-#define WORKSPACE_ACTION_H
+#ifndef ACTION_H_
+#define ACTION_H_
 
 #include <string>                        // for string
 #include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
@@ -41,4 +41,4 @@ inline void read(const cv::FileNode& node, Action& x, const Action& default_valu
         x.Read(node);
 }
 
-#endif  // WORKSPACE_ACTION_H
+#endif // ACTION_H_

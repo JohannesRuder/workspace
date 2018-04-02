@@ -2,8 +2,8 @@
 // Created by hannes on 07.03.18.
 //
 
-#ifndef WORKSPACE_UTILS_H
-#define WORKSPACE_UTILS_H
+#ifndef UTILS_H_
+#define UTILS_H_
 
 namespace cv {
 class Mat;
@@ -11,4 +11,4 @@ class Mat;
 
 bool IsMatEqual(const cv::Mat& mat_1, const cv::Mat& mat_2);
 
-#endif // WORKSPACE_UTILS_H
+#endif // UTILS_H_

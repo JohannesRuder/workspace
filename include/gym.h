@@ -2,12 +2,12 @@
 // Created by hannes on 18.02.18.
 //
 
-#ifndef WORKSPACE_GYM_H
-#define WORKSPACE_GYM_H
+#ifndef GYM_H_
+#define GYM_H_
 
-#include <string>                        // for string, basic_string
-#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
-#include <qcolor.h>                      // for QColor
+#include "../../../../usr/include/c++/5/string"                        // for string, basic_string
+#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
+#include "../../../../usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h"                      // for QColor
 
 class Gym
 {
@@ -37,4 +37,4 @@ inline void read(const cv::FileNode& node, Gym& x, const Gym& default_value = Gy
         x.Read(node);
 }
 
-#endif  // WORKSPACE_GYM_H
+#endif  // GYM_H_

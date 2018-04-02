@@ -2,12 +2,12 @@
 // Created by hannes on 15.02.18.
 //
 
-#ifndef WORKSPACE_GAME_H
-#define WORKSPACE_GAME_H
+#ifndef GAME_H_
+#define GAME_H_
 
-#include <string>                        // for string
-#include <vector>                        // for vector
-#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include "../../../../usr/include/c++/5/string"                        // for string
+#include "../../../../usr/include/c++/5/vector"                        // for vector
+#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
 
 #include "set.h"    // for Set
 #include "team.h"   // for Team
@@ -62,4 +62,4 @@ inline void read(const cv::FileNode& node, Game& x, const Game& default_value = 
     }
 }
 
-#endif  // WORKSPACE_GAME_H
+#endif  // GAME_H_

@@ -2,8 +2,8 @@
 // Created by hannes on 18.02.18.
 //
 
-#ifndef WORKSPACE_SEASON_H_
-#define WORKSPACE_SEASON_H_
+#ifndef SEASON_H_
+#define SEASON_H_
 
 #include <string>                        // for string, basic_string
 #include <vector>                        // for vector
@@ -52,4 +52,4 @@ inline void read(const cv::FileNode& node, Season& season, const Season& default
     }
 }
 
-#endif  // WORKSPACE_SEASON_H_
+#endif  // SEASON_H_

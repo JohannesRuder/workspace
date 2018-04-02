@@ -2,13 +2,13 @@
 // Created by hannes on 13.02.18.
 //
 
-#ifndef WORKSPACE_CAMERA_H
-#define WORKSPACE_CAMERA_H
+#ifndef CAMERA_H_
+#define CAMERA_H_
 
-#include <string>                        // for string, basic_string
-#include <opencv2/core/mat.hpp>          // for Mat
-#include <opencv2/core/mat.inl.hpp>      // for Mat::operator=, Mat::~Mat
-#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include "../../../../usr/include/c++/5/string"                        // for string, basic_string
+#include "../../../../usr/local/include/opencv2/core/mat.hpp"          // for Mat
+#include "../../../../usr/local/include/opencv2/core/mat.inl.hpp"      // for Mat::operator=, Mat::~Mat
+#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
 
 class Camera
 {
@@ -49,4 +49,4 @@ inline void read(const cv::FileNode& node, Camera& x, const Camera& default_valu
         x.Read(node);
 }
 
-#endif  // WORKSPACE_CAMERA_H
+#endif  // CAMERA_H_

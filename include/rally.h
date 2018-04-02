@@ -2,13 +2,13 @@
 // Created by hannes on 15.02.18.
 //
 
-#ifndef WORKSPACE_RALLY_H
-#define WORKSPACE_RALLY_H
+#ifndef RALLY_H_
+#define RALLY_H_
 
-#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
-#include <qdatetime.h>                   // for QTime
-#include <string>                        // for string
-#include <vector>                        // for vector
+#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
+#include "../../../../usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h"                   // for QTime
+#include "../../../../usr/include/c++/5/string"                        // for string
+#include "../../../../usr/include/c++/5/vector"                        // for vector
 
 #include "action.h"                      // for Action
 
@@ -48,4 +48,4 @@ inline void read(const cv::FileNode& node, Rally& x, const Rally& default_value 
         x.Read(node);
 }
 
-#endif  // WORKSPACE_RALLY_H
+#endif  // RALLY_H_

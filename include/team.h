@@ -2,14 +2,14 @@
 // Created by hannes on 11.02.18.
 //
 
-#ifndef WORKSPACE_TEAM_H
-#define WORKSPACE_TEAM_H
+#ifndef TEAM_H_
+#define TEAM_H_
 
-#include <string>                        // for string
-#include <vector>                        // for vector
-#include <opencv2/core/core.hpp>         // IWYU pragma: keep
-#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
-#include <qstring.h>                     // for QString
+#include "../../../../usr/include/c++/5/string"                        // for string
+#include "../../../../usr/include/c++/5/vector"                        // for vector
+#include "../../../../usr/local/include/opencv2/core/core.hpp"         // IWYU pragma: keep
+#include "../../../../usr/local/include/opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
+#include "../../../../usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h"                     // for QString
 
 #include "player.h"  // for Player
 
@@ -53,4 +53,4 @@ inline void read(const cv::FileNode& node, Team& x, const Team& default_value = 
     }
 }
 
-#endif  // WORKSPACE_TEAM_H
+#endif  // TEAM_H_

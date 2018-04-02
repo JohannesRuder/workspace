@@ -33,22 +33,23 @@ file(GLOB QT_GEN_HEADERS ./bin_debug/*.h)
 file(GLOB QT_CPP_GENERATED ./bin_debug/*.cpp)
 
 add_executable(workspace main.cpp
-        src/team.cpp
-        src/player.cpp
-        src/video.cpp
-        src/camera.cpp
-        src/action.cpp
-        src/game.cpp
-        src/gym.cpp
+        src/team.cpp include/team.h
+        src/player.cpp include/player.h
+        src/video.cpp include/video.h
+        src/camera.cpp include/camera.h
+        src/action.cpp include/action.h
+        src/game.cpp include/game.h
+        src/gym.cpp include/gym.h
         mainwindow.cpp
 #        src/opencvworker.cpp
-        src/rally.cpp
-        src/season.cpp
-        src/set.cpp
-        src/utils.cpp
+        src/rally.cpp include/rally.h
+        src/season.cpp include/season.h
+        src/set.cpp include/set.h
+        src/utils.cpp include/utils.h
         ui_mainwindow.h
         ${QT_GEN_HEADERS}
         ${QT_CPP_GENERATED})
+target_include_directories(workspace PRIVATE ${workspace_SOURCE_DIR}/include)
 
 qt5_use_modules(workspace Core Widgets Gui)
 
@@ -88,6 +89,7 @@ add_executable(runUnitTests
         test/set_spec.cpp src/set.cpp
         test/video_spec.cpp src/video.cpp
         test/utils_spec.cpp src/utils.cpp)
+target_include_directories(runUnitTests PRIVATE ${workspace_SOURCE_DIR}/include)
 
 # Link test executable against gtest & gtest_main
 target_link_libraries(runUnitTests
@@ -108,17 +110,3 @@ endforeach()
 
 target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Widgets Qt5::Gui)
 
-## Include what you use
-#find_program(iwyu_path NAMES include-what-you-use iwyu)
-#if(NOT iwyu_path)
-#    message(FATAL_ERROR "Could not find the program include-what-you-use")
-#endif()
-#
-#set(iwyu_path_and_options
-#        ${iwyu_path}
-#        -Xiwyu
-#        --verbose=1)
-##        --mapping_file=${my_mapping})
-#
-#set_property(TARGET ${PROJECT_NAME}
-#        PROPERTY CXX_INCLUDE_WHAT_YOU_USE ${iwyu_path_and_options})

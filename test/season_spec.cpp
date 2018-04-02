@@ -9,8 +9,8 @@
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
 // IWYU pragma: no_include <opencv2/core/cvstd.inl.hpp>
 
-#include "../src/game.h"            // for Game
-#include "../src/season.h"          // for Season
+#include "game.h"            // for Game
+#include "season.h"          // for Season
 #include "gtest/gtest_pred_impl.h"  // for EXPECT_EQ, AssertionResult
 
 class DefaultSeasonFixture : public ::testing::Test

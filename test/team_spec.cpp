@@ -7,8 +7,8 @@
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
 // IWYU pragma: no_include <opencv2/core/cvstd.inl.hpp>
 
-#include "../src/player.h"          // for Player, Position, Position::...
-#include "../src/team.h"            // for Team
+#include "player.h"          // for Player, Position, Position::...
+#include "team.h"            // for Team
 #include "gtest/gtest_pred_impl.h"  // for Test, EXPECT_EQ, EqHelper, TEST
 
 class DefaultTeamFixture : public ::testing::Test

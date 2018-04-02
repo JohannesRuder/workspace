@@ -9,8 +9,8 @@
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
 #include <string>                        // for string
 
-#include "../src/camera.h"               // for Camera
-#include "../src/video.h"                // for Video
+#include "camera.h"               // for Camera
+#include "video.h"                // for Video
 #include "gtest/gtest_pred_impl.h"       // for AssertionResult, EXPECT_EQ
 
 class DefaultVideoFixture : public ::testing::Test

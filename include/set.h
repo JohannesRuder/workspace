@@ -2,8 +2,8 @@
 // Created by hannes on 15.02.18.
 //
 
-#ifndef WORKSPACE_SET_H
-#define WORKSPACE_SET_H
+#ifndef SET_H_
+#define SET_H_
 
 #include <string>                        // for string
 #include <vector>                        // for vector
@@ -47,4 +47,4 @@ inline void read(const cv::FileNode& node, Set& x, const Set& default_value = Se
         x.Read(node);
 }
 
-#endif  // WORKSPACE_SET_H
+#endif  // SET_H_

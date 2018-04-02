@@ -8,7 +8,7 @@
 #include <qdatetime.h>                   // for QTime
 #include <vector>                        // for vector
 
-#include "../src/rally.h"                // for Rally
+#include "rally.h"                // for Rally
 #include "gtest/gtest_pred_impl.h"       // for AssertionResult, TEST_F, Tes...
 
 class DefaultRallyFixture : public ::testing::Test
