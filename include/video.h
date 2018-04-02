@@ -21,7 +21,7 @@ class Video
     cv::Mat gym_floor_mask_;
 
   public:
-    Video();
+    Video() = default;
     Video(const std::string& name, const std::string& filename);
 
     void SetName(const std::string& name);
@@ -49,9 +49,13 @@ inline void write(cv::FileStorage& file_storage, const std::string&, const Video
 inline void read(const cv::FileNode& node, Video& x, const Video& default_value = Video())
 {
     if (node.empty())
+    {
         x = default_value;
+    }
     else
+    {
         x.Read(node);
+    }
 }
 
 #endif  // VIDEO_H_

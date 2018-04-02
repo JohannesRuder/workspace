@@ -20,7 +20,7 @@ class Team
     std::vector<Player> players_;
 
   public:
-    explicit Team();
+    explicit Team() = default;
     explicit Team(const QString& name);
 
     void SetName(const QString& name);

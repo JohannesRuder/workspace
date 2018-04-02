@@ -10,10 +10,10 @@
 
 enum class Position
 {
-    STELLER,
-    MITTELBLOCKER,
-    AUSSENANGREIFER,
-    UNDEFINED
+    kSTELLER,
+    kMITTELBLOCKER,
+    kAUSSENANGREIFER,
+    kUNDEFINED
 };
 
 class Player
@@ -21,11 +21,11 @@ class Player
   private:
     std::string name_;
     int number_;
-    Position position_;
+    Position position_{Position::kUNDEFINED};
     int number_of_actions_;
 
   public:
-    Player();
+    Player() = default;
     Player(const std::string& name, int number, Position position);
     const std::string& GetName() const;
     const int& GetNumber() const;
@@ -47,9 +47,13 @@ inline void write(cv::FileStorage& file_storage, const std::string&, const Playe
 inline void read(const cv::FileNode& node, Player& x, const Player& default_value = Player())
 {
     if (node.empty())
+    {
         x = default_value;
+    }
     else
+    {
         x.Read(node);
+    }
 }
 
 #endif  // PLAYER_H_

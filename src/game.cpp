@@ -64,7 +64,7 @@ void Game::Read(const cv::FileNode& node)
 }
 
 Game::Game(int number, const Team& home_team, const Team& guest_team)
-    : number_(number), home_team_(home_team), guest_team_(guest_team)
+    : number_{number}, home_team_{home_team}, guest_team_{guest_team}
 {
 }
 

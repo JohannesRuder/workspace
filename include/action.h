@@ -15,7 +15,7 @@ class Action
     QTime time_;
 
   public:
-    Action();
+    Action() = default;
 
     explicit Action(const QTime& time);
 
@@ -36,9 +36,13 @@ inline void write(cv::FileStorage& file_storage, const std::string&, const Actio
 inline void read(const cv::FileNode& node, Action& x, const Action& default_value = Action())
 {
     if (node.empty())
+    {
         x = default_value;
+    }
     else
+    {
         x.Read(node);
+    }
 }
 
 #endif  // ACTION_H_

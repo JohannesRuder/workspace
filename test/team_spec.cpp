@@ -40,8 +40,8 @@ TEST(Team, Constructor)
 TEST(Team, FileInAndOutput)
 {
     Team unit{"Los Krachos"};
-    unit.AddPlayer(Player{"Hannes", 9, Position::MITTELBLOCKER});
-    unit.AddPlayer(Player{"Michi", 6, Position::AUSSENANGREIFER});
+    unit.AddPlayer(Player{"Hannes", 9, Position::kMITTELBLOCKER});
+    unit.AddPlayer(Player{"Michi", 6, Position::kAUSSENANGREIFER});
 
     static const char* const filename = "/home/hannes/workspace/data.yaml";
 

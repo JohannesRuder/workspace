@@ -18,7 +18,6 @@ class Gym
     QColor floor_color_;
 
   public:
-    Gym();
 
     void Write(cv::FileStorage& file_storage) const;
     void Read(const cv::FileNode& node);
@@ -31,10 +30,11 @@ inline void write(cv::FileStorage& file_storage, const std::string&, const Gym& 
 
 inline void read(const cv::FileNode& node, Gym& x, const Gym& default_value = Gym())
 {
-    if (node.empty())
+    if (node.empty()) {
         x = default_value;
-    else
+    } else {
         x.Read(node);
+    }
 }
 
 #endif  // GYM_H_

@@ -4,8 +4,6 @@
 
 #include "player.h"
 
-Player::Player() : name_(""), number_(0), position_(Position::UNDEFINED), number_of_actions_(0) {}
-
 Player::Player(const std::string& name, int number, Position position)
     : name_{name}, number_{number}, position_{position}, number_of_actions_{0}
 {
@@ -42,17 +40,17 @@ void Player::Write(cv::FileStorage& file_storage) const
                  << "name" << name_ << "number" << number_;
     switch (position_)
     {
-        case Position::STELLER:
+        case Position::kSTELLER:
             file_storage << "position"
-                         << "STELLER";
+                         << "kSTELLER";
             break;
-        case Position::MITTELBLOCKER:
+        case Position::kMITTELBLOCKER:
             file_storage << "position"
-                         << "MITTELBLOCKER";
+                         << "kMITTELBLOCKER";
             break;
-        case Position::AUSSENANGREIFER:
+        case Position::kAUSSENANGREIFER:
             file_storage << "position"
-                         << "AUSSENANGREIFER";
+                         << "kAUSSENANGREIFER";
             break;
         default:
             file_storage << "position"
@@ -65,21 +63,21 @@ void Player::Read(const cv::FileNode& node)
 {
     name_ = static_cast<std::string>(node["name"]);
     number_ = static_cast<int>(node["number"]);
-    if (static_cast<std::string>(node["position"]) == "STELLER")
+    if (static_cast<std::string>(node["position"]) == "kSTELLER")
     {
-        position_ = Position::STELLER;
+        position_ = Position::kSTELLER;
     }
-    else if (static_cast<std::string>(node["position"]) == "MITTELBLOCKER")
+    else if (static_cast<std::string>(node["position"]) == "kMITTELBLOCKER")
     {
-        position_ = Position::MITTELBLOCKER;
+        position_ = Position::kMITTELBLOCKER;
     }
-    else if (static_cast<std::string>(node["position"]) == "AUSSENANGREIFER")
+    else if (static_cast<std::string>(node["position"]) == "kAUSSENANGREIFER")
     {
-        position_ = Position::AUSSENANGREIFER;
+        position_ = Position::kAUSSENANGREIFER;
     }
     else
     {
-        position_ = Position::UNDEFINED;
+        position_ = Position::kUNDEFINED;
     }
     number_of_actions_ = static_cast<int>(node["numberOfActions"]);
 }

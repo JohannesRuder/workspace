@@ -19,7 +19,7 @@ TEST_F(DefaultPlayerFixture, DefaultConstructor)
 {
     EXPECT_EQ("", unit_.GetName());
     EXPECT_EQ(0, unit_.GetNumber());
-    EXPECT_EQ(Position::UNDEFINED, unit_.GetPosition());
+    EXPECT_EQ(Position::kUNDEFINED, unit_.GetPosition());
     EXPECT_EQ(0, unit_.GetNumberOfActions());
 }
 
@@ -35,14 +35,14 @@ TEST_F(DefaultPlayerFixture, IncrementNumberOfActions)
 class ExamplePlayerFixture : public ::testing::Test
 {
 protected:
-    Player unit_{"Hannes", 9, Position::MITTELBLOCKER};
+    Player unit_{"Hannes", 9, Position::kMITTELBLOCKER};
 };
 
 TEST_F(ExamplePlayerFixture, Constructor)
 {
     EXPECT_EQ("Hannes", unit_.GetName());
     EXPECT_EQ(9, unit_.GetNumber());
-    EXPECT_EQ(Position::MITTELBLOCKER, unit_.GetPosition());
+    EXPECT_EQ(Position::kMITTELBLOCKER, unit_.GetPosition());
     EXPECT_EQ(0, unit_.GetNumberOfActions());
 }
 
@@ -67,24 +67,24 @@ TEST_F(ExamplePlayerFixture, WritePlayerToFile)
 
 TEST_F(ExamplePlayerFixture, ComparePlayers_AllEqual)
 {
-    Player player{"Hannes",9,Position::MITTELBLOCKER};
+    Player player{"Hannes",9,Position::kMITTELBLOCKER};
     EXPECT_TRUE(unit_ == player);
 }
 
 TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentName)
 {
-    Player player{"Michi",9,Position::MITTELBLOCKER};
+    Player player{"Michi",9,Position::kMITTELBLOCKER};
     EXPECT_FALSE(unit_ == player);
 }
 
 TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentNumber)
 {
-    Player player{"Hannes",6,Position::MITTELBLOCKER};
+    Player player{"Hannes",6,Position::kMITTELBLOCKER};
     EXPECT_FALSE(unit_ == player);
 }
 
 TEST_F(ExamplePlayerFixture, ComparePlayers_DifferentPosition1)
 {
-    Player player{"Hannes",9,Position::AUSSENANGREIFER};
+    Player player{"Hannes",9,Position::kAUSSENANGREIFER};
     EXPECT_TRUE(unit_ == player);
 }

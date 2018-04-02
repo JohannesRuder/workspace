@@ -14,13 +14,11 @@
 class Set
 {
   private:
-    int homeScore_;
-    int guestScore_;
+    int home_score_;
+    int guest_score_;
     std::vector<Rally> rallies_;
 
   public:
-    Set();
-
     int GetHomeScore() const;
     int GetGuestScore() const;
     const std::vector<Rally>& GetRallies() const;
@@ -42,9 +40,13 @@ inline void write(cv::FileStorage& file_storage, const std::string&, const Set& 
 inline void read(const cv::FileNode& node, Set& x, const Set& default_value = Set())
 {
     if (node.empty())
+    {
         x = default_value;
+    }
     else
+    {
         x.Read(node);
+    }
 }
 
 #endif  // SET_H_

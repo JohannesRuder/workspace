@@ -4,8 +4,6 @@
 
 #include "video.h"
 
-Video::Video() : name_(""), filename_(""), camera_(), gym_floor_mask_() {}
-
 void Video::SetName(const std::string& name)
 {
     name_ = name;
@@ -56,7 +54,7 @@ const Camera& Video::GetCamera() const
     return camera_;
 }
 
-Video::Video(const std::string& name, const std::string& filename) : name_(name), filename_(filename) {}
+Video::Video(const std::string& name, const std::string& filename) : name_{name}, filename_{filename} {}
 
 bool Video::operator==(const Video& rhs) const
 {

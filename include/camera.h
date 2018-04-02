@@ -20,7 +20,7 @@ class Camera
     cv::Mat distortion_;
 
   public:
-    Camera();
+    Camera() = default;
     Camera(const std::string& name, const std::string& camera_calibration_filename);
 
     void SetName(const std::string& name);
@@ -45,9 +45,13 @@ inline void write(cv::FileStorage& file_storage, const std::string&, const Camer
 inline void read(const cv::FileNode& node, Camera& x, const Camera& default_value = Camera())
 {
     if (node.empty())
+    {
         x = default_value;
+    }
     else
+    {
         x.Read(node);
+    }
 }
 
 #endif  // CAMERA_H_

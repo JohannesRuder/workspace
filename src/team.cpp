@@ -6,9 +6,7 @@
 
 #include <opencv2/core/cvstd.inl.hpp>  // for operator<<, String::operator b...
 
-Team::Team() : name_(""), players_(0) {}
-
-Team::Team(const QString& name) : name_(name) {}
+Team::Team(const QString& name) : name_{name} {}
 
 const QString& Team::GetName() const
 {

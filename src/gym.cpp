@@ -4,8 +4,6 @@
 
 #include "gym.h"
 
-Gym::Gym() : name_(""), address_(""), line_color_(), floor_color_() {}
-
 void Gym::Write(cv::FileStorage& file_storage) const
 {
     file_storage << "{"

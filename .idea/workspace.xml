@@ -23,17 +23,29 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2340ac1-1f3f-4e35-9b37-59d411bad2d1" name="Default" comment="1) Clang-tidy on game, season and team&#10;2) Added AddVideo tests">
+    <list default="true" id="d2340ac1-1f3f-4e35-9b37-59d411bad2d1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.clang-tidy" beforeDir="false" afterPath="$PROJECT_DIR$/.clang-tidy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/action.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/action.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/camera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/game.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/gym.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/gym.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/rally.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/rally.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/set.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/set.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/team.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/team.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/video.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/video.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/action.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/camera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gym.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/gym.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rally.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rally.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/set.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/set.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/team.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/video.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/video.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/player_spec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/player_spec.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/team_spec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/team_spec.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
     <ignored path="$USER_HOME$/cmake-build-debug/CMakeFiles/" />
@@ -54,7 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CMAKE_PREFIX_PATH</find>
       <find>find_package</find>
       <find>QTTestProject</find>
       <find>target_link_libraries</find>
@@ -84,6 +95,7 @@
       <find>WORKSPACE_UTILS_H</find>
       <find>WORKSPACE_TEAM_H</find>
       <find>WORKSPACE_SET_H</find>
+      <find>Position::UNDEFINED</find>
     </findStrings>
     <replaceStrings>
       <replace>std::string</replace>
@@ -113,6 +125,7 @@
       <replace>UTILS_H_</replace>
       <replace>TEAM_H_</replace>
       <replace>SET_H_</replace>
+      <replace>Position::kUNDEFINED</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -125,8 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/rally.cpp" />
-        <option value="$PROJECT_DIR$/src/opencvworker.h" />
         <option value="$PROJECT_DIR$/src/action.h" />
         <option value="$PROJECT_DIR$/src/rally.h" />
         <option value="$PROJECT_DIR$/src/player.h" />
@@ -138,15 +149,10 @@
         <option value="$PROJECT_DIR$/ui_mainwindow.h" />
         <option value="$USER_HOME$/cmake-build-debug/googletest-build/googlemock/gtest/gtest_main_autogen/mocs_compilation.cpp" />
         <option value="$PROJECT_DIR$/test/mainwindow_spec.cpp" />
-        <option value="$PROJECT_DIR$/.clang-tidy" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CMakeConfiguration.cmake" />
         <option value="$PROJECT_DIR$/test/camera_spec.cpp" />
-        <option value="$PROJECT_DIR$/src/gym.cpp" />
-        <option value="$PROJECT_DIR$/src/player.cpp" />
         <option value="$PROJECT_DIR$/src/utils.cpp" />
-        <option value="$PROJECT_DIR$/src/video.cpp" />
-        <option value="$PROJECT_DIR$/src/team.cpp" />
         <option value="$PROJECT_DIR$/src/video.h" />
         <option value="$PROJECT_DIR$/test/team_spec.cpp" />
         <option value="$PROJECT_DIR$/test/utils_spec.cpp" />
@@ -154,28 +160,35 @@
         <option value="$PROJECT_DIR$/src/season.h" />
         <option value="$PROJECT_DIR$/src/team.h" />
         <option value="$PROJECT_DIR$/src/game.h" />
-        <option value="$PROJECT_DIR$/src/game.cpp" />
         <option value="$PROJECT_DIR$/src/season.cpp" />
         <option value="$PROJECT_DIR$/test/video_spec.cpp" />
         <option value="$PROJECT_DIR$/test/season_spec.cpp" />
-        <option value="$PROJECT_DIR$/src/action.cpp" />
         <option value="$PROJECT_DIR$/src/opencvworker.cpp" />
         <option value="$PROJECT_DIR$/test/action_spec.cpp" />
         <option value="$PROJECT_DIR$/test/game_spec.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/season.h" />
-        <option value="$PROJECT_DIR$/include/action.h" />
         <option value="$PROJECT_DIR$/include/opencvworker.h" />
-        <option value="$PROJECT_DIR$/include/set.h" />
         <option value="$PROJECT_DIR$/include/utils.h" />
-        <option value="$PROJECT_DIR$/src/camera.cpp" />
         <option value="$PROJECT_DIR$/include/game.h" />
+        <option value="$PROJECT_DIR$/.clang-tidy" />
+        <option value="$PROJECT_DIR$/include/action.h" />
+        <option value="$PROJECT_DIR$/src/game.cpp" />
+        <option value="$PROJECT_DIR$/src/action.cpp" />
         <option value="$PROJECT_DIR$/include/camera.h" />
-        <option value="$PROJECT_DIR$/include/gym.h" />
-        <option value="$PROJECT_DIR$/include/player.h" />
-        <option value="$PROJECT_DIR$/include/video.h" />
+        <option value="$PROJECT_DIR$/src/camera.cpp" />
+        <option value="$PROJECT_DIR$/src/gym.cpp" />
+        <option value="$PROJECT_DIR$/src/rally.cpp" />
+        <option value="$PROJECT_DIR$/src/set.cpp" />
+        <option value="$PROJECT_DIR$/src/team.cpp" />
         <option value="$PROJECT_DIR$/include/team.h" />
+        <option value="$PROJECT_DIR$/src/video.cpp" />
+        <option value="$PROJECT_DIR$/include/gym.h" />
+        <option value="$PROJECT_DIR$/src/player.cpp" />
+        <option value="$PROJECT_DIR$/include/player.h" />
         <option value="$PROJECT_DIR$/include/rally.h" />
+        <option value="$PROJECT_DIR$/include/set.h" />
+        <option value="$PROJECT_DIR$/include/video.h" />
       </list>
     </option>
   </component>
@@ -211,6 +224,24 @@
               <item name="workspace" type="b2602c69:ProjectViewProjectNode" />
               <item name="workspace" type="47feb1d3:ProjectViewModuleNode" />
               <item name="workspace" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workspace" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workspace" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="workspace" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -251,10 +282,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Build All">
+  <component name="RunManager" selected="Application.runUnitTests">
     <configuration name="DefaultGameFixture.WriteGameToFile" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="DefaultGameFixture" TEST_METHOD="WriteGameToFile" TEST_MODE="SUITE_TEST" />
     <configuration name="ExampleGameFixture.WriteGameToFile" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="ExampleGameFixture" TEST_METHOD="WriteGameToFile" TEST_MODE="SUITE_TEST" />
-    <configuration name="ExampleVideoFixture.FileInAndOutput" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="ExampleVideoFixture" TEST_METHOD="FileInAndOutput" TEST_MODE="SUITE_TEST" />
+    <configuration name="ExamplePlayerFixture.Constructor" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="ExamplePlayerFixture" TEST_METHOD="Constructor" TEST_MODE="SUITE_TEST" />
     <configuration name="FullSeasonFixture" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="FullSeasonFixture" TEST_MODE="SUITE_TEST" />
     <configuration name="FullSeasonFixture.WriteSeasonToFile" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="workspace" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="runUnitTests" TEST_CLASS="FullSeasonFixture" TEST_METHOD="WriteSeasonToFile" TEST_MODE="SUITE_TEST" />
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="workspace" RUN_TARGET_NAME="workspace" EXPLICIT_BUILD_TARGET_NAME="all" />
@@ -276,17 +307,17 @@
       <item itemvalue="Application.gtest_main" />
       <item itemvalue="Google Test.FullSeasonFixture.WriteSeasonToFile" />
       <item itemvalue="Google Test.DefaultGameFixture.WriteGameToFile" />
-      <item itemvalue="Google Test.ExampleVideoFixture.FileInAndOutput" />
       <item itemvalue="Google Test.ExampleGameFixture.WriteGameToFile" />
       <item itemvalue="Google Test.FullSeasonFixture" />
+      <item itemvalue="Google Test.ExamplePlayerFixture.Constructor" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.ExamplePlayerFixture.Constructor" />
         <item itemvalue="Google Test.FullSeasonFixture.WriteSeasonToFile" />
         <item itemvalue="Google Test.FullSeasonFixture" />
         <item itemvalue="Google Test.ExampleGameFixture.WriteGameToFile" />
         <item itemvalue="Google Test.DefaultGameFixture.WriteGameToFile" />
-        <item itemvalue="Google Test.ExampleVideoFixture.FileInAndOutput" />
       </list>
     </recent_temporary>
   </component>
@@ -349,7 +380,7 @@
       <workItem from="1522528715514" duration="729000" />
       <workItem from="1522605012482" duration="9744000" />
       <workItem from="1522664729025" duration="1092000" />
-      <workItem from="1522666050985" duration="1234000" />
+      <workItem from="1522666050985" duration="5445000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1517138596222</created>
@@ -484,16 +515,17 @@
       <option name="project" value="LOCAL" />
       <updated>1522665717853</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed includes">
+      <created>1522689843550</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1522689843552</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExampleVideoFixture_FileInAndOutput - 2018.04.01 at 21h 02m 12s.xml">
-      <configuration name="ExampleVideoFixture.FileInAndOutput" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="DefaultGameFixture_WriteGameToFile - 2018.04.01 at 21h 03m 08s.xml">
-      <configuration name="DefaultGameFixture.WriteGameToFile" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="ExampleGameFixture_WriteGameToFile - 2018.04.01 at 21h 06m 54s.xml">
       <configuration name="ExampleGameFixture.WriteGameToFile" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
@@ -518,9 +550,15 @@
     <history-entry file="FullSeasonFixture_WriteSeasonToFile - 2018.04.01 at 21h 23m 17s.xml">
       <configuration name="FullSeasonFixture.WriteSeasonToFile" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="ExamplePlayerFixture_Constructor - 2018.04.02 at 20h 33m 15s.xml">
+      <configuration name="ExamplePlayerFixture.Constructor" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ExamplePlayerFixture_Constructor - 2018.04.02 at 20h 34m 16s.xml">
+      <configuration name="ExamplePlayerFixture.Constructor" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179419000" />
+    <option name="totallyTimeSpent" value="183630000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,25 +572,25 @@
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1617" height="1062" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.19504644" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49535602" weight="0.32911393" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49535602" visible="true" weight="0.24207188" />
       <window_info anchor="bottom" id="CMake" order="7" weight="0.39429176" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.504644" side_tool="true" weight="0.24207188" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.28858352" />
-      <window_info anchor="bottom" id="Run" internal_type="SLIDING" order="2" sideWeight="0.49473685" type="SLIDING" weight="0.39429176" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run" internal_type="SLIDING" order="2" sideWeight="0.49473685" type="SLIDING" visible="true" weight="0.23572938" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32924336" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.20433436" />
+      <window_info anchor="bottom" x="65" y="357" width="1615" height="319" id="Inspection Results" order="8" weight="0.39429176" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.29598308" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5010571" side_tool="true" weight="0.27120742" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39957717" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" x="65" y="357" width="1615" height="319" id="Inspection Results" order="8" visible="true" weight="0.39429176" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.29598308" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Find" order="1" weight="0.2964135" />
@@ -629,7 +667,8 @@
     <MESSAGE value="Cleaned up includes with include-what-you-need." />
     <MESSAGE value="1) Clang-tidy on game, season and team&#10;2) Added AddVideo tests" />
     <MESSAGE value="1) Fixed include guards" />
-    <option name="LAST_COMMIT_MESSAGE" value="1) Fixed include guards" />
+    <MESSAGE value="Fixed includes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed includes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -637,23 +676,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/include/game.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="e#74#128#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/player_spec.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -716,20 +738,6 @@
         <state relative-caret-position="-3293" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/video.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/set_spec.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -741,13 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/team.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -783,34 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gym.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/player_spec.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/opencv2/core/persistence.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1528">
           <caret line="1181" column="24" selection-start-line="1181" selection-start-column="18" selection-end-line="1181" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/season.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -838,24 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.clang-tidy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/action_spec.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/opencvworker.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -876,78 +839,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1101">
           <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="66" column="69" selection-start-line="66" selection-start-column="69" selection-end-line="66" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/camera.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/game.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="9" selection-end-column="79" />
-          <folding>
-            <element signature="e#74#128#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/gym.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="68" />
-          <folding>
-            <element signature="e#72#140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/action.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#78#132#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/video.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -958,16 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/set.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#72#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/season.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -975,41 +860,208 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/player.h">
+    <entry file="file://$PROJECT_DIR$/.clang-format">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.clang-tidy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+        <state relative-caret-position="18">
+          <caret line="1" column="123" selection-start-line="1" selection-start-column="123" selection-end-line="1" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/opencvworker.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/action.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding>
             <element signature="e#78#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/team.h">
+    <entry file="file://$PROJECT_DIR$/src/action.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/camera.h">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <element signature="e#78#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gym.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/opencvworker.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1419">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rally.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/season.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/set.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/team.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="e#74#128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/team.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="54" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/video.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="56" column="101" selection-start-line="56" selection-start-column="101" selection-end-line="56" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+          <folding>
+            <element signature="e#41#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/game.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#74#128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/gym.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="e#72#140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/player_spec.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/player.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#78#132#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/rally.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="172">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding>
+            <element signature="e#76#130#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/opencvworker.h">
+    <entry file="file://$PROJECT_DIR$/include/set.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="410">
+          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+          <folding>
+            <element signature="e#72#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/video.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#76#130#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

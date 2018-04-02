@@ -1,5 +1,5 @@
 ---
-Checks:          'readability-*,cppcoreguidelines-*,clang-analyzer-*,google-*,llvm-*,modernize-*,performance-*,portability-*'
+Checks:          'readability-*,cppcoreguidelines-*,clang-analyzer-*,google-*,llvm-*,-llvm-header-guard,-llvm-include-order,modernize-*,performance-*,portability-*'
 AnalyzeTemporaryDtors: false
 CheckOptions:
   - key:             readability-identifier-naming.AbstractClassCase

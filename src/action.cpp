@@ -6,9 +6,7 @@
 
 #include <qstring.h>  // for QString
 
-Action::Action() : time_() {}
-
-Action::Action(const QTime& time) : time_(time) {}
+Action::Action(const QTime& time) : time_{time} {}
 
 const QTime& Action::GetTime() const
 {
