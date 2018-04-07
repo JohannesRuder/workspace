@@ -2,16 +2,18 @@
 // Created by hannes on 18.02.18.
 //
 
-#include <vector>                        // for vector
 #include <gtest/gtest-message.h>         // for Message
-#include <gtest/gtest-test-part.h>       // for TestPartResult
+#include <gtest/gtest-test-part.h>       // for TestPartResult, TestFactoryImpl
 #include <opencv2/core/cvstd.hpp>        // for String
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+#include <vector>                        // for vector
 // IWYU pragma: no_include <opencv2/core/cvstd.inl.hpp>
 
-#include "game.h"            // for Game
-#include "season.h"          // for Season
-#include "gtest/gtest_pred_impl.h"  // for EXPECT_EQ, AssertionResult
+#include "game.h"                        // for Game
+#include "gtest/gtest_pred_impl.h"       // for EXPECT_EQ, AssertionResult
+#include "season.h"                      // for Season
+#include "team.h"                        // for Team
+#include "video.h"                       // for Video
 
 class DefaultSeasonFixture : public ::testing::Test
 {
@@ -65,9 +67,10 @@ class FullSeasonFixture : public ::testing::Test
   protected:
     Season unit_{"Season 2017/2018", "season-2017-2018.yaml"};
 
-    virtual void SetUp()
-    {
+    void SetUp() override {
         unit_.AddGame(Game{1, Team{"Los Krachos"}, Team{"Gänsejäger"}});
+        Video video {"View 1", "/home/hannes/Videos/2016-02-15_NixIsFix.mp4"};
+//        unit_.GetGame(1).AddVideo(video);
 //        unit_.GetGame(1).AddVideo(Video{"View 1", "/home/hannes/Videos/2016-02-15_NixIsFix.mp4"});
     }
 };

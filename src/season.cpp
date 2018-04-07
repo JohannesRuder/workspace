@@ -28,14 +28,19 @@ const std::string& Season::GetFilename()
     return filename_;
 }
 
+void Season::AddGame(Game game)
+{
+    games_.push_back(game);
+}
+
 Game& Season::GetGame(int number)
 {
     return games_[number];
 }
 
-void Season::AddGame(Game game)
+const std::vector<Game>& Season::GetGames() const
 {
-    games_.push_back(game);
+    return games_;
 }
 
 void Season::Write(cv::FileStorage& file_storage) const
@@ -56,9 +61,4 @@ void Season::Read(const cv::FileNode& node)
         iterator >> game;
         games_.push_back(game);
     }
-}
-
-const std::vector<Game>& Season::GetGames() const
-{
-    return games_;
 }

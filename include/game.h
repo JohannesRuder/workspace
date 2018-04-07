@@ -35,7 +35,7 @@ class Game
     const Team& GetGuestTeam() const;
     void AddSet(const Set& set);
     const std::vector<Set>& GetSets() const;
-    void AddVideo(const Video& video);
+    void    AddVideo(const Video& video);
     const std::vector<Video>& GetVideos() const;
     const std::vector<int>& GetVideoFrames() const;
 

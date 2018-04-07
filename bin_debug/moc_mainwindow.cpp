@@ -6,9 +6,17 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../mainwindow.h"
-#include <QtCore/qbytearray.h>
-#include <QtCore/qmetatype.h>
+#include <QtCore/qbytearray.h>  // for QByteArrayData, Q_STATIC_BYTE_ARRAY_D...
+#include <QtCore/qglobal.h>     // for Q_NULLPTR
+#include <qglobal.h>            // for qptrdiff, Q_UNUSED, QT_BEGIN_MOC_NAME...
+#include <qmainwindow.h>        // for QMainWindow, QMainWindow::staticMetaO...
+#include <qobject.h>            // for QObject, QObjectData
+#include <qobjectdefs.h>        // for QMetaObject, QMetaObject::Call, Q_MOC...
+#include <qscopedpointer.h>     // for QScopedPointer
+#include <stddef.h>             // for offsetof
+#include <string.h>             // for strcmp
+
+#include "../mainwindow.h"      // for MainWindow
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
