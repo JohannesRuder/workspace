@@ -72,10 +72,10 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Hallo", 0));
-        radioButton->setText(QApplication::translate("MainWindow", "RadioButton", 0));
-        menuHallo_Hannes->setTitle(QApplication::translate("MainWindow", "Hallo Hannes", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Hallo", nullptr));
+        radioButton->setText(QApplication::translate("MainWindow", "RadioButton", nullptr));
+        menuHallo_Hannes->setTitle(QApplication::translate("MainWindow", "Hallo Hannes", nullptr));
     } // retranslateUi
 
 };
