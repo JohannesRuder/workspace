@@ -11,7 +11,7 @@ class QWidget;
 namespace Ui
 {
 class MainWindow;
-}
+} // namespace Ui
 
 class MainWindow : public QMainWindow
 {
@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
 
   public:
     explicit MainWindow(QWidget* parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
   private:
     Ui::MainWindow* ui;

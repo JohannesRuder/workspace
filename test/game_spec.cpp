@@ -16,7 +16,7 @@
 class DefaultGameFixture : public ::testing::Test
 {
   protected:
-    DefaultGameFixture() {}
+    DefaultGameFixture() = default;
 
     Game unit_{};
 };
@@ -64,7 +64,7 @@ class ExampleGameFixture : public ::testing::Test
   protected:
     Game unit_{1, Team{"Los Krachos"}, Team{"Nix is fix"}};
 
-    virtual void SetUp() { unit_.AddVideo(Video{"View 1", "/home/hannes/Videos/2016-02-15_NixIsFix.mp4"}); }
+    void SetUp() override { unit_.AddVideo(Video{"View 1", "/home/hannes/Videos/2016-02-15_NixIsFix.mp4"}); }
 };
 
 TEST_F(ExampleGameFixture, WriteGameToFile)

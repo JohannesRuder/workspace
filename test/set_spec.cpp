@@ -13,28 +13,28 @@
 class DefaultSetFixture : public ::testing::Test
 {
   protected:
-    Set unit{};
+    Set unit_{};
 };
 
 TEST_F(DefaultSetFixture, DefaultConstructor)
 {
-    EXPECT_EQ(0, unit.GetHomeScore());
-    EXPECT_EQ(0, unit.GetGuestScore());
-    EXPECT_TRUE(unit.GetRallies().empty());
+    EXPECT_EQ(0, unit_.GetHomeScore());
+    EXPECT_EQ(0, unit_.GetGuestScore());
+    EXPECT_TRUE(unit_.GetRallies().empty());
 }
 
 TEST_F(DefaultSetFixture, IncrementHomeScore)
 {
-    EXPECT_EQ(0, unit.GetHomeScore());
-    unit.IncrementHomeScore();
-    EXPECT_EQ(1, unit.GetHomeScore());
+    EXPECT_EQ(0, unit_.GetHomeScore());
+    unit_.IncrementHomeScore();
+    EXPECT_EQ(1, unit_.GetHomeScore());
 }
 
 TEST_F(DefaultSetFixture, IncrementGuestScore)
 {
-    EXPECT_EQ(0, unit.GetGuestScore());
-    unit.IncrementGuestScore();
-    EXPECT_EQ(1, unit.GetGuestScore());
+    EXPECT_EQ(0, unit_.GetGuestScore());
+    unit_.IncrementGuestScore();
+    EXPECT_EQ(1, unit_.GetGuestScore());
 }
 
 TEST_F(DefaultSetFixture, WriteSetToFile)
@@ -42,7 +42,7 @@ TEST_F(DefaultSetFixture, WriteSetToFile)
     static const char *const filename = "/home/hannes/workspace/data.yaml";
 
     cv::FileStorage file_storage(filename, cv::FileStorage::WRITE);
-    file_storage << "set" << unit;
+    file_storage << "set" << unit_;
     file_storage.release();
 
     Set set_from_file;
@@ -50,7 +50,7 @@ TEST_F(DefaultSetFixture, WriteSetToFile)
     file_storage["set"] >> set_from_file;
     file_storage.release();
 
-    EXPECT_EQ(unit.GetHomeScore(), set_from_file.GetHomeScore());
-    EXPECT_EQ(unit.GetGuestScore(), set_from_file.GetGuestScore());
+    EXPECT_EQ(unit_.GetHomeScore(), set_from_file.GetHomeScore());
+    EXPECT_EQ(unit_.GetGuestScore(), set_from_file.GetGuestScore());
     // TODO: Compare Rallies
 }

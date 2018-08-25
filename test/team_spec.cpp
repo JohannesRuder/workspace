@@ -14,21 +14,21 @@
 class DefaultTeamFixture : public ::testing::Test
 {
   protected:
-    DefaultTeamFixture() {}
+    DefaultTeamFixture() = default;
 
-    Team unit{};
+    Team unit_{};
 };
 
 TEST_F(DefaultTeamFixture, DefaultConstructor)
 {
-    EXPECT_EQ("", unit.GetName());
+    EXPECT_EQ("", unit_.GetName());
 }
 
 TEST_F(DefaultTeamFixture, SetName)
 {
-    EXPECT_EQ("", unit.GetName());
-    unit.SetName("Los Krachos");
-    EXPECT_EQ("Los Krachos", unit.GetName());
+    EXPECT_EQ("", unit_.GetName());
+    unit_.SetName("Los Krachos");
+    EXPECT_EQ("Los Krachos", unit_.GetName());
 }
 
 TEST(Team, Constructor)
@@ -49,11 +49,11 @@ TEST(Team, FileInAndOutput)
     file_storage << "team" << unit;
     file_storage.release();
 
-    Team teamFromFile;
+    Team team_from_file;
     file_storage.open(filename, cv::FileStorage::READ);
-    file_storage["team"] >> teamFromFile;
+    file_storage["team"] >> team_from_file;
     file_storage.release();
 
-    EXPECT_EQ(unit.GetName(), teamFromFile.GetName());
-    EXPECT_EQ(unit.GetPlayers(), teamFromFile.GetPlayers());
+    EXPECT_EQ(unit.GetName(), team_from_file.GetName());
+    EXPECT_EQ(unit.GetPlayers(), team_from_file.GetPlayers());
 }

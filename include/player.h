@@ -20,9 +20,9 @@ class Player
 {
   private:
     std::string name_;
-    int number_;
+    int number_{};
     Position position_{Position::kUNDEFINED};
-    int number_of_actions_;
+    int number_of_actions_{};
 
   public:
     Player() = default;

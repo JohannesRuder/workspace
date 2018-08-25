@@ -14,8 +14,8 @@
 #include <qobject.h>            // for QObject, QObjectData
 #include <qobjectdefs.h>        // for QByteArrayData, QMetaObject, QMetaObj...
 #include <qscopedpointer.h>     // for QScopedPointer
-#include <stddef.h>             // for offsetof
-#include <string.h>             // for strcmp
+#include <cstddef>              // for offsetof
+#include <cstring>              // for strcmp
 
 #include "../mainwindow.h"      // for MainWindow
 #if !defined(Q_MOC_OUTPUT_REVISION)
