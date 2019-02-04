@@ -4,7 +4,7 @@
 
 #include "rally.h"
 
-#include <qstring.h>  // for QString
+#include <qt5/QtCore/qstring.h>  // for QString
 
 Rally::Rally(const QTime& start_time) : start_time_{start_time} {}
 

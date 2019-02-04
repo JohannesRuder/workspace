@@ -4,10 +4,10 @@
 
 #include "utils.h"
 
-#include <opencv2/core.hpp>          // for compare, countNonZero
-#include <opencv2/core/base.hpp>     // for CmpTypes::CMP_NE
-#include <opencv2/core/mat.hpp>      // for Mat
-#include <opencv2/core/mat.inl.hpp>  // for _InputArray::_InputArray, _Input...
+#include "opencv2/core.hpp" // for compare, countNonZero
+#include "opencv2/core/base.hpp"     // for CmpTypes::CMP_NE
+#include "opencv2/core/mat.hpp"      // for Mat
+#include "opencv2/core/mat.inl.hpp"  // for _InputArray::_InputArray, _Input...
 
 bool IsMatEqual(const cv::Mat& mat_1, const cv::Mat& mat_2)
 {

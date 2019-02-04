@@ -8,7 +8,7 @@
 #include <string>                        // for string
 #include <vector>                        // for vector
 #include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
-#include <qdatetime.h>                   // for QTime
+#include <qt5/QtCore/qdatetime.h>                   // for QTime
 
 #include "action.h"  // for Action
 

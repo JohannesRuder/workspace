@@ -6,7 +6,7 @@
 #define PLAYER_H_
 
 #include <string>                        // for string
-#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include "opencv2/core.hpp"  // for FileStorage (ptr only), File...
 
 enum class Position
 {

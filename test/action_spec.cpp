@@ -7,8 +7,8 @@
 #include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
 #include <qdatetime.h>                   // for QTime
 
-#include "action.h"                 // for Action
 #include "gtest/gtest_pred_impl.h"  // for AssertionResult, TEST_F, Tes...
+#include "MyLib/action.h"
 
 class DefaultActionFixture : public ::testing::Test
 {

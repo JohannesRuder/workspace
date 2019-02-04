@@ -5,15 +5,15 @@
 #ifndef OPENCVWORKER_H_
 #define OPENCVWORKER_H_
 
-#include <QImage>
-#include <QObject>
-#include <QTime>
+#include <qt5/QtGui/QImage>
+#include <qt5/QtCore/QObject>
+#include <qt5/QtCore/QTime>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
-#include "../src/convopencv2qt.h"
+#include "convopencv2qt.h"
 
 class OpenCvWorker : public QObject
 {

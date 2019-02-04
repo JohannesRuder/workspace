@@ -5,13 +5,13 @@
 #include <string>                        // for string
 #include <gtest/gtest-message.h>         // for Message
 #include <gtest/gtest-test-part.h>       // for TestPartResult, TestFactoryImpl
-#include <opencv2/core/mat.hpp>          // for MatCommaInitializer_, Mat, Mat_
-#include <opencv2/core/mat.inl.hpp>      // for MatCommaInitializer_::operator,
-#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
+#include "opencv2/core/mat.hpp"          // for MatCommaInitializer_, Mat, Mat_
+#include "opencv2/core/mat.inl.hpp"      // for MatCommaInitializer_::operator,
+#include "opencv2/core/persistence.hpp"  // for FileStorage, operator<<, ope...
 
-#include "camera.h"                 // for Camera
+#include "mylib/camera.h"                 // for Camera
 #include "gtest/gtest_pred_impl.h"  // for AssertionResult, EXPECT_TRUE
-#include "utils.h"                  // for IsMatEqual
+#include "mylib/utils.h"                  // for IsMatEqual
 
 class DefaultCameraFixture : public ::testing::Test
 {

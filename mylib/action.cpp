@@ -4,7 +4,7 @@
 
 #include "action.h"
 
-#include <qstring.h>  // for QString
+#include <qt5/QtCore/qstring.h>  // for QString
 
 Action::Action(const QTime& time) : time_{time} {}
 

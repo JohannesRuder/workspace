@@ -6,9 +6,9 @@
 #define VIDEO_H_
 
 #include <string>                        // for string
-#include <opencv2/core/mat.hpp>          // for Mat
-#include <opencv2/core/mat.inl.hpp>      // for Mat::operator=, Mat::~Mat
-#include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
+#include "opencv2/core/mat.hpp"          // for Mat
+#include "opencv2/core/mat.inl.hpp"      // for Mat::operator=, Mat::~Mat
+#include "opencv2/core/persistence.hpp"  // for FileStorage (ptr only), File...
 
 #include "camera.h"  // for Camera
 

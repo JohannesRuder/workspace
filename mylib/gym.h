@@ -7,7 +7,7 @@
 
 #include <string>                        // for string, basic_string
 #include <opencv2/core/persistence.hpp>  // for FileStorage (ptr only), File...
-#include <qcolor.h>                      // for QColor
+#include <qt5/QtGui/qcolor.h>                      // for QColor
 
 class Gym
 {

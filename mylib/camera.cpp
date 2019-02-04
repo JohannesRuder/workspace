@@ -5,7 +5,8 @@
 #include "camera.h"
 #include "utils.h"  // for IsMatEqual
 
-#include <opencv2/core/cvstd.hpp>  // for String
+#include "opencv2/core/cvstd.hpp"
+
 
 Camera::Camera(const std::string& name, const std::string& camera_calibration_filename)
     : name_{name}, camera_calibration_filename_{camera_calibration_filename}

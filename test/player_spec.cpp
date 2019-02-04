@@ -4,10 +4,9 @@
 
 #include <gtest/gtest-message.h>         // for Message
 #include <gtest/gtest-test-part.h>       // for TestPartResult
-#include <opencv2/core/persistence.hpp>  // for FileStorage, operator<<, ope...
-
-#include "player.h"               // for Player, Position, Position::...
+#include "opencv2/core/persistence.hpp"  // for FileStorage, operator<<, ope...
 #include "gtest/gtest_pred_impl.h"       // for AssertionResult, EXPECT_EQ
+#include "mylib/player.h"
 
 class DefaultPlayerFixture : public ::testing::Test
 {
