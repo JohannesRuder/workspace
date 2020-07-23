@@ -1,6 +1,22 @@
 ---
-Checks:          'readability-*,cppcoreguidelines-*,clang-analyzer-*,google-*,llvm-*,-llvm-header-guard,-llvm-include-order,modernize-*,performance-*,portability-*'
+# Note:
+# Using '-' excludes a check. By default, all checks are disabled.
+
+Checks:
+"
+-*,\
+cppcoreguidelines-*,\
+google-build-namespaces,\
+google-build-using-namespace,\
+google-global-names-in-headers,\
+llvm-include-order,\
+readability-*,\
+-readability-avoid-const-params-in-decls,\
+"
+
+HeaderFilterRegex: '.*/src/(?:adp|build_system|legacy)/.*'
 AnalyzeTemporaryDtors: false
+
 CheckOptions:
   - key:             readability-identifier-naming.AbstractClassCase
     value:           CamelCase
@@ -17,9 +33,9 @@ CheckOptions:
   - key:             readability-identifier-naming.ClassConstantSuffix
     value:           ''
   - key:             readability-identifier-naming.ClassMemberCase
-    value:           lower_case
+    value:           CamelCase
   - key:             readability-identifier-naming.ClassMemberPrefix
-    value:           g_
+    value:           g
   - key:             readability-identifier-naming.ClassMemberSuffix
     value:           ''
   - key:             readability-identifier-naming.ClassMethodCase
@@ -39,7 +55,7 @@ CheckOptions:
   - key:             readability-identifier-naming.ConstantMemberPrefix
     value:           ''
   - key:             readability-identifier-naming.ConstantMemberSuffix
-    value:           ''
+    value:           _
   - key:             readability-identifier-naming.ConstantParameterCase
     value:           lower_case
   - key:             readability-identifier-naming.ConstantParameterPrefix
@@ -51,19 +67,19 @@ CheckOptions:
   - key:             readability-identifier-naming.ConstantSuffix
     value:           ''
   - key:             readability-identifier-naming.ConstexprFunctionCase
-    value:           CamelCase
+    value:           ''
   - key:             readability-identifier-naming.ConstexprFunctionPrefix
     value:           ''
   - key:             readability-identifier-naming.ConstexprFunctionSuffix
     value:           ''
   - key:             readability-identifier-naming.ConstexprMethodCase
-    value:           CamelCase
+    value:           ''
   - key:             readability-identifier-naming.ConstexprMethodPrefix
     value:           ''
   - key:             readability-identifier-naming.ConstexprMethodSuffix
     value:           ''
   - key:             readability-identifier-naming.ConstexprVariableCase
-    value:           lower_case
+    value:           ''
   - key:             readability-identifier-naming.ConstexprVariablePrefix
     value:           ''
   - key:             readability-identifier-naming.ConstexprVariableSuffix
@@ -99,9 +115,9 @@ CheckOptions:
   - key:             readability-identifier-naming.GlobalFunctionSuffix
     value:           ''
   - key:             readability-identifier-naming.GlobalVariableCase
-    value:           lower_case
+    value:           CamelCase
   - key:             readability-identifier-naming.GlobalVariablePrefix
-    value:           g_
+    value:           g
   - key:             readability-identifier-naming.GlobalVariableSuffix
     value:           ''
   - key:             readability-identifier-naming.IgnoreFailedSplit
@@ -257,4 +273,3 @@ CheckOptions:
   - key:             readability-identifier-naming.VirtualMethodSuffix
     value:           ''
 ...
-
